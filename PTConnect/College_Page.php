@@ -12,6 +12,7 @@ if(isset($_GET['pageNum'])){
 }else{
     $pageNum = 0;
 }
+if(isset($_GET['next'])){
 if($_GET['next'] == 1){
     $pageNum++;
     if($pageNum > (count($arr)-1)){
@@ -22,6 +23,7 @@ if($_GET['next'] == 1){
     if($pageNum < 0){
         $pageNum = count($arr)-1;
     }
+}
 }
 ?>
 <html>
@@ -69,8 +71,11 @@ if($_GET['next'] == 1){
     </style>
 </head>
 <body>
+<div>
+
+</div>
 <div id = "main">
-    <a href = "Questions_test.php?next=-1&pageNum=<?php echo $pageNum ?>">
+    <a href = "College_Page.php?next=-1&pageNum=<?php echo $pageNum ?>">
         <div class = "nav" id = "prev_q">
             <img class = "arrows" src = "            http://upload.wikimedia.org/wikipedia/commons/1/18/Left_arrow.svg
 " width = "70em"/>
@@ -79,7 +84,7 @@ if($_GET['next'] == 1){
     <div id = "question_display">
         <?php echo $arr[$pageNum]; ?>
     </div>
-    <a href = "Questions_test.php?next=1&pageNum=<?php echo $pageNum ?>">
+    <a href = "College_Page.php?next=1&pageNum=<?php echo $pageNum ?>">
         <div class = "nav" id = "next_q">
             <img class = "arrows" src = "http://upload.wikimedia.org/wikipedia/commons/1/12/Right_arrow.svg" width = "70em"/>
 
