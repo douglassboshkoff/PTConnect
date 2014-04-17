@@ -13,6 +13,18 @@
     body{
         display: inline;
     }
+    body/div{
+        border: 1px solid red;
+        width: 30%;
+        height: 100%;
+        float: right;
+    }
+    body:first-child{
+        border: 1px solid red;
+        width: 70%;
+        height: 100%;
+        float: right;
+    }
 </style>
 <title>
     College Filter
