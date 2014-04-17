@@ -54,7 +54,14 @@ if($_GET['next'] == 1){
             margin-right: 2.5em;
             float:right;
         }
-        #main{
+        #main1{
+            margin: auto;
+            padding-top: 1em;
+            width: 35em;
+            height: 15em;
+            text-align: center;
+        }
+        #main2{
             margin: auto;
             padding-top: 1em;
             width: 35em;
@@ -68,13 +75,43 @@ if($_GET['next'] == 1){
             margin-left: .2em;
             margin-top: .6em;
         }
+        #user_pic{
+            float: left;
+            height: 80%;
+            width: 35%;
+            margin-left: 1.5em;
+
+        }
+        #user_bio{
+            float:right;
+            width: 55%;
+            height: 80%;
+            margin-right: 1.5em;
+        }
+        #college_name{
+            margin: auto;
+            padding-top: 1em;
+            width: 35em;
+            height: 2em;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-<div>
-
+<div id = "college_name">
+    PURDUE UNIVERSITY
 </div>
-<div id = "main">
+<br/>
+<div id = "main1">
+    <div id = "user_pic">
+
+    </div>
+    <div id = "user_bio">
+
+    </div>
+</div>
+<br/>
+<div id = "main2">
     <a href = "College_Page.php?next=-1&pageNum=<?php echo $pageNum ?>">
         <div class = "nav" id = "prev_q">
             <img class = "arrows" src = "            http://upload.wikimedia.org/wikipedia/commons/1/18/Left_arrow.svg
