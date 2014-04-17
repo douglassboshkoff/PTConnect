@@ -13,16 +13,18 @@
     body{
         display: inline;
     }
-    body/div{
+    div:first-child{
         border: 1px solid red;
+        /*width and height customized to a 1px border*/
         width: 30%;
-        height: 100%;
-        float: right;
+        height: 99.72%;
+        float: left;
     }
-    body:first-child{
+    div:nth-of-type(2){
         border: 1px solid red;
-        width: 70%;
-        height: 100%;
+        /*width and height customized to a 1px border*/
+        width: 69.72%;
+        height: 99.72%;
         float: right;
     }
 </style>
@@ -31,10 +33,10 @@
 </title>
 <body>
 <div>
-
+    woop
 </div>
 <div>
-
+    woop
 </div>
 </body>
 </html>
