@@ -95,6 +95,29 @@ if($_GET['next'] == 1){
             height: 2em;
             text-align: center;
         }
+        /** Code From Danny **/
+        #clip {
+            list-style-type: lower-greek;
+            margin-top: 1em;
+            height: 80%;
+            width: 90%;
+        }
+
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            background: url("http://upload.wikimedia.org/wikipedia/commons/1/12/Right_arrow.svg") no-repeat left top;
+            height: 64px;
+            padding-left: 64px;
+
+        }
+
+        ul{
+            list-style-type: lower-greek;
+        }
     </style>
 </head>
 <body>
@@ -129,7 +152,15 @@ if($_GET['next'] == 1){
     </a>
     <br/>
     <div id = "post_bar">
-
+        <div id="clip">
+            <ul id="bullets">
+                <li id="active"><a href="#" id="current">Item one</a></li>
+                <li><a href="#">Item two </br> heheh</a></li>
+                <li><a href="#">Item three</a></li>
+                <li><a href="#">Item four</a></li>
+                <li><a href="#">Item five</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 </body>
