@@ -1,5 +1,17 @@
 <?php
 
+$comment_arr = array();
+$comment_arr[0] = "Comment 1";
+$comment_arr[1] = "Comment 2";
+$comment_arr[2] = "Comment 3";
+$comment_arr[3] = "Comment 4";
+$comment_arr[4] = "Comment 5";
+//$comment_arr[5] = "Comment 6";
+//$comment_arr[6] = "Comment 7";
+//$comment_arr[7] = "Comment 8";
+//$comment_arr[8] = "Comment 9";
+
+
 $arr = array();
 $arr[0] = "test";
 $arr[1] = "test1";
@@ -38,8 +50,11 @@ if($_GET['next'] == 1){
             display: inline-block;
         }
         #post_bar{
+
             width: 30em;
-            height: 18em;
+            //height: 18em;
+            height: <?php echo (count($comment_arr) * 6); ?>em;
+            //padding-bottom: 1em;
         }
         #prev_q{
             float:left;
@@ -65,8 +80,10 @@ if($_GET['next'] == 1){
             margin: auto;
             padding-top: 1em;
             width: 35em;
-            height: 25em;
+            //height: 25em;
             text-align: center;
+            height: <?php echo (count($comment_arr) * 7); ?>em;
+
         }
         body{
             text-align: center;
@@ -97,10 +114,10 @@ if($_GET['next'] == 1){
         }
         /** Code From Danny **/
         #clip {
-            list-style-type: lower-greek;
             margin-top: 1em;
-            height: 80%;
+            height: 100%;
             width: 90%;
+            border: none;
         }
 
         ul{
@@ -109,16 +126,22 @@ if($_GET['next'] == 1){
             margin: 0;
         }
         li{
-            background: url("http://upload.wikimedia.org/wikipedia/commons/1/12/Right_arrow.svg") no-repeat left top;
-            height: 64px;
-            padding-left: 64px;
+            background: url("BlankFace.jpg") no-repeat left top;
+            width: 4em;
+            height: 4em;
+            padding-left: 5em;
+            padding-top: 1em;
 
         }
 
         ul{
-            list-style-type: lower-greek;
+
         }
     </style>
+    <script>
+        var cssStyle = getCSSRule('#styleName');
+        cssStyle.style.background = redfinedColour;
+    </script>
 </head>
 <body>
 <div id = "college_name">
@@ -155,10 +178,10 @@ if($_GET['next'] == 1){
         <div id="clip">
             <ul id="bullets">
                 <li id="active"><a href="#" id="current">Item one</a></li>
-                <li><a href="#">Item two </br> heheh</a></li>
-                <li><a href="#">Item three</a></li>
-                <li><a href="#">Item four</a></li>
-                <li><a href="#">Item five</a></li>
+                <?php for($i = 0; $i < count($comment_arr); $i++){?>
+                    <li><a href="#"><?php echo $comment_arr[$i];?> </a></li>
+
+                <?php } ?>
             </ul>
         </div>
     </div>
