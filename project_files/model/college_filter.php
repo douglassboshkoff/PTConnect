@@ -65,8 +65,9 @@
     .divider{
         display: inline;
         float: left;
-        width: 1%;
+        width: .5%;
         height: 99%;
+        background-color: black;
         border: 1px solid black;
     }
 
