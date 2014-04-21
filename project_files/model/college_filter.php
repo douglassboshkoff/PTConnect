@@ -72,7 +72,7 @@
 
     .results_container {
         float: left;
-        width: 69%;
+        width: 68%;
         padding-top: 3%;
     }
 /*

@@ -139,7 +139,7 @@ if($_GET['next'] == 1){
             margin: 0;
         }
         li{
-            background: url("resources/BlankFace.jpg") no-repeat left top;
+            background: url("../resources/BlankFace.jpg") no-repeat left top;
             width: 4em;
             height: 4em;
             padding-left: 5em;
