@@ -13,27 +13,40 @@
 
 <style>
     body{
-        display: inline-block;
+        display: inline;
     }
-    div:first-child{
+    .fltrs{
+        /* first half w/ drop-downs */
         /*width and height customized to a 1px border*/
         width: 30%;
-        height: 99.72%;
+        height: 80%;
+        float: left;
     }
 
-    div:nth-child(2){
-        height: 100%;
-        width: 1px;
+    .line{
+        /* line under "filters"*/
+        width: 80%;
+        height: 0;
         border: 1px solid black;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: center;
+        margin-top: -5%
     }
 
-    div:nth-of-type(3){
-        /*width and height customized to a 1px border*/
-        width: 30%;
-        height: 99.72%;
-        margin-left: 30%;
+    h1{
+        /* "filters" */
+        margin-bottom: 5%;
     }
-
+        /*
+            div:nth-of-type(3){
+                /*width and height customized to a 1px border
+                width: 30%;
+                height: 99.72%;
+                margin-left: 30%;
+                /*border: 1px solid black;
+            }
+        */
     p{
         margin-left: 10%;
         margin-bottom: -1%;
@@ -44,14 +57,52 @@
         width: 80%;
         margin-left: 10%;
     }
+
+    .heading{
+        margin-left: 10%;
+    }
+
+    .divider{
+        display: inline;
+        float: left;
+        width: 1%;
+        height: 99%;
+        border: 1px solid black;
+    }
+
+    .results_container {
+        float: left;
+        width: 69%;
+        padding-top: 3%;
+    }
+/*
+    .results_bin{
+        display: inline;
+        float: left;
+        width: 100%;
+
+    }
+*/
+    .results{
+        float: left;
+        width: 100%;
+        height: 33%;
+    }
+
 </style>
+
 <title>
     College Filter
 </title>
-<body style="display: inline">
-<div class="fltrs" style="margin: 0">
-    <h1 style="margin-left: 10%">Filters</h1>
-    <div style="height: 0; border: 1px solid black; margin-left: 10%; margin-right: 10%; text-align: center; margin-top: -5%"></div>
+
+<body> <!-- style="display: inline"> -->
+
+<div class="fltrs"> <!-- style="margin: 0" -->
+
+    <h1 class="heading">Filters</h1>
+
+    <div class="line"></div>
+
     <p>PT Grad Year</p>
     <select>
         <!-- options -->
@@ -77,27 +128,27 @@
         <!-- options -->
     </select>
 </div>
-<div>
-
-</div>
-<div>
+<div class="divider"></div>
+<div class="results_container" style="float: left">
     <!-- php for statement making rows of 4 profiles -->
-    <div style="display: inline">
-        <div>
-            bing
+   <!-- <div class="results_bin"> -->
+
+        <div class="results">
         </div>
-        <div>
-            bing
+
+        <div class="results">
         </div>
-        <div>
-            bing
+
+        <div class="results">
         </div>
-        <div>
-            bing
+
+        <div class="results">
         </div>
-    </div>
-    <!-- end statement -->
+
+    <!--</div> -->
+    <!-- end statement-->
 </div>
+
 </body>
 
 <!-- insert footer here -->
