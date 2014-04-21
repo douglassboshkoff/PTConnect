@@ -87,9 +87,9 @@
         <div id='top'>
             <ul>
                 <li><span id="white">PT</span><span id="red">Connect</span></li>
-                <form id="login">
-                    <input type="text" placeholder="Email"/>
-                    <input type="password" placeholder="Password"/>
+                <form id="login" action = "." method = "post">
+                    <input type="text" placeholder="Email" name = "email"/>
+                    <input type="password" placeholder="Password" name = "password"/>
                     <input id="loginButton" type="submit" value="Login"/>
                 </form>
             </ul>

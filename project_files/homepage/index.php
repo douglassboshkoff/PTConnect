@@ -25,8 +25,8 @@ else if($action == 'login')
 }
 else if($action == 'register')
 {
-    $fname = $_POST['firstName'];
-    $lname = $_POST['lastName'];
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $verifypassword = $_POST['verifypassword'];
