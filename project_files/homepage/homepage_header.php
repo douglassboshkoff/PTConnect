@@ -88,6 +88,7 @@
             <ul>
                 <li><span id="white">PT</span><span id="red">Connect</span></li>
                 <form id="login" action = "." method = "post">
+                    <input type="hidden" name="action" value="login"/>
                     <input type="text" placeholder="Email" name = "email"/>
                     <input type="password" placeholder="Password" name = "password"/>
                     <input id="loginButton" type="submit" value="Login"/>

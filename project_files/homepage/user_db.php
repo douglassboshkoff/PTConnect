@@ -15,11 +15,11 @@ function add_user($fname, $lname, $email, $password, $gradyear)
     $db->exec($query);
 }
 
-function get_customer($username)
+function get_customer($email)
 {
     global $db;
     $query ="SELECT * FROM users
-             WHERE username = '$username'";
+             WHERE email = '$email'";
     $result=$db->query($query);
     return $result;
 }

@@ -18,7 +18,7 @@ if ($action == 'under_construction')
 
 else if($action == 'login')
 {
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
     include('next_page.php');
 }
