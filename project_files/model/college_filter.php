@@ -18,7 +18,7 @@
     .fltrs{
         /* first half w/ drop-downs */
         /*width and height customized to a 1px border*/
-        width: 30%;
+        width: 25%;
         height: 80%;
         float: left;
     }
@@ -38,19 +38,12 @@
         /* "filters" */
         margin-bottom: 5%;
     }
-        /*
-            div:nth-of-type(3){
-                /*width and height customized to a 1px border
-                width: 30%;
-                height: 99.72%;
-                margin-left: 30%;
-                /*border: 1px solid black;
-            }
-        */
+
     p{
         margin-left: 10%;
         margin-bottom: -1%;
-        margin-top: 3%;
+        margin-top: 7%;
+        font-size: 24;
     }
 
     select{
@@ -65,29 +58,79 @@
     .divider{
         display: inline;
         float: left;
-        width: .5%;
-        height: 99%;
+        width: .1%;
+        height: 99.8%;
         background-color: black;
         border: 1px solid black;
     }
 
     .results_container {
         float: left;
-        width: 68%;
+        width: 73%;
         padding-top: 3%;
     }
-/*
-    .results_bin{
-        display: inline;
-        float: left;
-        width: 100%;
+        /*
+            .results_bin{
+                display: inline;
+                float: left;
+                width: 100%;
 
-    }
-*/
+            }
+        */
     .results{
         float: left;
-        width: 100%;
+        display: inline;
+        width: 22%;
+        margin-left: 2.5%;
+        margin-bottom: 2.5%;
         height: 33%;
+        /*border: 1px solid black;*/
+    }
+
+    .propic{
+        border: 1px solid black;
+        width: 80%;
+        height: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .top{
+        height: 85%;
+        width: 100%;
+    }
+
+    .bottom{
+        height: 15%;
+        width: 100%;
+    }
+
+    .info{
+        text-align: right;
+        border: 1px solid black;
+        width: 80%;
+        height: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /*
+    .info{
+        border: 1px solid black;
+        margin-right: 10%;
+        height: 100%;
+        display: block;
+        text-align: right;
+    }
+*/
+    .name{
+        font-weight: bold;
+    }
+
+    .class_number{
+
     }
 
 </style>
@@ -130,26 +173,38 @@
     </select>
 </div>
 <div class="divider"></div>
-<div class="results_container" style="float: left">
+<div class="results_container">
     <!-- php for statement making rows of 4 profiles -->
-   <!-- <div class="results_bin"> -->
+    <!-- <div class="results_bin"> -->
 
-        <div class="results">
+    <div class="results">
+        <div class="top">
+            <img class="propic" src="../resources/BlankFace.jpg">
         </div>
+        <div class="bottom">
+            <div class="info">
+                <div class="name">
+                    Danny Gimeno
+                </div>
+                <div class="class_number">
+                    2015
+                </div>
 
-        <div class="results">
+            </div>
         </div>
+    </div>
 
-        <div class="results">
-        </div>
+    <div class="results">
+    </div>
 
-        <div class="results">
-        </div>
+    <div class="results">
+    </div>
 
+    <div class="results">
+    </div>
     <!--</div> -->
     <!-- end statement-->
 </div>
-
 </body>
 
 <!-- insert footer here -->
