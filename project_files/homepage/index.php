@@ -20,7 +20,6 @@ else if($action == 'login')
 {
     $username = $_POST['username'];
     $password = $_POST['password'];
-
     include('next_page.php');
 }
 else if($action == 'register')
@@ -32,14 +31,11 @@ else if($action == 'register')
     $verifypassword = $_POST['verifypassword'];
     $gradyear = $_POST['gradyear'];
 
-    if($password == $verify_password)
+    if($password == $verifypassword)
     {
-        add_user($firstName, $lastName, $email, $password, $grad_year);
         include('next_page.php');
     }
-
 }
-
 else
 {
     include('homepage_header.php');

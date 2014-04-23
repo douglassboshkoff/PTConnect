@@ -193,14 +193,16 @@
     </form>
 </div>
 <div id="ptcsCreate">
-    <form action="." method="post"
-          id="register">
+
+    <form action="." method="post">
+        <input type="hidden" name="action" value="register"/>
         <input id="fname" type="text" placeholder="First Name" name = "fname"/>
         <input id="lname" type="text" placeholder="Last Name" name = "lname"/>
         <input id="email" type="text" placeholder="Email" name = "email"/>
         <input id="password" type="password" placeholder="Password" name = "password"/>
         <input id="password" type="password" placeholder="Verify Password" name = "verifypassword"/>
         <select id="gradyear" name = "gradyear">
+
             <option>PT Grad Year</option>
             <option>2017</option>
             <option>2016</option>
@@ -218,12 +220,18 @@
             <option>2006</option>
             <option>2005</option>
             <option>2004</option>
+
         </select>
+
         <input id="createButton" type="submit" value="Create" />
-        <form>
+
+        </form>
 </div>
+
 <div id="footer">
     <h1>&#169;2014</h1>
 </div>
+
 </body>
+
 </html>
