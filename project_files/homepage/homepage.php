@@ -189,6 +189,7 @@
 <div id="guestLogin">
     <p>Learn more about PTCS alumni, the colleges they have attended, and their current and past employers.  </p>
     <form>
+        <input type="hidden" name="action" value="continue_as_guest"/>
         <input id="guestContinue" type="submit" value="Continue as Guest" />
     </form>
 </div>

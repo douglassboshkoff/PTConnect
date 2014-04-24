@@ -33,8 +33,14 @@ else if($action == 'register')
 
     if($password == $verifypassword)
     {
-        include('next_page.php');
+        include('header.php');
+        include('main.php');
     }
+}
+else if($action == 'continue_as_guest')
+{
+    include('guest_header.php');
+    include('main.php');
 }
 else
 {
