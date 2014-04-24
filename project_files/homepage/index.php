@@ -18,9 +18,8 @@ if ($action == 'under_construction')
 
 else if($action == 'login')
 {
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
-
     include('next_page.php');
 }
 else if($action == 'register')
@@ -32,14 +31,17 @@ else if($action == 'register')
     $verifypassword = $_POST['verifypassword'];
     $gradyear = $_POST['gradyear'];
 
-    if($password == $verify_password)
+    if($password == $verifypassword)
     {
-        add_user($firstName, $lastName, $email, $password, $grad_year);
-        include('next_page.php');
+        include('header.php');
+        include('main.php');
     }
-
 }
-
+else if($action == 'continue_as_guest')
+{
+    include('guest_header.php');
+    include('main.php');
+}
 else
 {
     include('homepage_header.php');

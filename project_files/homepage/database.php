@@ -1,8 +1,13 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: sspartz
- * Date: 4/21/14
- * Time: 2:22 PM
- * To change this template use File | Settings | File Templates.
- */
+//$dsn = 'mysql:host=localhost;dbname=users';
+//$username = 'ts_user';
+//$password = 'pa55word';
+//
+//try {
+//    $db = new PDO($dsn, $username, $password);
+//} catch (PDOException $e) {
+//    $error_message = $e->getMessage();
+//    include('../errors/database_error.php');
+//    exit();
+//}
+//?>
