@@ -6,6 +6,9 @@
  * Time: 11:55 AM
  **/
 
+//test array
+$arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
+
 ?>
 <html>
 
@@ -14,6 +17,8 @@
 <style>
     body{
         display: inline;
+        height: 100%;
+        width: 100%;
     }
     .fltrs{
         /* first half w/ drop-downs */
@@ -21,6 +26,7 @@
         width: 25%;
         height: 80%;
         float: left;
+
     }
 
     .line{
@@ -114,17 +120,18 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+        padding-bottom: 1%;
     }
 
-    /*
-    .info{
-        border: 1px solid black;
-        margin-right: 10%;
-        height: 100%;
-        display: block;
-        text-align: right;
-    }
-*/
+        /*
+        .info{
+            border: 1px solid black;
+            margin-right: 10%;
+            height: 100%;
+            display: block;
+            text-align: right;
+        }
+    */
     .name{
         font-weight: bold;
     }
@@ -172,38 +179,29 @@
         <!-- options -->
     </select>
 </div>
+<script class="divider" type="text/javascript" src="divider.js"></script>
 <div class="divider"></div>
 <div class="results_container">
     <!-- php for statement making rows of 4 profiles -->
-    <!-- <div class="results_bin"> -->
+    <?php foreach($arr as $value) : ?>
 
-    <div class="results">
-        <div class="top">
-            <img class="propic" src="../resources/BlankFace.jpg">
-        </div>
-        <div class="bottom">
-            <div class="info">
-                <div class="name">
-                    Danny Gimeno
+        <div class="results">
+            <div class="top">
+                <img class="propic" src="../resources/BlankFace.jpg">
+            </div>
+            <div class="bottom">
+                <div class="info">
+                    <div class="name">
+                        <?php echo $value?>
+                    </div>
+                    <div class="class_number">
+                        2015
+                    </div>
                 </div>
-                <div class="class_number">
-                    2015
-                </div>
-
             </div>
         </div>
-    </div>
 
-    <div class="results">
-    </div>
-
-    <div class="results">
-    </div>
-
-    <div class="results">
-    </div>
-    <!--</div> -->
-    <!-- end statement-->
+    <?php endforeach; ?>
 </div>
 </body>
 
