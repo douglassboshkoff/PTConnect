@@ -151,6 +151,7 @@ if($_GET['next'] == 1){
 
         }
     </style>
+
     <script>
         var cssStyle = getCSSRule('#styleName');
         cssStyle.style.background = redfinedColour;
