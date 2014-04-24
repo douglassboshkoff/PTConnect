@@ -74,7 +74,7 @@
 			}
 			#table {
 				border: 1px solid black;
-				width: 75%;
+				width: 71%;
 				display: block;
 				margin: 20px auto 0 auto;
 				font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
@@ -90,6 +90,7 @@
 				text-decoration: none;
 				font-weight: normal;
 				font-size: 24px;
+                border-bottom: 1px black solid;
 			}
 			#table td a {
 				color: black;
@@ -107,6 +108,7 @@
 			    background: url("http://cdn.bavotasan.com/wp-content/uploads/2011/05/down_arrow_select.jpg") no-repeat right white;
 			    border: 1px solid #ccc;
 			    box-shadow: inset 1px 1px 0px 0px #dddddd;
+                width: 240px;
 			}
 			.dropdown option {
 				font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
@@ -122,9 +124,6 @@
 			}
 			#add h2 {
 				font-weight: normal;
-			}
-			#experience {
-				width: 240px;
 			}
 			label {
 				padding-right: 20px;
@@ -148,6 +147,12 @@
 				font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
 				float: right;
 			}
+            .line-separator{
+                height:1px;
+                background:#717171;
+                border-bottom:1px solid #313030;
+                display:inline-block;
+            }
 
 		</style>
 	</head>
@@ -174,6 +179,9 @@
 					<td><a href="http://google.com">delete</a></td>
 
 				</tr>
+                <tr>
+                       <div class="line-separator"></div>
+                </tr>
 				<tr>
 					<td><h1>Google Internship</h1></td>
 					<td><a href="http://google.com">edit</a></td>
@@ -185,14 +193,14 @@
 			<h1>Add Experience</h1>
 			<form>
 				<label>Type</label>
-				<select class="dropdown" id="experience">
+				<select class="dropdown">
 					<option>CS Competition</option>
 					<option>Internship</option>
 					<option>Job</option>
 				</select>
 				<br/>
-				<label>Title</label>
-				<select class="dropdown" id="experience">
+				<label style="margin-right: 25px">Title</label>
+				<select class="dropdown">
 					<option>Major 1</option>
 					<option>Computer Engineering</option>
 					<option>Computer Science</option>
