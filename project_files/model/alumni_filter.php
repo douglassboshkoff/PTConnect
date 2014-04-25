@@ -8,7 +8,13 @@
 
 //test array
 $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
-
+$class = 2015;
+$grad_year_array = array("hello","world","how's","it","goin?");
+$college_array = array("hello","world","how's","it","goin?");
+$major_array = array("hello","world","how's","it","goin?");
+$experience_type_array = array("hello","world","how's","it","goin?");
+$experience_title_array = array("hello","world","how's","it","goin?");
+$alumID = "Tom Ato";
 ?>
 <html>
 
@@ -68,6 +74,7 @@ $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dww
         height: 99.8%;
         background-color: black;
         border: 1px solid black;
+        position: fixed;
     }
 
     .results_container {
@@ -132,6 +139,13 @@ $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dww
             text-align: right;
         }
     */
+
+    .pic_form{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+    }
+
     .name{
         font-weight: bold;
     }
@@ -156,51 +170,64 @@ $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dww
 
     <p>PT Grad Year</p>
     <select>
-        <!-- options -->
+        <?php foreach ($grad_year_array as $year) : ?>
+        <option value="<?php echo $year ?>"><?php echo $year ?></option>
+        <?php endforeach ; ?>
     </select>
 
     <p>College</p>
     <select>
-        <!-- options -->
+        <?php foreach ($college_array as $college) : ?>
+            <option value="<?php echo $college ?>"><?php echo $college ?></option>
+        <?php endforeach ; ?>
     </select>
 
     <p>Major</p>
     <select>
-        <!-- options -->
+        <?php foreach ($major_array as $major) : ?>
+            <option value="<?php echo $major ?>"><?php echo $major ?></option>
+        <?php endforeach ; ?>
     </select>
 
     <p>Experience Type</p>
     <select>
-        <!-- options -->
+        <?php foreach ($experience_type_array as $type) : ?>
+            <option value="<?php echo $type ?>"><?php echo $type ?></option>
+        <?php endforeach ; ?>
     </select>
 
     <p>Experience Title</p>
     <select>
-        <!-- options -->
+        <?php foreach ($experience_title_array as $title) : ?>
+            <option value="<?php echo $title ?>"><?php echo $title ?></option>
+        <?php endforeach ; ?>
     </select>
+
 </div>
-<script class="divider" type="text/javascript" src="divider.js"></script>
 <div class="divider"></div>
 <div class="results_container">
     <!-- php for statement making rows of 4 profiles -->
     <?php foreach($arr as $value) : ?>
-
-        <div class="results">
-            <div class="top">
-                <img class="propic" src="../resources/BlankFace.jpg">
-            </div>
-            <div class="bottom">
-                <div class="info">
-                    <div class="name">
-                        <?php echo $value?>
-                    </div>
-                    <div class="class_number">
-                        2015
+        <!-- add place for action -->
+        <form action="place" method="post">
+            <input type="hidden" value="<?php echo $alumID ?>">
+            <div class="results">
+                <div class="top">
+                    <input class="propic" type="image" src="../resources/BlankFace.jpg" alt="Submit">
+                    <!--<img class="propic" src="../resources/BlankFace.jpg"> -->
+                </div>
+                <div class="bottom">
+                    <div class="info">
+                        <div class="name">
+                            <?php echo $value?>
+                        </div>
+                        <div class="class_number">
+                            <?php echo $class?>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
+        </form>
     <?php endforeach; ?>
 </div>
 </body>
