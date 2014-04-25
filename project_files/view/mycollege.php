@@ -1,3 +1,19 @@
+<?php
+    $action = $_POST['action'];
+
+    if($action === 'edit')
+    {
+        //grab data from the userid.
+    }
+    else if($action === 'add')
+    {
+        //update the data for a user with the specified fields.
+    }
+    else if($action === 'delete')
+    {
+       //delete the data
+    }
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -74,7 +90,7 @@
 			}
 			#table {
 				border: 1px solid black;
-				width: 71%;
+				width: 75%;
 				display: block;
 				margin: 20px auto 0 auto;
 				font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
@@ -90,12 +106,10 @@
 				text-decoration: none;
 				font-weight: normal;
 				font-size: 24px;
-                border-bottom: 1px black solid;
 			}
 			#table td a {
 				color: black;
 			}
-
 			.dropdown {
 				font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
 				background: transparent;
@@ -108,7 +122,6 @@
 			    background: url("http://cdn.bavotasan.com/wp-content/uploads/2011/05/down_arrow_select.jpg") no-repeat right white;
 			    border: 1px solid #ccc;
 			    box-shadow: inset 1px 1px 0px 0px #dddddd;
-                width: 240px;
 			}
 			.dropdown option {
 				font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
@@ -125,9 +138,11 @@
 			#add h2 {
 				font-weight: normal;
 			}
+			#college {
+				width: 200px;
+			}
 			label {
 				padding-right: 20px;
-                margin-right: 20px
 			}
 			.questions {
 				display: inline-block;
@@ -147,17 +162,14 @@
 				font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
 				float: right;
 			}
-            .line-separator{
-                height:1px;
-                background:#717171;
-                border-bottom:1px solid #313030;
-                display:inline-block;
+            #firstlabel{
+                padding-right: 26px;
             }
 
 		</style>
 	</head>
 	<body>
-		<!--<div id='top'>
+		<div id='top'>
 			<ul>
 			   <li><span id="white">PT</span><span id="red">Connect</span></li>
 			   <img src="profile.png" />
@@ -166,47 +178,62 @@
 		<div id='tabs'>
 			<ul>
 			   <li><a href='main.html'><span>Home</span></a></li>
-			   <li class="active"><a href='mycollege.html'><span>My College</span></a></li>
+			   <li class="active"><a href='mycollege.php'><span>My College</span></a></li>
 			   <li><a href='#'><span>My Employer</span></a></li>
 			   <li class='last'><a href='#'><span>My Profile</span></a></li>
 			</ul>
-		</div>-->
+		</div>
 		<div id='table'>
 			<table>
 				<tr>
-					<td><h1>Miami of Ohio</h1></td>
+					<td><h1>Purdue University</h1></td>
 					<td><a href="http://google.com">edit</a></td>
 					<td><a href="http://google.com">delete</a></td>
 
 				</tr>
-                <tr>
-                       <div class="line-separator"></div>
-                </tr>
 				<tr>
-					<td><h1>Google Internship</h1></td>
+					<td><h1>Harvard University</h1></td>
 					<td><a href="http://google.com">edit</a></td>
 					<td><a href="http://google.com">delete</a></td>
 				</tr>
 			</table>
 		</div>
+
 		<div id="add">
-			<h1>Add Experience</h1>
-			<form>
-				<label>Type</label>
-				<select class="dropdown">
-					<option>CS Competition</option>
-					<option>Internship</option>
-					<option>Job</option>
+			<h1>Add College</h1>
+			<form method="post" action="index.php">
+				<label id = "firstlabel">School</label>
+				<select class="dropdown" id="college">
+					<option>College</option>
+					<option>Harvard University</option>
+					<option>Purdue University</option>
 				</select>
-				<br/>
-				<label style="margin-right: 25px">Title</label>
+				<br>
+				<label>Major 1</label>
 				<select class="dropdown">
 					<option>Major 1</option>
 					<option>Computer Engineering</option>
 					<option>Computer Science</option>
 				</select>
+				<label>Major 2</label>
+				<select class="dropdown">
+					<option>Major 2</option>
+					<option>Computer Engineering</option>
+					<option>Computer Science</option>
+				</select>
 				<br/>
-
+				<label>Minor 1</label>
+				<select class="dropdown">
+					<option>Minor 1</option>
+					<option>Computer Engineering</option>
+					<option>Computer Science</option>
+				</select>
+				<label>Minor 2</label>
+				<select class="dropdown">
+					<option>Minor 2</option>
+					<option>Computer Engineering</option>
+					<option>Computer Science</option>
+				</select>
 				<h2>Question 1 Text</h2>
 				<textarea class="questions" rows="4"></textarea>
 				<h2>Question 2 Text</h2>
