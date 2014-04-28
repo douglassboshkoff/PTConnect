@@ -36,6 +36,10 @@ else if($action == 'register')
         include('header.php');
         include('main.php');
     }
+    else
+    {
+        echo "This should create error text in the registration box.";
+    }
 }
 else if($action == 'continue_as_guest')
 {
