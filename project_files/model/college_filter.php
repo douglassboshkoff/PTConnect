@@ -9,13 +9,14 @@
 //test array
 $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
 $class = 2015;
-$grad_year_array = array("hello","world","how's","it","goin?");
-$college_array = array("hello","world","how's","it","goin?");
-$major_array = array("hello","world","how's","it","goin?");
-$experience_type_array = array("hello","world","how's","it","goin?");
-$experience_title_array = array("hello","world","how's","it","goin?");
-$alumID = "Tom Ato";
+$filter1_array = array("hello","world","how's","it","goin?");
+$filter2_array = array("hello","world","how's","it","goin?");
+$filter3_array = array("hello","world","how's","it","goin?");
+$filter4_array = array("hello","world","how's","it","goin?");
+$filter5_array = array("hello","world","how's","it","goin?");
+$collegeID = "Tom Ato";
 ?>
+
 <html>
 
 <!-- insert header here -->
@@ -157,7 +158,7 @@ $alumID = "Tom Ato";
 </style>
 
 <title>
-    Alumni Filter
+    College Filter
 </title>
 
 <body> <!-- style="display: inline"> -->
@@ -168,37 +169,37 @@ $alumID = "Tom Ato";
 
     <div class="line"></div>
 
-    <p>PT Grad Year</p>
+    <p>1st Filter</p>
     <select>
-        <?php foreach ($grad_year_array as $year) : ?>
-        <option value="<?php echo $year ?>"><?php echo $year ?></option>
+        <?php foreach ($filter1_array as $year) : ?>
+            <option value="<?php echo $year ?>"><?php echo $year ?></option>
         <?php endforeach ; ?>
     </select>
 
-    <p>College</p>
+    <p>2nd Filter</p>
     <select>
-        <?php foreach ($college_array as $college) : ?>
+        <?php foreach ($filter2_array as $college) : ?>
             <option value="<?php echo $college ?>"><?php echo $college ?></option>
         <?php endforeach ; ?>
     </select>
 
-    <p>Major</p>
+    <p>3rd Filter</p>
     <select>
-        <?php foreach ($major_array as $major) : ?>
+        <?php foreach ($filter3_array as $major) : ?>
             <option value="<?php echo $major ?>"><?php echo $major ?></option>
         <?php endforeach ; ?>
     </select>
 
-    <p>Experience Type</p>
+    <p>4th Filter</p>
     <select>
-        <?php foreach ($experience_type_array as $type) : ?>
+        <?php foreach ($filter4_array as $type) : ?>
             <option value="<?php echo $type ?>"><?php echo $type ?></option>
         <?php endforeach ; ?>
     </select>
 
-    <p>Experience Title</p>
+    <p>5th Filter</p>
     <select>
-        <?php foreach ($experience_title_array as $title) : ?>
+        <?php foreach ($filter5_array as $title) : ?>
             <option value="<?php echo $title ?>"><?php echo $title ?></option>
         <?php endforeach ; ?>
     </select>
@@ -209,11 +210,11 @@ $alumID = "Tom Ato";
     <!-- php for statement making rows of 4 profiles -->
     <?php foreach($arr as $value) : ?>
         <!-- add place for action -->
-        <form action="User_Profilepage.php" method="post">
-            <input type="hidden" value="<?php echo $alumID ?>">
+        <form action="College_Page.php" method="post">
+            <input type="hidden" value="<?php echo $collegeID ?>">
             <div class="results">
                 <div class="top">
-                    <input class="propic" type="image" src="../resources/BlankFace.jpg" alt="Submit">
+                    <input class="propic" type="image" src="../resources/College.jpg" alt="Submit">
                     <!--<img class="propic" src="../resources/BlankFace.jpg"> -->
                 </div>
                 <div class="bottom">
