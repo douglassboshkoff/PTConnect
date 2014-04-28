@@ -211,7 +211,7 @@ $collegeID = "Tom Ato";
     <?php foreach($arr as $value) : ?>
         <!-- add place for action -->
         <form action="College_Page.php" method="post">
-            <input type="hidden" value="<?php echo $collegeID ?>">
+            <input type="hidden" name="college_ID" value="<?php echo $collegeID ?>">
             <div class="results">
                 <div class="top">
                     <input class="propic" type="image" src="../resources/College.jpg" alt="Submit">

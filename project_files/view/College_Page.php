@@ -1,5 +1,10 @@
 <?php
+$collegeID = "";
+// gets the collegeID from the college filter page
+if(isset($_POST["college_ID"])){
 
+    $collegeID = $_POST["college_ID"];
+}
 $comment_arr = array();
 
 /** Will correspond with the questions held in $arr (if page is on question 2, these will be question 2 comments */
