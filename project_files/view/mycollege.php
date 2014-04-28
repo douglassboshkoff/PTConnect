@@ -207,6 +207,7 @@
 					<option>College</option>
 					<option>Harvard University</option>
 					<option>Purdue University</option>
+                    <option class = ".textexp"> Other </option>
 				</select>
 				<br>
 				<label>Major 1</label>
