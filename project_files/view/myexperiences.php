@@ -1,5 +1,12 @@
 <?php
-$action = $_POST['action'];
+if(isset($_POST['action']))
+{
+    $action = $_POST['action'];
+}
+else
+{
+    $action='display';
+}
 
 if($action === 'edit')
 {
@@ -13,6 +20,8 @@ else if($action === 'delete')
 {
     //delete the data
 }
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -123,7 +132,7 @@ else if($action === 'delete')
 			    background: url("http://cdn.bavotasan.com/wp-content/uploads/2011/05/down_arrow_select.jpg") no-repeat right white;
 			    border: 1px solid #ccc;
 			    box-shadow: inset 1px 1px 0px 0px #dddddd;
-                width: 240px;
+                width: 320px;
 			}
 			.dropdown option {
 				font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
@@ -162,6 +171,17 @@ else if($action === 'delete')
 				font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
 				float: right;
 			}
+            .other_box {
+                font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+                background: transparent;
+                padding: 4px;
+                font-size: 16px;
+                line-height: 1;
+                border-radius: 0;
+                border: 1px solid #ccc;
+                width: 320px;
+                height: 28px;
+            }
 
 		</style>
 	</head>
@@ -188,9 +208,6 @@ else if($action === 'delete')
 					<td><a href="http://google.com">delete</a></td>
 
 				</tr>
-                <tr>
-                       <div class="line-separator"></div>
-                </tr>
 				<tr>
 		    		<td><h1>Google Internship</h1></td>
 					<td><a href="http://google.com">edit</a></td>
@@ -210,10 +227,11 @@ else if($action === 'delete')
 				<br/>
 				<label style="margin-right: 25px">Title</label>
 				<select class="dropdown">
-					<option>Major 1</option>
-					<option>Computer Engineering</option>
-					<option>Computer Science</option>
+					<option>Miami of Ohio CS Competition</option>
+					<option>Google Internship</option>
 				</select>
+                <br/>
+                <textarea class="other_box" hidden="hidden"></textarea>
 				<br/>
 
 				<h2>Question 1 Text</h2>
