@@ -1,4 +1,19 @@
 <?php
+include('../validate/fields.php');
+include('../validate/validate.php');
+
+$fields = new Register\fields();
+
+$fields->addField('type','You must choose your type of experience.');
+$fields->addField('title','You must choose the title of your experience.');
+$fields->addField('other','Must choose a type.');
+
+$type = new Register\field('type','Must choose a type.');
+$title = new Register\field('title','You must choose a title for your experience.');
+$other = new Register\field('other');
+$validate = new Register\validate();
+
+
 if(isset($_POST['action']))
 {
     $action = $_POST['action'];
@@ -21,7 +36,7 @@ else if($action === 'delete')
     //delete the data
 }
 
-
+echo $action;
 ?>
 <!DOCTYPE html>
 <html>
@@ -186,20 +201,6 @@ else if($action === 'delete')
 		</style>
 	</head>
 	<body>
-		<!--<div id='top'>
-			<ul>
-			   <li><span id="white">PT</span><span id="red">Connect</span></li>
-			   <img src="profile.png" />
-			</ul>
-		</div>
-		<div id='tabs'>
-			<ul>
-			   <li><a href='main.html'><span>Home</span></a></li>
-			   <li class="active"><a href='mycollege.html'><span>My College</span></a></li>
-			   <li><a href='#'><span>My Employer</span></a></li>
-			   <li class='last'><a href='#'><span>My Profile</span></a></li>
-			</ul>
-		</div>-->
 		<div id='table'>
 			<table>
 				<tr>
@@ -217,9 +218,10 @@ else if($action === 'delete')
 		</div>
 		<div id="add">
 			<h1>Add Experience</h1>
-			<form>
+			<form method="post" action="myexperiences.php">
 				<label>Type</label>
 				<select class="dropdown">
+                    <option></option>
 					<option>CS Competition</option>
 					<option>Internship</option>
 					<option>Job</option>
@@ -227,6 +229,7 @@ else if($action === 'delete')
 				<br/>
 				<label style="margin-right: 25px">Title</label>
 				<select class="dropdown">
+                    <option></option>
 					<option>Miami of Ohio CS Competition</option>
 					<option>Google Internship</option>
 				</select>
@@ -235,12 +238,13 @@ else if($action === 'delete')
 				<br/>
 
 				<h2>Question 1 Text</h2>
-				<textarea class="questions" rows="4"></textarea>
+				<textarea class="questions" rows="4" ></textarea>
 				<h2>Question 2 Text</h2>
 				<textarea class="questions" rows="4"></textarea>
 				<h2>Question 3 Text</h2>
 				<textarea class="questions" rows="4"></textarea>
 				<input type="submit" id="addButton" value="Add">
+                <input type="hidden" id="action" value="<?php if($action === 'display'){$action='add';}else{$action='edit';}?>>
 			</form>
 		</div>
 	</body>

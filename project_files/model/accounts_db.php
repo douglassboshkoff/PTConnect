@@ -10,7 +10,7 @@
     
     function getUser($email) {
         global $db;
-        $query = "SELECT * FROM accounts WHERE email == '$email'"
+        $query = "SELECT * FROM accounts WHERE email == '$email'";
         $user = $db->query($query);
         //this needs php code to return the acutal user, cannot write this at this time.
         //would give you cookie if you wrote this for me.
