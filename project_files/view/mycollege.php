@@ -15,8 +15,11 @@
     }
 ?>
 <!DOCTYPE html>
+
 <html>
 	<head>
+        <script type="text/javascript" src="../js/jQuery.js"></script>
+        <script type="text/javascript" src="../js/dropdown_text.js"></script>
 		<style>
 			body {
 				min-width: 600px;
@@ -209,6 +212,7 @@
 					<option>Purdue University</option>
                     <option class = ".textexp"> Other </option>
 				</select>
+                <div id = "hiddendiv">  <input type="text" id="othertextbox" /> HI </div>
 				<br>
 				<label>Major 1</label>
 				<select class="dropdown">
