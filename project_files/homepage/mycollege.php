@@ -165,25 +165,43 @@
 </div>
 
 <div id='table'>
-    <table>
-        <tr>
-            <td><h1>Purdue University</h1></td>
-<!--for the edit, make this go to a link maybe?-->
-            <td><a href="http://google.com">edit</a></td>
-<!--make this into a form...assign an action and
-make this like the Tech project...and hook this up to
-the database...-->
-            <td><a href="http://google.com">delete</a></td>
-        </tr>
-        <tr>
-            <td><h1>Harvard University</h1></td>
-<!--for the edit, make this go to a link maybe?-->
-            <td><a href="http://google.com">edit</a></td>
-<!--make this into a form...assign an action and
-make this like the Tech project...-->
-            <td><a href="http://google.com">delete</a></td>
-        </tr>
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <td><h1>Purdue University</h1></td>-->
+<!--<!--for the edit, make this go to a link maybe?-->-->
+<!--            <td><a href="http://google.com">edit</a></td>-->
+<!--<!--make this into a form...assign an action and-->
+<!--make this like the Tech project...and hook this up to-->
+<!--the database...-->-->
+<!--            <td><a href="http://google.com">delete</a></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><h1>Harvard University</h1></td>-->
+<!--<!--for the edit, make this go to a link maybe?-->-->
+<!--            <td><a href="http://google.com">edit</a></td>-->
+<!--<!--make this into a form...assign an action and-->
+<!--make this like the Tech project...-->-->
+<!--            <td><a href="http://google.com">delete</a></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+    <table border="filled">
+        <?php foreach ($colleges as $college) : ?>
+            <tr/>
+            <td><?php echo $college['collegeName'];?></td>
+            <td>
+                <form action="." method="post">
+                    <input type="hidden" name="action"
+                           value = "delete_product"/>
+                    <input type="hidden" name="email"
+                           value="<?php echo $user['email'];?>"/>
+                    <input type="submit" value="Delete"/>
+                </form>
+            </td>
+            </tr>
+        <?php endforeach;?>
     </table>
+
 </div>
 
 <div id="add">
