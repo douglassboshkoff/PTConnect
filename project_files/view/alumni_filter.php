@@ -8,13 +8,19 @@
 
 //test array
 $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
+
+// temporary values
 $class = 2015;
+$userID = "Tom Ato";
+
 $grad_year_array = array("hello","world","how's","it","goin?");
 $college_array = array("hello","world","how's","it","goin?");
 $major_array = array("hello","world","how's","it","goin?");
 $experience_type_array = array("hello","world","how's","it","goin?");
 $experience_title_array = array("hello","world","how's","it","goin?");
-$alumID = "Tom Ato";
+
+$class_array = "";
+$name_array = "";
 ?>
 <html>
 
@@ -210,7 +216,7 @@ $alumID = "Tom Ato";
     <?php foreach($arr as $value) : ?>
         <!-- add place for action -->
         <form action="User_Profilepage.php" method="post">
-            <input type="hidden" value="<?php echo $alumID ?>">
+            <input type="hidden" name="userID" value="<?php echo $userID ?>">
             <div class="results">
                 <div class="top">
                     <input class="propic" type="image" src="../resources/BlankFace.jpg" alt="Submit">

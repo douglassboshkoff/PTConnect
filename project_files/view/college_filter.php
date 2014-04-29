@@ -8,13 +8,21 @@
 
 //test array
 $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
+
+// temporary value
+$collegeID = "Tom Ato";
 $class = 2015;
+
+//filters
 $filter1_array = array("hello","world","how's","it","goin?");
 $filter2_array = array("hello","world","how's","it","goin?");
 $filter3_array = array("hello","world","how's","it","goin?");
 $filter4_array = array("hello","world","how's","it","goin?");
 $filter5_array = array("hello","world","how's","it","goin?");
-$collegeID = "Tom Ato";
+
+//
+$secondaryinfo_array = "";
+$name_array = "";
 ?>
 
 <html>
@@ -24,25 +32,33 @@ $collegeID = "Tom Ato";
 <style>
     body{
         display: inline;
-        height: 100%;
+       /* height: 100%;
         width: 100%;
+        width: inherit;
+        */
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
     }
     .fltrs{
         /* first half w/ drop-downs */
         /*width and height customized to a 1px border*/
-        width: 25%;
-        height: 80%;
+        width: auto;
+        height: auto;
         float: left;
 
     }
 
     .line{
         /* line under "filters"*/
-        width: 80%;
+        width: 8em;
+        padding-right: 2em;
         height: 0;
         border: 1px solid black;
-        margin-left: 10%;
+        /*margin-left: 10%;
         margin-right: 10%;
+        */
         text-align: center;
         margin-top: -5%
     }
@@ -80,7 +96,8 @@ $collegeID = "Tom Ato";
 
     .results_container {
         float: left;
-        width: 73%;
+        width: auto;
+        /*width: 73%;*/
         padding-top: 3%;
     }
         /*
@@ -91,6 +108,21 @@ $collegeID = "Tom Ato";
 
             }
         */
+
+
+    .line2{
+        /* line under "filters"*/
+        width: 8em;
+        padding-right: 2em;
+        height: 0;
+        border: 1px solid black;
+        /*margin-left: 10%;
+        margin-right: 10%;
+        */
+        text-align: center;
+        margin-top: -5%
+    }
+
     .results{
         float: left;
         display: inline;
@@ -154,6 +186,15 @@ $collegeID = "Tom Ato";
     .class_number{
 
     }
+/*
+    #container {
+        width: inherit;
+        height: inherit;
+        margin: 0;
+        padding: 0;
+        background-color: pink;
+    }
+*/
 
 </style>
 
@@ -207,6 +248,9 @@ $collegeID = "Tom Ato";
 </div>
 <div class="divider"></div>
 <div class="results_container">
+
+    <div class="line2"></div>
+
     <!-- php for statement making rows of 4 profiles -->
     <?php foreach($arr as $value) : ?>
         <!-- add place for action -->
