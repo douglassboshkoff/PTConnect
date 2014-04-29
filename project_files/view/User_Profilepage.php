@@ -7,6 +7,13 @@
  * To change this template use File | Settings | File Templates.
  */
 $cur_pic = "../test_material/bullets_picture/Bullet_Arrow_R.png";
+
+//gets userID from alum filter
+$userID = "";
+if(isset($_POST["userID"])){
+    $userID = $_POST["userID"];
+}
+
 $arr_exp = array();
 
     $arr_exp[0] = "test";
