@@ -29,3 +29,13 @@ function get_user($email)
     $result=$db->query($query);
     return $result;
 }
+
+function get_college_by_user($id) {
+    global $db;
+    $query = "SELECT name FROM universities
+    INNER JOIN questions
+    ON questions.university_id = universities.id
+    WHERE questions.accounts_id = '$id'";
+    $result = $db->query($query);
+    return $result;
+}
