@@ -48,6 +48,6 @@
         $years = $result->fetch();
         return $years;
 
-        //the sql command works, however the phpcode might not.
+        //the sql command works, however the phpcoht not.
     }
 ?>
