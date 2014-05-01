@@ -215,30 +215,38 @@
                 <div id = "hiddendiv">  <input type="text" id="othertextbox" />  </div>
 				<br>
 				<label>Major 1</label>
-				<select class="dropdown">
+				<select class="dropdown" id = "major1">
 					<option>Major 1</option>
 					<option>Computer Engineering</option>
 					<option>Computer Science</option>
-				</select>
+                    <option value = "1" class = ".textexp"> Other </option>
+                </select>
+                <div id = "majordiv1">  <input type="text" id="majorothertextbox" />  </div>
 				<label>Major 2</label>
-				<select class="dropdown">
+				<select class="dropdown" id = "major2">
 					<option>Major 2</option>
 					<option>Computer Engineering</option>
 					<option>Computer Science</option>
-				</select>
+                    <option value = "1" class = ".textexp"> Other </option>
+                </select>
+                <div id = "majordiv2">  <input type="text" id="majorothertextbox2" />  </div>
 				<br/>
 				<label>Minor 1</label>
-				<select class="dropdown">
+				<select class="dropdown" id = "minor1">
 					<option>Minor 1</option>
 					<option>Computer Engineering</option>
 					<option>Computer Science</option>
-				</select>
+                    <option value = "1" class = ".textexp"> Other </option>
+                </select>
+                <div id = "minordiv1">  <input type="text" id="minorothertextbox" />  </div>
 				<label>Minor 2</label>
-				<select class="dropdown">
+				<select class="dropdown" id = "minor2">
 					<option>Minor 2</option>
 					<option>Computer Engineering</option>
 					<option>Computer Science</option>
-				</select>
+                    <option value = "1" class = ".textexp"> Other </option>
+                </select>
+                <div id = "minordiv2">  <input type="text" id="minorothertextbox2" />  </div>
 				<h2>Question 1 Text</h2>
 				<textarea class="questions" rows="4"></textarea>
 				<h2>Question 2 Text</h2>
