@@ -87,8 +87,8 @@ $(document).ready(function() {
         });
         $("#minorothertextbox2").change(function()
         {
-            $("#minor2").val($("#minorothertextbox2").text());
-
+            var v = $("#minor2").val($(this).text());
+            alert(($(this).html(v)));
         });
 
     }
