@@ -8,7 +8,7 @@
          //this should work now assuming all of my syntax is correct. I cannot get it to work on phpstorm at this time
     }
     
-    function getUser($email) {
+    function get_user($email) {
         global $db;
         $query = "SELECT * FROM accounts WHERE email == '$email'";
         $user = $db->query($query);
@@ -17,7 +17,7 @@
         //needs an object class
     }
     
-    function validatePassword($email, $password) {
+    function validate_password($email, $password) {
         global $db;
         $query = "SELECT * FROM accounts WHERE email == '$email'";
         $result = $db->query($query);
@@ -30,6 +30,13 @@
             return false;
         }
         //hope this workds
+    }
+
+    function get_bio($id) {
+        global $db;
+        $query = "SELECT bio FROM accounts WHERE id = '$id'";
+        $result = $db->query($query);
+        return $result;
     }
 
 ?>
