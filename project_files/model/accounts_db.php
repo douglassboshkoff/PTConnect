@@ -39,7 +39,7 @@
         return $result;
     }
     
-    function getGradYears() {
+   function getGradYears() {
         global $db;
         $query = "SELECT DISTINCT pt_grad_year
         FROM accounts
