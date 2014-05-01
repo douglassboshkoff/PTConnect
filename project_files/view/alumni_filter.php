@@ -5,7 +5,7 @@
  * Date: 4/17/14
  * Time: 11:55 AM
  **/
-
+include "../homepage/user_db";
 //test array
 $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
 
@@ -213,10 +213,10 @@ $name_array = "";
 <div class="divider"></div>
 <div class="results_container">
     <!-- php for statement making rows of 4 profiles -->
-    <?php foreach($arr as $value) : ?>
+    <?php foreach($arr as $name) : ?>
         <!-- add place for action -->
         <form action="User_Profilepage.php" method="post">
-            <input type="hidden" name="userID" value="<?php echo $userID ?>">
+            <input type="hidden" name="userID" value="<?php echo $user_email ?>">
             <div class="results">
                 <div class="top">
                     <input class="propic" type="image" src="../resources/BlankFace.jpg" alt="Submit">
@@ -225,7 +225,7 @@ $name_array = "";
                 <div class="bottom">
                     <div class="info">
                         <div class="name">
-                            <?php echo $value?>
+                            <?php echo $name?>
                         </div>
                         <div class="class_number">
                             <?php echo $class?>

@@ -52,7 +52,7 @@ $name_array = "";
 
     .line{
         /* line under "filters"*/
-        width: 8em;
+        width: 15em;
         padding-right: 2em;
         height: 0;
         border: 1px solid black;
@@ -87,7 +87,7 @@ $name_array = "";
     .divider{
         display: inline;
         float: left;
-        width: .1%;
+        width: .1em;
         height: 99.8%;
         background-color: black;
         border: 1px solid black;
@@ -96,7 +96,7 @@ $name_array = "";
 
     .results_container {
         float: left;
-        width: auto;
+        width: 81em;
         /*width: 73%;*/
         padding-top: 3%;
     }
@@ -109,27 +109,27 @@ $name_array = "";
             }
         */
 
-
+/*
     .line2{
-        /* line under "filters"*/
+        /* line under "filters"*//*
         width: 8em;
         padding-right: 2em;
         height: 0;
         border: 1px solid black;
         /*margin-left: 10%;
         margin-right: 10%;
-        */
+        *//*
         text-align: center;
         margin-top: -5%
-    }
+    }*/
 
     .results{
         float: left;
         display: inline;
-        width: 22%;
+        width: 16em;
         margin-left: 2.5%;
         margin-bottom: 2.5%;
-        height: 33%;
+        height: 16em;
         /*border: 1px solid black;*/
     }
 
@@ -249,7 +249,6 @@ $name_array = "";
 <div class="divider"></div>
 <div class="results_container">
 
-    <div class="line2"></div>
 
     <!-- php for statement making rows of 4 profiles -->
     <?php foreach($arr as $value) : ?>
