@@ -9,7 +9,6 @@
 function getCollege($userID) {
     $query = "SELECT university_id FROM questions WHERE account_id == '$userID'";
 
-
 }
 
 ?>

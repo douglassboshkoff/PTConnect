@@ -31,7 +31,7 @@ $name_array = "";
 
 <style>
     body{
-        display: inline;
+        /*display: inline;
        /* height: 100%;
         width: 100%;
         width: inherit;
@@ -45,9 +45,8 @@ $name_array = "";
         /* first half w/ drop-downs */
         /*width and height customized to a 1px border*/
         width: auto;
-        height: auto;
+        height: 100%;
         float: left;
-
     }
 
     .line{
@@ -95,6 +94,7 @@ $name_array = "";
     }
 
     .results_container {
+        display: inline;
         float: left;
         width: 81em;
         /*width: 73%;*/
