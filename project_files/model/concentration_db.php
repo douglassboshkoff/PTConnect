@@ -8,6 +8,7 @@
  */
  
  function get_majors() {
+   global $db;
    $query = 'SELECT DISTINCT name
    FROM concentration
    WHERE major_minor = 0
