@@ -1,6 +1,6 @@
 <?php
 
-    function addUser($fname, $lname, $email, $gradYear) {
+    function add_user($fname, $lname, $email, $gradYear) {
         global $db;
         $query = "INSERT INTO accounts( first_name, last_name, email, pt_grad_year) 
          VALUES ('$fname', '$lname', '$email', '$gradYear')";
@@ -36,10 +36,10 @@
         global $db;
         $query = "SELECT bio FROM accounts WHERE id = '$id'";
         $result = $db->query($query);
-        return $result;
+        return $result->fetch();
     }
     
-   function getGradYears() {
+   function get_grad_years() {
         global $db;
         $query = "SELECT DISTINCT pt_grad_year
         FROM accounts
@@ -48,6 +48,13 @@
         $years = $result->fetch();
         return $years;
 
-        //the sql command works, however the phpcoht not.
+        //the sql command works, however the phpcode might not.
     }
+
+   function get_experiences($id) {
+       global $db;
+       $query = "SELECT * FROM experiences WHERE accounts_id_ac = '$id'";
+       $result = $db->query($query);
+       return $result->fetch();
+   }
 ?>

@@ -21,7 +21,7 @@ function get_user($email)
     $query ="SELECT * FROM accounts
              WHERE email = '$email'";
     $result=$db->query($query);
-    return $result;
+    return $result->fetch();
 }
 
 function get_college_by_user($id) {
@@ -31,5 +31,5 @@ function get_college_by_user($id) {
     ON questions.university_id = universities.id
     WHERE questions.accounts_id = '$id'";
     $result = $db->query($query);
-    return $result;
+    return $result->fetch();
 }
