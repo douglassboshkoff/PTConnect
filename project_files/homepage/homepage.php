@@ -197,12 +197,12 @@
 
     <form action="." method="post">
         <input type="hidden" name="action" value="register"/>
-        <input id="fname" type="text" placeholder="First Name" name = "fname"/>
-        <input id="lname" type="text" placeholder="Last Name" name = "lname"/>
+        <input id="fname" type="text" placeholder="First Name" name = "first_name"/>
+        <input id="lname" type="text" placeholder="Last Name" name = "last_name"/>
         <input id="email" type="text" placeholder="Email" name = "email"/>
         <input id="password" type="password" placeholder="Password" name = "password"/>
         <input id="password" type="password" placeholder="Verify Password" name = "verifypassword"/>
-        <select id="gradyear" name = "gradyear">
+        <select id="gradyear" name = "pt_grad_year">
 
             <option>PT Grad Year</option>
             <option>2017</option>

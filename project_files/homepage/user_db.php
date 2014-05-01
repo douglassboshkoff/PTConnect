@@ -1,30 +1,24 @@
 <?php
 
-/*
- * I could temporarily connect this database to the customer table in
- * tech_support. Connect email and password since username does not exist
- * in the table. But gradyear is not accounted for in the table...
- */
-
 function get_users(){
     global $db;
-    $query="SELECT * FROM users";
+    $query="SELECT * FROM accounts";
     $result=$db->query($query);
     return $result;
 }
 
-function add_user($fname, $lname, $email, $password, $gradyear)
+function add_user($first_name, $last_name, $email, $pt_grad_year, $password)
 {
     global $db;
-    $query = "INSERT INTO users(fname, lname, email, password, gradyear)
-              VALUES ('$fname','$lname', '$email', '$password', '$gradyear')";
+    $query = "INSERT INTO accounts(first_name, last_name, email, pt_grad_year, password)
+              VALUES ('$first_name','$last_name', '$email', '$pt_grad_year', '$password')";
     $db->exec($query);
 }
 
 function get_user($email)
 {
     global $db;
-    $query ="SELECT * FROM users
+    $query ="SELECT * FROM accounts
              WHERE email = '$email'";
     $result=$db->query($query);
     return $result;

@@ -15,7 +15,28 @@ if ($action == 'under_construction')
     include('homepage_header.php');
     include('homepage.php');
 }
-
+else if($action == 'mycollege')
+{
+    /**
+     * something like...
+     * access the user that we're talking about...
+     * access all of their colleges...
+     * put those in an array?
+     * loop through array
+     * let those colleges populate the table...
+     */
+    include('header.php');
+    include('mycollege.php');
+}
+else if($action == 'delete_college_from_user')
+{
+    /**
+     * we have the user...
+     * take the college name...
+     * delete it from the user himself...
+     * but be careful to not make it delete the actual college...
+     */
+}
 else if($action == 'login')
 {
     $email = $_POST['email'];
@@ -24,12 +45,14 @@ else if($action == 'login')
 }
 else if($action == 'register')
 {
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $verifypassword = $_POST['verifypassword'];
-    $gradyear = $_POST['gradyear'];
+    $pt_grad_year = $_POST['pt_grad_year'];
+
+    add_user($first_name, $last_name, $email, $pt_grad_year, $password);
 
     if($password == $verifypassword)
     {
