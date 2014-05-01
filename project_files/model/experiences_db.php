@@ -1,8 +1,8 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: Danny
- * Date: 4/28/14
- * Time: 1:32 PM
- * To change this template use File | Settings | File Templates.
- */
+
+function get_experiences($id) {
+    global $db;
+    $query = "SELECT * FROM experiences WHERE accounts_id_ac = '$id'";
+    $result = $db->query($query);
+    return $result->fetch();
+}
