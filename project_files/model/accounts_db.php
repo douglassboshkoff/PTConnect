@@ -38,5 +38,16 @@
         $result = $db->query($query);
         return $result;
     }
+    
+    function getGradYears() {
+        global $db;
+        $query = "SELECT DISTINCT pt_grad_year
+        FROM accounts
+        ORDER BY pt_grad_year";
+        $result = $db->query($query);
+        $years = $result->fetch();
+        return $years;
 
+        //the sql command works, however the phpcode might not.
+    }
 ?>
