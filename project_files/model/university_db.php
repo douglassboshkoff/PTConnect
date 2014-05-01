@@ -11,4 +11,15 @@ function getCollege($userID) {
 
 }
 
+function getColleges() {
+        global $db;
+        $query = "SELECT DISTINCT name
+        FROM universities
+        ORDER BY name";
+        $request = $db->query($query);
+        $universities = $request->fetch();
+        return $universities;
+        //SQL works, phpcode might not}
+}
+
 ?>
