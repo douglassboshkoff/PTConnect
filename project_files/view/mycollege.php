@@ -210,9 +210,9 @@
 					<option>College</option>
 					<option>Harvard University</option>
 					<option>Purdue University</option>
-                    <option class = ".textexp"> Other </option>
+                    <option value = "1" class = ".textexp"> Other </option>
 				</select>
-                <div id = "hiddendiv">  <input type="text" id="othertextbox" /> HI </div>
+                <div id = "hiddendiv">  <input type="text" id="othertextbox" />  </div>
 				<br>
 				<label>Major 1</label>
 				<select class="dropdown">

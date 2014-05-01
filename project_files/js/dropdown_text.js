@@ -8,15 +8,11 @@ $(document).ready(function() {
         $(".dropdown").change(function()
         {
             var val = $(this).val();
-            var val1 =  $( ".dropdown option:selected").val();
-            alert(val1);
 
-            if(val.value ==  "Other".value)
+            if(val == "1")
             {
-                alert(1);
                 $("#hiddendiv").show();
             }else{
-                alert(2);
                 $("#hiddendiv").hide();
             }
         });
