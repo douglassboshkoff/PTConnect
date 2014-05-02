@@ -235,7 +235,6 @@ echo $action;
                 <br/>
                 <textarea class="other_box" hidden="hidden"></textarea>
 				<br/>
-                <?php /**foreach ($question as $questions) { } **/ ?>
 				<h2>Question 1 Text</h2>
 				<textarea class="questions" rows="4" ></textarea>
 				<h2>Question 2 Text</h2>
@@ -243,8 +242,8 @@ echo $action;
 				<h2>Question 3 Text</h2>
 				<textarea class="questions" rows="4"></textarea>
 				<input type="submit" id="addButton" value="Add">
-                <input type="hidden" id="action" value="<?php if($action === 'display'){ $action='add';}else{$action='edit';}?>">
-			</form>
+                <input type="hidden" id="action" value="<?php if($action === 'display'){ $action='add';}else{$action='edit';} echo $action;?>">
+			<?php echo "here: ".$action; ?></form>
 		</div>
 	</body>
 </html>
