@@ -50,4 +50,12 @@
 
         //the sql command works, however the phpcode might not.
     }
+    
+    function get_name($id) {
+        global $db;
+        $query = "SELECT first_name
+        FROM accounts
+        WHERE id = '$id'";
+        
+    }
 ?>
