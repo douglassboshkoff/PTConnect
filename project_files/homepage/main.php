@@ -154,19 +154,24 @@
 <a href="http://google.com"><div id="userSearchIcon">
         <img src="profile.png" />
     </div></a>
+
 <a href="http://google.com"><div id="collegeSearchIcon">
         <img src="collegeSearch.png" />
     </div></a>
+
 <a href="http://google.com"><div id="userSearchDescription">
-        <a href="http://google.com"><h1>Users</h1></a>
+        <a action="alumni_filter"><h1>Users</h1></a>
         <p>Find users by name, grad year, college, major, and employer.</p>
     </div></a>
+
 <a href="http://google.com"><div id="collegeSearchDescription">
-        <a href="http://google.com"><h1>Colleges</h1></a>
+        <a action="college_filter"><h1>Colleges</h1></a>
         <p>Find colleges by name, location, and number of PT alumni graduates.</p>
     </div></a>
+
 <div id="footer">
     <h1>&#169;2014</h1>
 </div>
+
 </body>
 </html>
