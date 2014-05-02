@@ -1,5 +1,13 @@
 <?php
 
+
+/**
+ * MAKE A USER EDIT METHOD
+ * MAKE A USER DELETE METHOD
+ * REMEMBER THESE ARE TECHNICALLY CALLED 'ACCOUNT'!!!
+ */
+
+
 function get_users(){
     global $db;
     $query="SELECT * FROM accounts";
