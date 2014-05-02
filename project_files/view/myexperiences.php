@@ -1,7 +1,7 @@
 <?php
 include('../validate/fields.php');
 include('../validate/validate.php');
-
+include('../model/questions_db.php');
 $fields = new Register\fields();
 
 $fields->addField('type','You must choose your type of experience.');
@@ -12,7 +12,6 @@ $type = new Register\field('type','Must choose a type.');
 $title = new Register\field('title','You must choose a title for your experience.');
 $other = new Register\field('other');
 $validate = new Register\validate();
-
 
 if(isset($_POST['action']))
 {
@@ -236,7 +235,7 @@ echo $action;
                 <br/>
                 <textarea class="other_box" hidden="hidden"></textarea>
 				<br/>
-
+                <?php /**foreach ($question as $questions) { } **/ ?>
 				<h2>Question 1 Text</h2>
 				<textarea class="questions" rows="4" ></textarea>
 				<h2>Question 2 Text</h2>
@@ -244,7 +243,7 @@ echo $action;
 				<h2>Question 3 Text</h2>
 				<textarea class="questions" rows="4"></textarea>
 				<input type="submit" id="addButton" value="Add">
-                <input type="hidden" id="action" value="<?php if($action === 'display'){$action='add';}else{$action='edit';}?>>
+                <input type="hidden" id="action" value="<?php if($action === 'display'){ $action='add';}else{$action='edit';}?>">
 			</form>
 		</div>
 	</body>
