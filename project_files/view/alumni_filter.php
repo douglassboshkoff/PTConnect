@@ -5,13 +5,14 @@
  * Date: 4/17/14
  * Time: 11:55 AM
  **/
-include "../homepage/user_db";
+include "../model/user_db.php";
 //test array
 $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
 
 // temporary values
 $class = 2015;
-$userID = "Tom Ato";
+// identification value
+$user_email = "Tom Ato";
 
 $grad_year_array = array("hello","world","how's","it","goin?");
 $college_array = array("hello","world","how's","it","goin?");
@@ -38,7 +39,6 @@ $name_array = "";
         width: 25%;
         height: 80%;
         float: left;
-
     }
 
     .line{

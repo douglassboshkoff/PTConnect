@@ -38,33 +38,31 @@ $name_array = "";
         */
         width: auto;
         height: auto;
-        margin: 0;
-        padding: 0;
+        display: inline;
     }
     .fltrs{
         /* first half w/ drop-downs */
         /*width and height customized to a 1px border*/
-        width: auto;
+        width: 15em;
         height: 100%;
-        float: left;
+        display: inline;
     }
 
     .line{
         /* line under "filters"*/
-        width: 15em;
-        padding-right: 2em;
+        width: 100%;
         height: 0;
         border: 1px solid black;
         /*margin-left: 10%;
         margin-right: 10%;
         */
         text-align: center;
-        margin-top: -5%
+        margin-top: -10%;
     }
 
     h1{
-        /* "filters" */
-        margin-bottom: 5%;
+        /* "filters"
+        margin-bottom: 5%;*/
     }
 
     p{
@@ -85,8 +83,7 @@ $name_array = "";
 
     .divider{
         display: inline;
-        float: left;
-        width: .1em;
+        width: 1em;
         height: 99.8%;
         background-color: black;
         border: 1px solid black;
@@ -95,10 +92,10 @@ $name_array = "";
 
     .results_container {
         display: inline;
-        float: left;
-        width: 81em;
-        /*width: 73%;*/
-        padding-top: 3%;
+        width: 20em;
+        height: 100%;
+        /*width: 73%;
+        padding-top: 3%;*/
     }
         /*
             .results_bin{
@@ -246,9 +243,10 @@ $name_array = "";
     </select>
 
 </div>
-<div class="divider"></div>
-<div class="results_container">
 
+<!-- <div class="divider"></div> -->
+
+<div class="results_container">
 
     <!-- php for statement making rows of 4 profiles -->
     <?php foreach($arr as $value) : ?>
