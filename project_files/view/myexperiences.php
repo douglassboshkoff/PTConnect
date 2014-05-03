@@ -196,23 +196,41 @@ echo $action;
                 width: 320px;
                 height: 28px;
             }
+            form input[type="submit"]{
+
+                background: none;
+                border: none;
+                color: black;
+                text-decoration: underline;
+                cursor: pointer;
+                font-size: 16px;
+            }
 
 		</style>
+        <script type=text/javascript"" src="../js/jQuery.js"></script>
+        <script type="text/javascript" src="../js/option.js"></script>
 	</head>
 	<body>
 		<div id='table'>
 			<table>
+                <? // php foreach($college as $colleges) { ?>
 				<tr>
 					<td><h1>Miami of Ohio</h1></td>
-					<td><a href="http://google.com">edit</a></td>
-					<td><a href="http://google.com">delete</a></td>
+
+					<td>
+                        <form action="myexperiences.php" method="post" name="review">
+                        <input type="submit" value="edit" name="submit"/>
+                        <input type="hidden" value="edit" name="action"/>
+                        </form>
+                    </td>
+					<td>
+                        <form action="myexperiences.php" method="post">
+                            <input type="submit" value="delete" name="submit"/>
+                            <input type="hidden" value="delete" name="action"/>
+                        </form>
 
 				</tr>
-				<tr>
-		    		<td><h1>Google Internship</h1></td>
-					<td><a href="http://google.com">edit</a></td>
-					<td><a href="http://google.com">delete</a></td>
-				</tr>
+                <?php// } ?>
 			</table>
 		</div>
 		<div id="add">

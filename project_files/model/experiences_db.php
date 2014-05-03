@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 function get_experiences($id) {
     global $db;
@@ -30,7 +30,7 @@ function get_all_titles() {
 
     //returns an array
 }
-=======
+//=======
 /**
  * Created by JetBrains PhpStorm.
  * User: Danny
@@ -49,4 +49,4 @@ function get_all_titles() {
     return $types;
   }
 ?>
->>>>>>> FETCH_HEAD
+//>>>>>>> FETCH_HEAD
