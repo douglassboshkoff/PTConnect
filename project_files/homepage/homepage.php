@@ -197,6 +197,7 @@
 
     <form action="." method="post">
         <input type="hidden" name="action" value="register"/>
+
         <input id="fname" type="text" placeholder="First Name" name = "first_name"/>
         <input id="lname" type="text" placeholder="Last Name" name = "last_name"/>
         <input id="email" type="text" placeholder="Email" name = "email"/>
