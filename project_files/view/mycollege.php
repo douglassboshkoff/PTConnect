@@ -171,7 +171,7 @@
 
 		</style>
 	</head>
-	<body>
+	<body id = "all">
 		<div id='top'>
 			<ul>
 			   <li><span id="white">PT</span><span id="red">Connect</span></li>
@@ -204,7 +204,7 @@
 
 		<div id="add">
 			<h1>Add College</h1>
-			<form method="post" action="index.php">
+			<form method="post" id = "form1" action="index.php">
 				<label id = "firstlabel">School</label>
 				<select class="dropdown" id="college">
 					<option>College</option>
@@ -229,7 +229,7 @@
 					<option>Computer Science</option>
                     <option value = "1" class = ".textexp"> Other </option>
                 </select>
-                <div id = "majordiv2">  <input type="text" id="majorothertextbox2" />  </div>
+                <div id = "majordiv2">  <input type="text" id="majorothertextbox2" value = "" />  </div>
 				<br/>
 				<label>Minor 1</label>
 				<select class="dropdown" id = "minor1">
