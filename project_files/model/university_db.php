@@ -6,19 +6,24 @@
  * Time: 1:44 PM
  */
 
-function getCollege($userID) {
+function get_college($userID) {
     $query = "SELECT university_id FROM questions WHERE account_id == '$userID'";
 
 }
 
-function getColleges() {
+function get_colleges() {
         global $db;
         $query = "SELECT DISTINCT name
         FROM universities
         ORDER BY name";
         $request = $db->query($query);
-        $universities = $request->fetch();
-        return $universities;
+
+    /*foreach($request as $in){
+            $colleges[] = $in;
+        }
+
+        return $colleges;*/
+    return $request;
         //SQL works, phpcode might not}
 }
 
