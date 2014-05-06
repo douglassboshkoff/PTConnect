@@ -12,9 +12,14 @@
         global $db;
         $query = "SELECT * FROM accounts WHERE email == '$email'";
         $user = $db->query($query);
-        //this needs php code to return the acutal user, cannot write this at this time.
-        //would give you cookie if you wrote this for me.
-        //needs an object class
+        return $user;
+    }
+    
+    function get_user($id) {
+        global $db;
+        $query = "SELECT * FROM accounts WHERE email == '$email'";
+        $user = $db->query($query)
+        return $user;
     }
     
     function validate_password($email, $password) {
@@ -58,4 +63,22 @@
         WHERE id = '$id'";
         
     }
+    function get_users(){
+    global $db;
+    $query="SELECT * FROM accounts";
+    $result=$db->query($query);
+    return $result;
+    }
+
+
+    function get_college_by_user($id) {
+    global $db;
+    $query = "SELECT name FROM universities
+    INNER JOIN questions
+    ON questions.university_id = universities.id
+    WHERE questions.accounts_id = '$id'";
+    $result = $db->query($query);
+    return $result->fetch();
+    }
+
 ?>
