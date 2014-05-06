@@ -11,6 +11,7 @@ function get_college($userID) {
     $query = "SELECT university_id FROM questions WHERE account_id == '$userID'";
 }
 
+
 function get_colleges() {
         global $db;
         $query = "SELECT DISTINCT name
@@ -24,6 +25,7 @@ function get_colleges() {
 
         return $colleges;*/
     return $request;
+        //SQL works, phpcode might not}
         //SQL works, phpcode might not}
 }
 ?>
