@@ -1,4 +1,18 @@
 <?php
+include('../validate/fields.php');
+include('../validate/validate.php');
+include('../model/questions_db.php');
+$fields = new Register\fields();
+
+$fields->addField('type','You must choose your type of experience.');
+$fields->addField('title','You must choose the title of your experience.');
+$fields->addField('other','Must choose a type.');
+
+$type = new Register\field('type','Must choose a type.');
+$title = new Register\field('title','You must choose a title for your experience.');
+$other = new Register\field('other');
+$validate = new Register\validate();
+
 if(isset($_POST['action']))
 {
     $action = $_POST['action'];
@@ -21,11 +35,13 @@ else if($action === 'delete')
     //delete the data
 }
 
-
+echo $action;
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
+        <script type="text/javascript" src="../js/jQuery.js"></script>
+        <script type="text/javascript" src="../js/dropdown_text_exp.js"></script>
 		<style>
 			body {
 				min-width: 600px;
@@ -182,66 +198,76 @@ else if($action === 'delete')
                 width: 320px;
                 height: 28px;
             }
+            form input[type="submit"]{
+
+                background: none;
+                border: none;
+                color: black;
+                text-decoration: underline;
+                cursor: pointer;
+                font-size: 16px;
+            }
 
 		</style>
+        <script type=text/javascript"" src="../js/jQuery.js"></script>
+        <script type="text/javascript" src="../js/option.js"></script>
 	</head>
 	<body>
-		<!--<div id='top'>
-			<ul>
-			   <li><span id="white">PT</span><span id="red">Connect</span></li>
-			   <img src="profile.png" />
-			</ul>
-		</div>
-		<div id='tabs'>
-			<ul>
-			   <li><a href='main.html'><span>Home</span></a></li>
-			   <li class="active"><a href='mycollege.html'><span>My College</span></a></li>
-			   <li><a href='#'><span>My Employer</span></a></li>
-			   <li class='last'><a href='#'><span>My Profile</span></a></li>
-			</ul>
-		</div>-->
 		<div id='table'>
 			<table>
+                <? // php foreach($college as $colleges) { ?>
 				<tr>
 					<td><h1>Miami of Ohio</h1></td>
-					<td><a href="http://google.com">edit</a></td>
-					<td><a href="http://google.com">delete</a></td>
+
+					<td>
+                        <form action="myexperiences.php" method="post" name="review">
+                        <input type="submit" value="edit" name="submit"/>
+                        <input type="hidden" value="edit" name="action"/>
+                        </form>
+                    </td>
+					<td>
+                        <form action="myexperiences.php" method="post">
+                            <input type="submit" value="delete" name="submit"/>
+                            <input type="hidden" value="delete" name="action"/>
+                        </form>
 
 				</tr>
-				<tr>
-		    		<td><h1>Google Internship</h1></td>
-					<td><a href="http://google.com">edit</a></td>
-					<td><a href="http://google.com">delete</a></td>
-				</tr>
+                <?php// } ?>
 			</table>
 		</div>
 		<div id="add">
 			<h1>Add Experience</h1>
-			<form>
+			<form method="post" action="myexperiences.php">
 				<label>Type</label>
 				<select class="dropdown">
+                    <option></option>
 					<option>CS Competition</option>
 					<option>Internship</option>
 					<option>Job</option>
+                    <option>Other</option>
 				</select>
 				<br/>
 				<label style="margin-right: 25px">Title</label>
-				<select class="dropdown">
+				<select class="dropdown" id = "titleselect">
+                    <option></option>
 					<option>Miami of Ohio CS Competition</option>
 					<option>Google Internship</option>
-				</select>
+				    <option value = "1" >Other</option>
+                </select>
+                <div id = "titlediv">  <input type="text" id="titletextbox" />  </div>
+
                 <br/>
                 <textarea class="other_box" hidden="hidden"></textarea>
 				<br/>
-
 				<h2>Question 1 Text</h2>
-				<textarea class="questions" rows="4"></textarea>
+				<textarea class="questions" rows="4" ></textarea>
 				<h2>Question 2 Text</h2>
 				<textarea class="questions" rows="4"></textarea>
 				<h2>Question 3 Text</h2>
 				<textarea class="questions" rows="4"></textarea>
 				<input type="submit" id="addButton" value="Add">
-			</form>
+                <input type="hidden" id="action" value="<?php if($action === 'display'){ $action='add';}else{$action='edit';} echo $action;?>">
+			<?php echo "here: ".$action; ?></form>
 		</div>
 	</body>
 </html>

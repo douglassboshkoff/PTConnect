@@ -1,6 +1,8 @@
 <?php
-$collegeID = "";
+
 // gets the collegeID from the college filter page
+
+$collegeID = "";
 if(isset($_POST["college_ID"])){
 
     $collegeID = $_POST["college_ID"];
@@ -46,7 +48,7 @@ if($_GET['next'] == 1){
 ?>
 <html>
 <head>
-    <title> WEBPAGE </title>
+    <title> College Page </title>
     <style>
         /** Generic Div **/
         div{

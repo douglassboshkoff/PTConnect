@@ -15,8 +15,11 @@
     }
 ?>
 <!DOCTYPE html>
+
 <html>
 	<head>
+        <script type="text/javascript" src="../js/jQuery.js"></script>
+        <script type="text/javascript" src="../js/dropdown_text.js"></script>
 		<style>
 			body {
 				min-width: 600px;
@@ -168,7 +171,7 @@
 
 		</style>
 	</head>
-	<body>
+	<body id = "all">
 		<div id='top'>
 			<ul>
 			   <li><span id="white">PT</span><span id="red">Connect</span></li>
@@ -201,40 +204,49 @@
 
 		<div id="add">
 			<h1>Add College</h1>
-			<form method="post" action="index.php">
+			<form method="post" id = "form1" action="index.php">
 				<label id = "firstlabel">School</label>
 				<select class="dropdown" id="college">
 					<option>College</option>
 					<option>Harvard University</option>
 					<option>Purdue University</option>
-                    <option class = ".textexp"> Other </option>
+                    <option value = "1" class = ".textexp"> Other </option>
 				</select>
+                <div id = "hiddendiv">  <input type="text" id="othertextbox" />  </div>
 				<br>
 				<label>Major 1</label>
-				<select class="dropdown">
+				<select class="dropdown" id = "major1">
 					<option>Major 1</option>
 					<option>Computer Engineering</option>
 					<option>Computer Science</option>
-				</select>
+                    <option value = "1" class = ".textexp"> Other </option>
+                </select>
+                <div id = "majordiv1">  <input type="text" id="majorothertextbox" />  </div>
 				<label>Major 2</label>
-				<select class="dropdown">
+				<select class="dropdown" id = "major2">
 					<option>Major 2</option>
 					<option>Computer Engineering</option>
 					<option>Computer Science</option>
-				</select>
+                    <option value = "1" class = ".textexp"> Other </option>
+                </select>
+                <div id = "majordiv2">  <input type="text" id="majorothertextbox2" value = "" />  </div>
 				<br/>
 				<label>Minor 1</label>
-				<select class="dropdown">
+				<select class="dropdown" id = "minor1">
 					<option>Minor 1</option>
 					<option>Computer Engineering</option>
 					<option>Computer Science</option>
-				</select>
+                    <option value = "1" class = ".textexp"> Other </option>
+                </select>
+                <div id = "minordiv1">  <input type="text" id="minorothertextbox" />  </div>
 				<label>Minor 2</label>
-				<select class="dropdown">
+				<select class="dropdown" id = "minor2">
 					<option>Minor 2</option>
 					<option>Computer Engineering</option>
 					<option>Computer Science</option>
-				</select>
+                    <option value = "1" class = ".textexp"> Other </option>
+                </select>
+                <div id = "minordiv2">  <input type="text" id="minorothertextbox2" />  </div>
 				<h2>Question 1 Text</h2>
 				<textarea class="questions" rows="4"></textarea>
 				<h2>Question 2 Text</h2>
