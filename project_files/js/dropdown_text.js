@@ -53,7 +53,6 @@ $(document).ready(function() {
             $(this).val("");
         });
         $("#majorothertextbox").focusout(function(){
-            $(this).css("background-color","#eeeeee");
             $(this).val("Enter New Minor Here");
         });
         //major2
@@ -77,7 +76,6 @@ $(document).ready(function() {
             $(this).val("");
         });
         $("#majorothertextbox2").focusout(function(){
-            $(this).css("background-color","#eeeeee");
             $(this).val("Enter New Major Here");
         });
 
@@ -103,7 +101,6 @@ $(document).ready(function() {
             $(this).val("");
         });
         $("#minorothertextbox").focusout(function(){
-            $(this).css("background-color","#eeeeee");
             $(this).val("Enter New Minor Here");
         });
 
@@ -127,7 +124,6 @@ $(document).ready(function() {
             $(this).val("");
         });
         $("#minorothertextbox2").focusout(function(){
-            $(this).css("background-color","#eeeeee");
             $(this).val("Enter New Minor Here");
         });
 

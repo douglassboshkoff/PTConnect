@@ -40,6 +40,8 @@ echo $action;
 <!DOCTYPE html>
 <html>
 	<head>
+        <script type="text/javascript" src="../js/jQuery.js"></script>
+        <script type="text/javascript" src="../js/dropdown_text_exp.js"></script>
 		<style>
 			body {
 				min-width: 600px;
@@ -242,14 +244,18 @@ echo $action;
 					<option>CS Competition</option>
 					<option>Internship</option>
 					<option>Job</option>
+                    <option>Other</option>
 				</select>
 				<br/>
 				<label style="margin-right: 25px">Title</label>
-				<select class="dropdown">
+				<select class="dropdown" id = "titleselect">
                     <option></option>
 					<option>Miami of Ohio CS Competition</option>
 					<option>Google Internship</option>
-				</select>
+				    <option value = "1" >Other</option>
+                </select>
+                <div id = "titlediv">  <input type="text" id="titletextbox" />  </div>
+
                 <br/>
                 <textarea class="other_box" hidden="hidden"></textarea>
 				<br/>
