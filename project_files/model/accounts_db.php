@@ -80,5 +80,20 @@
     $result = $db->query($query);
     return $result->fetch();
     }
+    
+    function get_names_by_filter($arryId) {
+        global $db;
+        $results = array();
+        $i = 0;
+        foreach($arryId as $id) {
+            $query = "SELECT CONCAT(first_name, " ", last_name) as Name FROM accounts WHERE id = '$id'";
+            $name = $db->query($query);
+            $results[$i] = $name;
+            $i++;
+        }
+        return $results
+        //I cannot check this function at this time, my phpstorm still does not work, this functions takes in an array of
+        // ids and returns and array of names. sorry if my syntax is wrong.
+    }
 
 ?>
