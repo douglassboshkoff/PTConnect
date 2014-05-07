@@ -46,6 +46,7 @@ $name_array = "";
         width: 15em;
         height: 100%;
         display: inline;
+        float: left;
     }
 
     .line{
@@ -87,13 +88,14 @@ $name_array = "";
         height: 99.8%;
         background-color: black;
         border: 1px solid black;
-        position: fixed;
     }
 
     .results_container {
         display: inline;
         width: 20em;
         height: 100%;
+        margin-left: 15em;
+        border: 1px solid black;
         /*width: 73%;
         padding-top: 3%;*/
     }
@@ -173,7 +175,6 @@ $name_array = "";
     .pic_form{
         width: 100%;
         height: 100%;
-        position: fixed;
     }
 
     .name{
