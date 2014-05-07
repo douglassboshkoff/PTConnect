@@ -39,7 +39,6 @@ $name_array = "";
         */
         width: auto;
         height: auto;
-        display: inline;
     }
     .fltrs{
         /* first half w/ drop-downs */
@@ -83,15 +82,7 @@ $name_array = "";
         margin-left: 10%;
     }
 
-    .divider{
-        display: inline-block;
 
-        width: .1em;
-        height: 99.8%;
-        float:left;
-        background-color: black;
-        border: 1px solid black;
-    }
     #main{
 
     }
@@ -100,6 +91,8 @@ $name_array = "";
         width: 90%;
         height: 100%;
         margin-left: 15em;
+        border-left: 1px black solid;
+
         /*width: 73%;
         padding-top: 3%;*/
     }
@@ -133,6 +126,7 @@ $name_array = "";
         margin-left: 2.5%;
         margin-bottom: 2.5%;
         height: 16em;
+
         /*border: 1px solid black;*/
     }
 
@@ -249,11 +243,10 @@ $name_array = "";
 
 </div>
 
-<div class="divider"> </div>
+
 
 
 <div class="results_container">
-
     <!-- php for statement making rows of 4 profiles -->
     <?php foreach($arr as $value) : ?>
         <!-- add place for action -->
