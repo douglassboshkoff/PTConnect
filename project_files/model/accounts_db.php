@@ -15,10 +15,10 @@
         return $user;
     }
     
-    function get_user($id) {
+    function get_user_by_id($id) {
         global $db;
-        $query = "SELECT * FROM accounts WHERE email == '$email'";
-        $user = $db->query($query)
+        $query = "SELECT * FROM accounts WHERE email == '$id'";
+        $user = $db->query($query);
         return $user;
     }
     
