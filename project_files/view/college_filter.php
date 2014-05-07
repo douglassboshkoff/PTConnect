@@ -30,6 +30,7 @@ $name_array = "";
 <!-- insert header here -->
 
 <style>
+
     body{
         /*display: inline;
        /* height: 100%;
@@ -45,7 +46,7 @@ $name_array = "";
         /*width and height customized to a 1px border*/
         width: 15em;
         height: 100%;
-        display: inline;
+        display: inline-block;
         float: left;
     }
 
@@ -83,19 +84,22 @@ $name_array = "";
     }
 
     .divider{
-        display: inline;
-        width: 1em;
+        display: inline-block;
+
+        width: .1em;
         height: 99.8%;
+        float:left;
         background-color: black;
         border: 1px solid black;
     }
+    #main{
 
+    }
     .results_container {
-        display: inline;
-        width: 20em;
+
+        width: 90%;
         height: 100%;
         margin-left: 15em;
-        border: 1px solid black;
         /*width: 73%;
         padding-top: 3%;*/
     }
@@ -201,7 +205,7 @@ $name_array = "";
 </title>
 
 <body> <!-- style="display: inline"> -->
-
+<div id = "main">
 <div class="fltrs"> <!-- style="margin: 0" -->
 
     <h1 class="heading">Filters</h1>
@@ -245,7 +249,8 @@ $name_array = "";
 
 </div>
 
-<!-- <div class="divider"></div> -->
+<div class="divider"> </div>
+
 
 <div class="results_container">
 
@@ -272,6 +277,7 @@ $name_array = "";
             </div>
         </form>
     <?php endforeach; ?>
+</div>
 </div>
 </body>
 
