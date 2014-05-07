@@ -5,7 +5,7 @@ function get_experiences($id) {
     global $db;
     $query = "SELECT * FROM experiences WHERE accounts_id_ac = '$id'";
     $result = $db->query($query);
-    return $result->fetch();
+    return $result;
 }
 
 function get_content($id) {
@@ -49,4 +49,3 @@ function get_all_titles() {
     return $types;
   }
 ?>
-//>>>>>>> FETCH_HEAD

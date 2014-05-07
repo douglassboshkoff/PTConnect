@@ -22,9 +22,17 @@ else
     $action='display';
 }
 
-if($action === 'edit')
+if($action === 'display')
+{
+    $experiences = get_experiences(1);
+}
+else if($action === 'edit')
 {
     //grab data from the userid.
+}
+else if($action === 'populate_edit')
+{
+    //populate the text boxes with edit data
 }
 else if($action === 'add')
 {
@@ -213,9 +221,9 @@ echo $action;
 	<body>
 		<div id='table'>
 			<table>
-                <? // php foreach($college as $colleges) { ?>
+                <?php  foreach($experience as $experiences) { ?>
 				<tr>
-					<td><h1>Miami of Ohio</h1></td>
+					<td><h1></h1></td>
 
 					<td>
                         <form action="myexperiences.php" method="post" name="review">
@@ -234,11 +242,10 @@ echo $action;
 			</table>
 		</div>
 		<div id="add">
-			<h1>Add Experience</h1>
+			<h1><?php if($action==='display') { echo "Add Experience";} else { echo "Edit Experience";} ?></h1>
 			<form method="post" action="myexperiences.php">
 				<label>Type</label>
 				<select class="dropdown">
-                    <option></option>
 					<option>CS Competition</option>
 					<option>Internship</option>
 					<option>Job</option>
@@ -246,7 +253,6 @@ echo $action;
 				<br/>
 				<label style="margin-right: 25px">Title</label>
 				<select class="dropdown">
-                    <option></option>
 					<option>Miami of Ohio CS Competition</option>
 					<option>Google Internship</option>
 				</select>
@@ -261,7 +267,7 @@ echo $action;
 				<textarea class="questions" rows="4"></textarea>
 				<input type="submit" id="addButton" value="Add">
                 <input type="hidden" id="action" value="<?php if($action === 'display'){ $action='add';}else{$action='edit';} echo $action;?>">
-			<?php echo "here: ".$action; ?></form>
+			</form>
 		</div>
 	</body>
 </html>
