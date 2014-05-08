@@ -6,9 +6,23 @@
  * Time: 1:44 PM
  */
 
+function add_college($name, $location, $image_link) {
+    global $db;
+    $query = "INSERT INTO universities (name, location, image_link) VALUES ('$name','$location', '$image_link')";
+    $db->exec($query);
+}
+
+function remove_college($id) {
+    global $db;
+    $query = "DELETE FROM universities WHERE id = '$id'";
+    $db->exec($query);
+}
 
 function get_college($userID) {
-    $query = "SELECT university_id FROM questions WHERE account_id == '$userID'";
+    global $db;
+    $query = "SELECT university_id FROM questions WHERE account_id = '$userID'";
+    $college = $db->query($query);
+    return $college;
 }
 
 
