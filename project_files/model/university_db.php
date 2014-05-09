@@ -6,20 +6,40 @@
  * Time: 1:44 PM
  */
 
-function getCollege($userID) {
-    $query = "SELECT university_id FROM questions WHERE account_id == '$userID'";
-
+function add_college($name, $location, $image_link) {
+    global $db;
+    $query = "INSERT INTO universities (name, location, image_link) VALUES ('$name','$location', '$image_link')";
+    $db->exec($query);
 }
 
-function getColleges() {
+function remove_college($id) {
+    global $db;
+    $query = "DELETE FROM universities WHERE id = '$id'";
+    $db->exec($query);
+}
+
+function get_college($userID) {
+    global $db;
+    $query = "SELECT university_id FROM questions WHERE account_id = '$userID'";
+    $college = $db->query($query);
+    return $college;
+}
+
+
+function get_colleges() {
         global $db;
         $query = "SELECT DISTINCT name
         FROM universities
         ORDER BY name";
         $request = $db->query($query);
-        $universities = $request->fetch();
-        return $universities;
+
+    /*foreach($request as $in){
+            $colleges[] = $in;
+        }
+
+        return $colleges;*/
+    return $request;
+        //SQL works, phpcode might not}
         //SQL works, phpcode might not}
 }
-
 ?>

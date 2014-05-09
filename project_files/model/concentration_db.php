@@ -17,5 +17,31 @@
    $majors = $result->fetch();
    return $majors;
  }
+
+ function get_minors() {
+    global $db;
+    $query = 'SELECT DISTINCT name
+   FROM concentration
+   WHERE major_minor = 1
+   ORDER BY name';
+    $result = $db->query($query);
+    $majors = $result->fetch();
+    return $majors;
+ }
+
+ function add_concentration($name, $major_minor) {
+     global $db;
+     $query = "INSERT INTO concentration (name, major_minor) VALUES ('$name', '$major_minor')";
+     $db->exec($query);
+     //useable but not finished, needs editing to add in accounts_id and univiersities_id
+ }
+
+ function remove_concentration($id) {
+     global $db;
+     $query = "DELETE FROM concentrations WHERE id = '$id'";
+     $db->exec($query);
+ }
+
+
  
 ?>

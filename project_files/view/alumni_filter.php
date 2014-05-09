@@ -5,7 +5,11 @@
  * Date: 4/17/14
  * Time: 11:55 AM
  **/
-include "../model/user_db.php";
+//include "../model/accounts_db.php";
+include "../model/university_db.php";
+//include "../model/experiences_db.php";
+include "../model/database.php";
+
 //test array
 $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
 
@@ -15,7 +19,7 @@ $class = 2015;
 $user_email = "Tom Ato";
 
 $grad_year_array = array("hello","world","how's","it","goin?");
-$college_array = array("hello","world","how's","it","goin?");
+//$college_array = get_colleges();
 $major_array = array("hello","world","how's","it","goin?");
 $experience_type_array = array("hello","world","how's","it","goin?");
 $experience_title_array = array("hello","world","how's","it","goin?");
