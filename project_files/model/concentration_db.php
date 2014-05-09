@@ -42,6 +42,13 @@
      $db->exec($query);
  }
 
+ function update_concentration($id, $name, $major_minor, $universities_id, $accounts_id) {
+     global $db;
+     $query = "UPDATE concentrations SET name = '$name', major_minor = '$major_minor', universities_id = '$universities_id', accounts_id = '$accounts_id'
+               WHERE id = '$id'";
+     $db->exec($query);
+ }
+
 
  
 ?>
