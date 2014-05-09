@@ -32,14 +32,12 @@ function get_colleges() {
         FROM universities
         ORDER BY name";
         $request = $db->query($query);
+        return $request;
+}
 
-    /*foreach($request as $in){
-            $colleges[] = $in;
-        }
-
-        return $colleges;*/
-    return $request;
-        //SQL works, phpcode might not}
-        //SQL works, phpcode might not}
+function update_colleges($id, $name, $location, $image_link) {
+    global $db;
+    $query = "UPDATE universities SET name = '$name', location = '$location', image_link = '$image_link'";
+    $db->exec($query);
 }
 ?>
