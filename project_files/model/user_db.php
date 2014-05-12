@@ -18,7 +18,7 @@ function get_users(){
 function add_user($first_name, $last_name, $email, $pt_grad_year, $password)
 {
     global $db;
-    $query = "INSERT INTO accounts(first_name, last_name, email, pt_grad_year, password)
+        $query = "INSERT INTO accounts(first_name, last_name, email, pt_grad_year, password)
               VALUES ('$first_name','$last_name', '$email', '$pt_grad_year', '$password')";
     $db->exec($query);
 }
