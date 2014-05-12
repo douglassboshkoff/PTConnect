@@ -1,6 +1,6 @@
 <?php
-//require('database.php');
-//require('../model/accounts_db.php');
+require('../model/database.php');
+require('../model/accounts_db.php');
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
