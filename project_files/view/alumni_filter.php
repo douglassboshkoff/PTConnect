@@ -19,7 +19,7 @@ $class = 2015;
 $user_email = "Tom Ato";
 
 $grad_year_array = array("hello","world","how's","it","goin?");
-//$college_array = get_colleges();
+$college_array = get_colleges();
 $major_array = array("hello","world","how's","it","goin?");
 $experience_type_array = array("hello","world","how's","it","goin?");
 $experience_title_array = array("hello","world","how's","it","goin?");
@@ -187,8 +187,9 @@ $name_array = "";
 
     <p>College</p>
     <select>
+
         <?php foreach ($college_array as $college) : ?>
-            <option value="<?php echo $college ?>"><?php echo $college ?></option>
+            <option value="<?php echo $college['id'] ?>"><?php echo $college['name'] ?></option>
         <?php endforeach ; ?>
     </select>
 

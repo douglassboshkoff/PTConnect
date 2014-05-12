@@ -7,7 +7,7 @@
  **/
 
 //test array
-$arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
+$arr = array("goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
 
 // temporary value
 $collegeID = "Tom Ato";
@@ -30,7 +30,8 @@ $name_array = "";
 <!-- insert header here -->
 
 <style>
-
+    div{
+    }
     body{
         /*display: inline;
        /* height: 100%;
@@ -38,7 +39,7 @@ $name_array = "";
         width: inherit;
         */
         width: auto;
-        height: auto;
+        height: <?php echo 17.25*(count($arr)/3);?>em;
     }
     .fltrs{
         /* first half w/ drop-downs */
@@ -123,8 +124,8 @@ $name_array = "";
         float: left;
         display: inline;
         width: 16em;
-        margin-left: 2.5%;
-        margin-bottom: 2.5%;
+        margin-left: 1em;
+        margin-bottom: 1em%;
         height: 16em;
 
         /*border: 1px solid black;*/

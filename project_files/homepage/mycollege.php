@@ -1,3 +1,9 @@
+<?php
+    //echo $user['id'];
+echo "yoyur mokm";
+    $colleges = get_college_by_user(1)->fetch();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -211,6 +217,13 @@
         <label>School</label>
         <select class="dropdown" id="college">
             <option>College</option>
+            <?php
+                foreach ($colleges as $college){
+                   ?>
+                    <option> <?php  echo $college; ?></option>
+            <?php
+            }
+            ?>
             <option>Harvard University</option>
             <option>Purdue University</option>
         </select>

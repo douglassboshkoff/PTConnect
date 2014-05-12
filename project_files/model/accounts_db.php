@@ -1,11 +1,10 @@
 <?php
 
-    function add_user($fname, $lname, $email, $gradYear) {
+    function add_user($fname, $lname, $email, $gradYear, $password) {
         global $db;
-        $query = "INSERT INTO accounts( first_name, last_name, email, pt_grad_year) 
-         VALUES ('$fname', '$lname', '$email', '$gradYear')";
+        $query = "INSERT INTO accounts( first_name, last_name, email, pt_grad_year, password)
+         VALUES ('$fname', '$lname', '$email', '$gradYear', '$password')";
          $db->exec($query);
-         //this should work now assuming all of my syntax is correct. I cannot get it to work on phpstorm at this time
     }
 
     function remove_user($id) {
@@ -68,13 +67,13 @@
 
         //the sql command works, however the phpcode might not.
     }
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
-
 =======
-    
->>>>>>> 30ff08ffb14f2a4affc01850f4364018cdbe8679
+>>>>>>> 25bd958dcb74f4842f4b0e4099973078b328fc50
+
     function get_name($id) {
         global $db;
         $query = "SELECT first_name
@@ -82,22 +81,35 @@
         WHERE id = '$id'";
         
     }
-    function get_users(){
+<<<<<<< HEAD
+    /**function get_users(){
     global $db;
     $query="SELECT * FROM accounts";
     $result=$db->query($query);
     return $result;
-    }
+    }**/
+=======
+//    function get_users(){
+//    global $db;
+//    $query="SELECT * FROM accounts";
+//    $result=$db->query($query);
+//    return $result;
+//    }
+/**
+ * It says the above method is repeated - the one un-commented-out orders them by ID.
+ * I kept this one commented out just in case we need to change the other method.
+ */
+>>>>>>> a65f1497b5fbb29dfa58c3a292552a11d7215768
 
 
-    function get_college_by_user($id) {
+function get_college_by_user($id) {
     global $db;
     $query = "SELECT name FROM universities
     INNER JOIN questions
     ON questions.university_id = universities.id
     WHERE questions.accounts_id = '$id'";
     $result = $db->query($query);
-    return $result->fetch();
+    return $result;
     }
     
     function get_names_by_filter($arryId) {
