@@ -94,7 +94,7 @@ function get_college_by_user($id) {
     ON questions.university_id = universities.id
     WHERE questions.accounts_id = '$id'";
     $result = $db->query($query);
-    return $result->fetch();
+    return $result;
     }
     
     function get_names_by_filter($arryId) {

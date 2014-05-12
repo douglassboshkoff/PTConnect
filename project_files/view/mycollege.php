@@ -1,4 +1,14 @@
 <?php
+    include "../model/database.php";
+    include "../model/accounts_db.php";
+    include "../model/university_db.php";
+
+    //echo $user['id'];
+    echo "yoyur mokm";
+    $colleges = get_college_by_user(1);
+foreach($colleges as $college){
+    echo $college;
+}
     $action = $_POST['action'];
 
     if($action === 'edit')
@@ -188,6 +198,15 @@
 		</div>
 		<div id='table'>
 			<table>
+                <?php
+                foreach ($colleges as $college){
+                    ?>
+                    <tr>
+                    <option> <?php  echo $college['name']; ?></option>
+                    </tr>
+                <?php
+                }
+                ?>
 				<tr>
 					<td><h1>Purdue University</h1></td>
 					<td><a href="http://google.com">edit</a></td>
