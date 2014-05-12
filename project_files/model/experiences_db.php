@@ -1,5 +1,4 @@
 <?php
-//<<<<<<< HEAD
 
 function get_experiences($id) {
     global $db;

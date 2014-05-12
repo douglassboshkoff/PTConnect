@@ -2,6 +2,8 @@
 include('../validate/fields.php');
 include('../validate/validate.php');
 include('../model/questions_db.php');
+include('../model/experiences_db.php');
+include('../model/database.php');
 $fields = new Register\fields();
 
 $fields->addField('type','You must choose your type of experience.');
@@ -21,6 +23,9 @@ else
 {
     $action='display';
 }
+
+$experiences = get_experiences(1);
+
 
 if($action === 'display')
 {
@@ -223,9 +228,9 @@ echo $action;
 	<body>
 		<div id='table'>
 			<table>
-                <?php // foreach($experience as $experiences) { ?>
+                <?php foreach($experiences as $experience) { ?>
 				<tr>
-					<td><h1></h1></td>
+					<td><h1><?php echo $experience['title']; ?></h1></td>
 
 					<td>
                         <form action="myexperiences.php" method="post" name="review">
@@ -240,7 +245,7 @@ echo $action;
                         </form>
 
 				</tr>
-                <?php //} ?>
+                <?php } ?>
 			</table>
 		</div>
 		<div id="add">
@@ -256,7 +261,6 @@ echo $action;
 				<br/>
 				<label style="margin-right: 25px">Title</label>
 				<select class="dropdown" id = "titleselect">
-                    <option></option>
 					<option>Miami of Ohio CS Competition</option>
 					<option>Google Internship</option>
 				    <option value = "1" >Other</option>
@@ -266,14 +270,17 @@ echo $action;
                 <br/>
                 <textarea class="other_box" hidden="hidden"></textarea>
 				<br/>
-				<h2>Question 1 Text</h2>
+				<h2>Describe your experience</h2>
 				<textarea class="questions" rows="4" ></textarea>
-				<h2>Question 2 Text</h2>
-				<textarea class="questions" rows="4"></textarea>
-				<h2>Question 3 Text</h2>
-				<textarea class="questions" rows="4"></textarea>
-				<input type="submit" id="addButton" value="Add">
-                <input type="hidden" id="action" value="<?php if($action === 'display'){ $action='add';}else{$action='edit';} echo $action;?>">
+                <input type="hidden" name="action" value="<?php
+                if($action === 'display')
+                {
+                    $action='add';
+                }
+                else{
+                    $action='edit';
+                }?>">
+                <input type="submit" id="addButton" value="Add">
 			</form>
 		</div>
 	</body>
