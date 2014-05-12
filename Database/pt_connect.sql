@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 29, 2014 at 03:10 PM
--- Server version: 5.5.32
--- PHP Version: 5.4.19
+-- Host: localhost
+-- Generation Time: May 12, 2014 at 07:30 PM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `pt_connect`
 --
-CREATE DATABASE IF NOT EXISTS `pt_connect` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `pt_connect`;
 
 -- --------------------------------------------------------
 
@@ -60,7 +58,14 @@ CREATE TABLE IF NOT EXISTS `concentration` (
   `universities_id_un` int(11) NOT NULL,
   `accounts_id_ac` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `concentration`
+--
+
+INSERT INTO `concentration` (`id`, `name`, `major_minor`, `universities_id_un`, `accounts_id_ac`) VALUES
+(1, 'Computer Science', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -80,23 +85,38 @@ CREATE TABLE IF NOT EXISTS `experiences` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Queries`
+--
+
+CREATE TABLE IF NOT EXISTS `Queries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `question` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `questions`
 --
 
 CREATE TABLE IF NOT EXISTS `questions` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `question_id` int(11) NOT NULL,
   `response` varchar(200) NOT NULL,
-  `university_id_un` int(11) NOT NULL,
-  `accounts_id_ac` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `university_id` int(11) NOT NULL,
+  `accounts_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `questions`
 --
 
-INSERT INTO `questions` (`id`, `question_id`, `response`, `university_id_un`, `accounts_id_ac`) VALUES
-(0, 2, 'I love college', 0, 1);
+INSERT INTO `questions` (`id`, `question_id`, `response`, `university_id`, `accounts_id`) VALUES
+(1, 0, '1', 1, 1),
+(2, 2, 'This is a test', 2, 2),
+(3, 1, 'This is a test', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -110,7 +130,15 @@ CREATE TABLE IF NOT EXISTS `universities` (
   `location` varchar(45) NOT NULL,
   `image_link` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `universities`
+--
+
+INSERT INTO `universities` (`id`, `name`, `location`, `image_link`) VALUES
+(1, 'Purdue', 'Lafayette, IN', 'test...'),
+(2, 'Harvard', 'Cambridge, MA', 'https://ddd');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
