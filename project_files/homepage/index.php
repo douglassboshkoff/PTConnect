@@ -1,6 +1,6 @@
 <?php
-require('../model/database.php');
-require('../model/accounts_db.php');
+//require('../model/database.php');
+//require('../model/accounts_db.php');
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
@@ -71,13 +71,13 @@ else if($action == 'continue_as_guest')
 }
 else if($action=='college_filter')
 {
-    include('college_filter.php');
+    include('../view/college_filter.php');
 //    http://stackoverflow.com/questions/13122619/input-image-as-clickable-button
     //reference this tomorrow...
 }
 else if($action=='alumni_filter')
 {
-    include('alumni_filter.php');
+    include('../view/alumni_filter.php');
 }
 else
 {
