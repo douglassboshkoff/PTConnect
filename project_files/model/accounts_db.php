@@ -5,7 +5,6 @@
         $query = "INSERT INTO accounts( first_name, last_name, email, pt_grad_year, password)
          VALUES ('$fname', '$lname', '$email', '$gradYear', '$password')";
          $db->exec($query);
-         //this should work now assuming all of my syntax is correct. I cannot get it to work on phpstorm at this time
     }
 
     function remove_user($id) {
@@ -82,9 +81,13 @@
 //    $result=$db->query($query);
 //    return $result;
 //    }
+/**
+ * It says the above method is repeated - the one un-commented-out orders them by ID.
+ * I kept this one commented out just in case we need to change the other method.
+ */
 
 
-    function get_college_by_user($id) {
+function get_college_by_user($id) {
     global $db;
     $query = "SELECT name FROM universities
     INNER JOIN questions
