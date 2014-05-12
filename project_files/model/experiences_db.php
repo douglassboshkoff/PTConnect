@@ -2,14 +2,14 @@
 
 function get_experiences($id) {
     global $db;
-    $query = "SELECT * FROM experiences WHERE accounts_id_ac = '$id'";
+    $query = "SELECT * FROM experiences WHERE accounts_id = '$id'";
     $result = $db->query($query);
     return $result;
 }
 
 function get_content($id) {
     global $db;
-    $query = "SELECT content FROM experiences WHERE accounts_id_ac = '$id'";
+    $query = "SELECT content FROM experiences WHERE accounts_id = '$id'";
     $result = $db->query($query);
     return $result->fetch();
 }
