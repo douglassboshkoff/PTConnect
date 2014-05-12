@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 12, 2014 at 07:42 PM
+-- Generation Time: May 12, 2014 at 08:14 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -106,6 +106,7 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `response` varchar(200) NOT NULL,
   `university_id` int(11) NOT NULL,
   `accounts_id` int(11) NOT NULL,
+  `queries_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -113,10 +114,10 @@ CREATE TABLE IF NOT EXISTS `questions` (
 -- Dumping data for table `questions`
 --
 
-INSERT INTO `questions` (`id`, `question_id`, `response`, `university_id`, `accounts_id`) VALUES
-(1, 0, '1', 1, 1),
-(2, 2, 'This is a test', 2, 2),
-(3, 1, 'This is a test', 2, 1);
+INSERT INTO `questions` (`id`, `question_id`, `response`, `university_id`, `accounts_id`, `queries_id`) VALUES
+(1, 0, '1', 1, 1, 0),
+(2, 2, 'This is a test', 2, 2, 0),
+(3, 1, 'This is a test', 2, 1, 0);
 
 -- --------------------------------------------------------
 
