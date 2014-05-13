@@ -151,20 +151,20 @@
         }
     </style>
 </head>
-<a href="alumni_filter.php"><div id="userSearchIcon">
+<a href="../view/alumni_filter.php"><div id="userSearchIcon">
         <img src="profile.png" />
     </div></a>
 
-<a href="college_filter.php"><div id="collegeSearchIcon">
+<a href="../view/college_filter.php"><div id="collegeSearchIcon">
         <img src="collegeSearch.png" />
     </div></a>
 
-<a href="alumni_filter.php"><div id="userSearchDescription">
+<a href="../view/alumni_filter.php"><div id="userSearchDescription">
         <a action="alumni_filter"><h1>Users</h1></a>
         <p>Find users by name, grad year, college, major, and employer.</p>
     </div></a>
 
-<a href="college_filter.php"><div id="collegeSearchDescription">
+<a href="../view/college_filter.php"><div id="collegeSearchDescription">
         <a action="college_filter"><h1>Colleges</h1></a>
 <!--        NOTE: I JUST COPIED THE COLLEGE_FILTER AND PUT IT INTO HOMEPAGE--MUST UPDATE!!-->
         <p>Find colleges by name, location, and number of PT alumni graduates.</p>
