@@ -68,11 +68,7 @@
 
         //the sql command works, however the phpcode might not.
     }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 30ff08ffb14f2a4affc01850f4364018cdbe8679
     function get_name($id) {
         global $db;
         $query = "SELECT first_name
@@ -80,12 +76,12 @@
         WHERE id = '$id'";
         
     }
-    function get_users(){
+    /**function get_users(){
     global $db;
     $query="SELECT * FROM accounts";
     $result=$db->query($query);
     return $result;
-    }
+    }**/
 
 
     function get_college_by_user($id) {
