@@ -24,7 +24,7 @@ else
 
 if($action === 'display')
 {
-    $experiences = get_experiences(1);
+    //$experiences = get_experiences(1);
 }
 else if($action === 'edit')
 {
@@ -223,7 +223,7 @@ echo $action;
 	<body>
 		<div id='table'>
 			<table>
-                <?php  foreach($experience as $experiences) { ?>
+                <?php // foreach($experience as $experiences) { ?>
 				<tr>
 					<td><h1></h1></td>
 
@@ -240,7 +240,7 @@ echo $action;
                         </form>
 
 				</tr>
-                <?php } ?>
+                <?php //} ?>
 			</table>
 		</div>
 		<div id="add">

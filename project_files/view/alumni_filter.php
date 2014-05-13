@@ -5,7 +5,7 @@
  * Date: 4/17/14
  * Time: 11:55 AM
  **/
-include "../model/accounts_db.php";
+//include "../model/accounts_db.php";
 include "../model/university_db.php";
 //include "../model/experiences_db.php";
 include "../model/database.php";
@@ -187,8 +187,9 @@ $name_array = "";
 
     <p>College</p>
     <select>
+
         <?php foreach ($college_array as $college) : ?>
-            <option value="<?php echo $college ?>"><?php echo $college ?></option>
+            <option value="<?php echo $college['id'] ?>"><?php echo $college['name'] ?></option>
         <?php endforeach ; ?>
     </select>
 

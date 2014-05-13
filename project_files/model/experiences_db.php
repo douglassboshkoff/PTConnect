@@ -48,10 +48,5 @@ function get_all_titles() {
     $types = $result->fetch();
     return $types;
   }
-<<<<<<< HEAD
-?>
-=======
-//>>>>>>> FETCH_HEAD
 ?>
 
->>>>>>> 30ff08ffb14f2a4affc01850f4364018cdbe8679

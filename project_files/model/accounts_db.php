@@ -7,6 +7,19 @@
          $db->exec($query);
          //this should work now assuming all of my syntax is correct. I cannot get it to work on phpstorm at this time
     }
+
+    function remove_user($id) {
+        global $db;
+        $query = "DELETE FROM accounts WHERE id = '$id'";
+        $db->exec($query);
+    }
+
+    function get_users() {
+        global $db;
+        $query = "SELECT * FROM accounts ORDER BY id";
+        $users = $db->query($query);
+        return $users;
+    }
     
     function get_user($email) {
         global $db;
