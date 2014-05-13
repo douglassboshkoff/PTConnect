@@ -18,16 +18,8 @@ function get_all_titles() {
     global $db;
     $query = "SELECT title FROM experiences";
     $result = $db->query($query);
-    $result = $result->fetch();
-    $toReturn = array();
+    return $result;
 
-    foreach($result as $r) {
-        $toReturn[] = $r;
-    }
-
-    return $toReturn;
-
-    //returns an array
 }
 //=======
 /**
@@ -44,8 +36,7 @@ function get_all_titles() {
     FROM experiences
     ORDER BY type';
     $result = $db->query($query);
-    $types = $result->fetch();
-    return $types;
+    return $result;
   }
 ?>
 
