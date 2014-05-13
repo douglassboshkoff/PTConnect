@@ -74,7 +74,7 @@ $name_array = "";
         margin-left: 10%;
     }
 
-    
+
 
     .heading{
         margin-left: 10%;
