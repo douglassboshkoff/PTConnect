@@ -5,12 +5,24 @@ include('../model/questions_db.php');
 include('../model/experiences_db.php');
 include('../model/database.php');
 $fields = new Register\fields();
+$experience = array(
+    'id'=>'1',
+    'type'=>'Other',
+    'title'=>'title',
+    'content'=>'content',
+    'accounts_id'=>'1'
+);
+$type= array();
+$type[0] = 'CS Competition';
+$type[1] = 'Internship';
+$type[2] = 'Other';
+
 
 $fields->addField('type','You must choose your type of experience.');
 $fields->addField('title','You must choose the title of your experience.');
 $fields->addField('other','Must choose a type.');
 
-$type = new Register\field('type','Must choose a type.');
+//$type = new Register\field('type','Must choose a type.');
 $title = new Register\field('title','You must choose a title for your experience.');
 $other = new Register\field('other');
 $validate = new Register\validate();
@@ -24,7 +36,7 @@ else
     $action='display';
 }
 
-$experiences = get_experiences(1);
+//$experiences = get_experiences(1);
 
 
 if($action === 'display')
@@ -228,14 +240,15 @@ echo $action;
 	<body>
 		<div id='table'>
 			<table>
-                <?php foreach($experiences as $experience) { ?>
+                <?php // foreach($experiences as $experience) { ?>
 				<tr>
 					<td><h1><?php echo $experience['title']; ?></h1></td>
 
 					<td>
-                        <form action="myexperiences.php" method="post" name="review">
+                        <form action="myexperiences.php" method="post">
                         <input type="submit" value="edit" name="submit"/>
                         <input type="hidden" value="edit" name="action"/>
+                        <input type="hidden" value="<?php echo $experience['id'] ?>" name="id"/>
                         </form>
                     </td>
 					<td>
@@ -245,7 +258,7 @@ echo $action;
                         </form>
 
 				</tr>
-                <?php } ?>
+                <?php // } ?>
 			</table>
 		</div>
 		<div id="add">
@@ -253,16 +266,16 @@ echo $action;
 			<form method="post" action="myexperiences.php">
 				<label>Type</label>
 				<select class="dropdown">
-					<option>CS Competition</option>
-					<option>Internship</option>
-					<option>Job</option>
-                    <option>Other</option>
+                <?php for($i = 0; $i < count($type); $i++) { ?>
+					<option <?php if($experience['type'] === $type[$i] ) { ?> selected <?php } ?>><?php echo $type[$i] ?>
+                   <?php } ?>
 				</select>
 				<br/>
 				<label style="margin-right: 25px">Title</label>
 				<select class="dropdown" id = "titleselect">
+                    <!-- for loop goes through all the types if the current option text equals the one from the selected then make it selected -->
 					<option>Miami of Ohio CS Competition</option>
-					<option>Google Internship</option>
+					<option selected>Google Internship</option>
 				    <option value = "1" >Other</option>
                 </select>
                 <div id = "titlediv">  <input type="text" id="titletextbox" />  </div>

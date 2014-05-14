@@ -4,6 +4,7 @@ function get_experiences($id) {
     global $db;
     $query = "SELECT * FROM experiences WHERE accounts_id = '$id'";
     $result = $db->query($query);
+    echo $result['accounts_id'];
     return $result;
 }
 
