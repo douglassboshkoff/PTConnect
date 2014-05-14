@@ -182,7 +182,11 @@ $action = $_POST['action'];
             #firstlabel{
                 padding-right: 26px;
             }
-
+            #table td input{
+                border:none;
+                background:none;
+                font-size: 14px;
+            }
 		</style>
 	</head>
 	<body id = "all">
@@ -208,7 +212,7 @@ $action = $_POST['action'];
                     <tr>
                         <td> <h1><?php  echo $college['name']; ?></h1></td>
                         <td>
-                            <form action="." method="post" name="editing">
+                            <form action="mycollege.php" method="post" name="editing">
                                 <input type="submit" value="edit" name="submit"/>
                                 <input type="hidden" value="edit" name="action"/>
                             </form>
