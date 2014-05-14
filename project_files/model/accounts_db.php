@@ -62,8 +62,7 @@ function get_grad_years() {
         FROM accounts
         ORDER BY pt_grad_year";
     $result = $db->query($query);
-    $years = $result->fetch();
-    return $years;
+    return $result;
 
     //the sql command works, however the phpcode might not.
 }
