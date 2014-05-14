@@ -14,8 +14,7 @@
    WHERE major_minor = 0
    ORDER BY name';
    $result = $db->query($query);
-   $majors = $result->fetch();
-   return $majors;
+   return $result;
  }
 
  function get_minors() {
