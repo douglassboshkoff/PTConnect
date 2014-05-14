@@ -8,7 +8,6 @@
 include "../model/accounts_db.php";
 include "../model/university_db.php";
 include "../model/concentration_db.php";
-//include "../model/experiences_db.php";
 include "../model/database.php";
 
 //test array
