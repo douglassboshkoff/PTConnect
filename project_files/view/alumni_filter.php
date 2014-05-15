@@ -8,6 +8,7 @@
 include "../model/accounts_db.php";
 include "../model/university_db.php";
 include "../model/concentration_db.php";
+include "../model/experiences_db.php";
 include "../model/database.php";
 
 //test array
@@ -21,8 +22,8 @@ $user_email = "Tom Ato";
 $grad_year_array = get_grad_years();
 $college_array = get_colleges();
 $major_array = get_majors();
-$experience_type_array = array("hello","world","how's","it","goin?");
-$experience_title_array = array("hello","world","how's","it","goin?");
+$experience_type_array = get_types();
+$experience_title_array = get_all_titles();
 
 $class_array = "";
 $name_array = "";
@@ -72,6 +73,8 @@ $name_array = "";
         width: 80%;
         margin-left: 10%;
     }
+
+
 
     .heading{
         margin-left: 10%;
@@ -177,42 +180,45 @@ $name_array = "";
     <h1 class="heading">Filters</h1>
 
     <div class="line"></div>
+    <form action="" method="action">
+        <p>PT Grad Year</p>
+        <select>
+            <?php foreach ($grad_year_array as $year) : ?>
+                <option value="<?php echo $year['pt_grad_year'] ?>"><?php echo $year['pt_grad_year'] ?></option>
+            <?php endforeach ; ?>
+        </select>
 
-    <p>PT Grad Year</p>
-    <select>
-        <?php foreach ($grad_year_array as $year) : ?>
-        <option value="<?php echo $year['pt_grad_year'] ?>"><?php echo $year['pt_grad_year'] ?></option>
-        <?php endforeach ; ?>
-    </select>
+        <p>College</p>
+        <select>
 
-    <p>College</p>
-    <select>
+            <?php foreach ($college_array as $college) : ?>
+                <option value="<?php echo $college['name'] ?>"><?php echo $college['name'] ?></option>
+            <?php endforeach ; ?>
+        </select>
 
-        <?php foreach ($college_array as $college) : ?>
-            <option value="<?php echo $college['name'] ?>"><?php echo $college['name'] ?></option>
-        <?php endforeach ; ?>
-    </select>
+        <p>Major</p>
+        <select>
+            <?php foreach ($major_array as $major) : ?>
+                <option value="<?php echo $major['name'] ?>"><?php echo $major['name'] ?></option>
+            <?php endforeach ; ?>
+        </select>
 
-    <p>Major</p>
-    <select>
-        <?php foreach ($major_array as $major) : ?>
-            <option value="<?php echo $major['name'] ?>"><?php echo $major['name'] ?></option>
-        <?php endforeach ; ?>
-    </select>
+        <p>Experience Type</p>
+        <select>
+            <?php foreach ($experience_type_array as $type) : ?>
+                <option name="type" value="<?php echo $type['type'] ?>"><?php echo $type['type'] ?></option>
+            <?php endforeach ; ?>
+        </select>
 
-    <p>Experience Type</p>
-    <select>
-        <?php foreach ($experience_type_array as $type) : ?>
-            <option value="<?php echo $type ?>"><?php echo $type ?></option>
-        <?php endforeach ; ?>
-    </select>
+        <p>Experience Title</p>
+        <select>
+            <?php foreach ($experience_title_array as $title) : ?>
+                <option name="title" value="<?php echo $title['title'] ?>"><?php echo $title['title'] ?></option>
+            <?php endforeach ; ?>
+        </select>
 
-    <p>Experience Title</p>
-    <select>
-        <?php foreach ($experience_title_array as $title) : ?>
-            <option value="<?php echo $title ?>"><?php echo $title ?></option>
-        <?php endforeach ; ?>
-    </select>
+        <input class="submit" type="submit" value="Search">
+    </form>
 
 </div>
 <div class="divider"></div>
