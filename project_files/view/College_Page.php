@@ -117,6 +117,11 @@ if($_GET['next'] == 1){
             margin-left: 1.5em;
 
         }
+
+        #college_pic{
+            height: 100%;
+        }
+
         #college_bio{
             float:right;
             width: 55%;
@@ -171,7 +176,7 @@ if($_GET['next'] == 1){
 <br/>
 <div id = "main1">
     <div id = "coll_pic">
-        <img src = "#" />
+        <img id="college_pic" src = "../resources/College.jpg" />
     </div>
     <div id = "college_bio">
         <p> This is the College Bio.</p>

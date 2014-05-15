@@ -92,7 +92,7 @@ $name_array = "";
         width: 90%;
         height: 100%;
         margin-left: 15em;
-        border-left: 1px black solid;
+        border-left: 2px black solid;
 
         /*width: 73%;
         padding-top: 3%;*/
