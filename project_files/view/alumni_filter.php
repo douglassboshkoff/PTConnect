@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: Danny
- * Date: 4/17/14
- * Time: 11:55 AM
- **/
 include "../model/accounts_db.php";
 include "../model/university_db.php";
 include "../model/concentration_db.php";
