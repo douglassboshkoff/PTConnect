@@ -1,107 +1,80 @@
 <?php
 
-    function add_user($fname, $lname, $email, $gradYear, $password) {
-        global $db;
-        $query = "INSERT INTO accounts( first_name, last_name, email, pt_grad_year, password)
+function add_user($fname, $lname, $email, $gradYear, $password) {
+    global $db;
+    $query = "INSERT INTO accounts( first_name, last_name, email, pt_grad_year, password)
          VALUES ('$fname', '$lname', '$email', '$gradYear', '$password')";
-         $db->exec($query);
-    }
+    $db->exec($query);
+}
 
-    function remove_user($id) {
-        global $db;
-        $query = "DELETE FROM accounts WHERE id = '$id'";
-        $db->exec($query);
-    }
+function remove_user($id) {
+    global $db;
+    $query = "DELETE FROM accounts WHERE id = '$id'";
+    $db->exec($query);
+}
 
-    function get_users() {
-        global $db;
-        $query = "SELECT * FROM accounts ORDER BY id";
-        $users = $db->query($query);
-        return $users;
-    }
-    
-    function get_user($email) {
-        global $db;
-        $query = "SELECT * FROM accounts WHERE email == '$email'";
-        $user = $db->query($query);
-        return $user;
-    }
-    
-    function get_user_by_id($id) {
-        global $db;
-        $query = "SELECT * FROM accounts WHERE email == '$id'";
-        $user = $db->query($query);
-        return $user;
-    }
-    
-    function validate_password($email, $password) {
-        global $db;
-        $query = "SELECT * FROM accounts WHERE email == '$email'";
-        $result = $db->query($query);
-        $user = $result->fetch();
-        $upass = $user['password'];
-        if($password == $upass) {
-            return true;
-        }
-        else {
-            return false;
-        }
-        //hope this workds
-    }
+function get_users() {
+    global $db;
+    $query = "SELECT * FROM accounts ORDER BY id";
+    $users = $db->query($query);
+    return $users;
+}
 
-    function get_bio($id) {
-        global $db;
-        $query = "SELECT bio FROM accounts WHERE id = '$id'";
-        $result = $db->query($query);
-        return $result->fetch();
+function get_user($email) {
+    global $db;
+    $query = "SELECT * FROM accounts WHERE email == '$email'";
+    $user = $db->query($query);
+    return $user;
+}
+
+function get_user_by_id($id) {
+    global $db;
+    $query = "SELECT * FROM accounts WHERE email == '$id'";
+    $user = $db->query($query);
+    return $user;
+}
+
+function validate_password($email, $password) {
+    global $db;
+    $query = "SELECT * FROM accounts WHERE email == '$email'";
+    $result = $db->query($query);
+    $user = $result->fetch();
+    $upass = $user['password'];
+    if($password == $upass) {
+        return true;
     }
-    
-   function get_grad_years() {
-        global $db;
-        $query = "SELECT DISTINCT pt_grad_year
+    else {
+        return false;
+    }
+    //hope this workds
+}
+
+function get_bio($id) {
+    global $db;
+    $query = "SELECT bio FROM accounts WHERE id = '$id'";
+    $result = $db->query($query);
+    return $result->fetch();
+}
+
+function get_grad_years() {
+    global $db;
+    $query = "SELECT DISTINCT pt_grad_year
         FROM accounts
         ORDER BY pt_grad_year";
-        $result = $db->query($query);
-        return $result;
+    $result = $db->query($query);
+    $years = $result->fetch();
+    return $years;
 
-        //the sql command works, however the phpcode might not.
-    }
-?>
-<!--
-<<<<<<< HEAD
+    //the sql command works, however the phpcode might not.
+}
 
-
-<<<<<<< HEAD
-=======
->>>>>>> 25bd958dcb74f4842f4b0e4099973078b328fc50
-
-    function get_name($id) {
-        global $db;
-        $query = "SELECT first_name
+function get_name($id) {
+    global $db;
+    $query = "SELECT first_name
         FROM accounts
         WHERE id = '$id'";
-        
-    }
-<<<<<<< HEAD
-    /**function get_users(){
-    global $db;
-    $query="SELECT * FROM accounts";
-    $result=$db->query($query);
-    return $result;
-    }**/
-=======
-//    function get_users(){
-//    global $db;
-//    $query="SELECT * FROM accounts";
-//    $result=$db->query($query);
-//    return $result;
-//    }
-/**
- * It says the above method is repeated - the one un-commented-out orders them by ID.
- * I kept this one commented out just in case we need to change the other method.
- */
->>>>>>> a65f1497b5fbb29dfa58c3a292552a11d7215768
 
+}
 
 function get_college_by_user($id) {
     global $db;
@@ -111,21 +84,19 @@ function get_college_by_user($id) {
     WHERE questions.accounts_id = '$id'";
     $result = $db->query($query);
     return $result;
-    }
-    
-    function get_names_by_filter($arryId) {
-        global $db;
-        $results = array();
-        $i = 0;
-        foreach($arryId as $id) {
-            $query = 'SELECT CONCAT(first_name, " ", last_name) as Name FROM accounts WHERE id = "$id"';
-            $name = $db->query($query);
-            $results[$i] = $name;
-            $i++;
-        }
-        return $results;
-        //I cannot check this function at this time, my phpstorm still does not work, this functions takes in an array of
-        // ids and returns and array of names. sorry if my syntax is wrong.
-    }
+}
 
-?>
+function get_names_by_filter($arryId) {
+    global $db;
+    $results = array();
+    $i = 0;
+    foreach($arryId as $id) {
+        $query = 'SELECT CONCAT(first_name, " ", last_name) as Name FROM accounts WHERE id = "$id"';
+        $name = $db->query($query);
+        $results[$i] = $name;
+        $i++;
+    }
+    return $results;
+    //I cannot check this function at this time, my phpstorm still does not work, this functions takes in an array of
+    // ids and returns and array of names. sorry if my syntax is wrong.
+}
