@@ -42,7 +42,13 @@ else if($action == 'login')
 {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    include('next_page.php');
+    if(validate_password($email, $password) == true){
+        include('main.php');
+    }
+    else {
+        include('homepage.php');
+        include('homepage_header.php');
+    }
 }
 else if($action == 'register')
 {
