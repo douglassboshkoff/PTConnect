@@ -4,16 +4,12 @@
     include "../model/university_db.php";
 
     //echo $user['id'];
+    echo "yoyur mokm";
     $colleges = get_college_by_user(1);
-    $colleges = array();
-    $colleges[0] = array();
-    $colleges[1] = array();
-    $college[2] = array();
-    $colleges[0]['name'] = "Purdue School of Two";
-    $colleges[1]['name'] = "Danny Institute";
-    $colleges[2]['name'] = "Douglass Acadamy";
-
-$action = $_POST['action'];
+foreach($colleges as $college){
+    echo $college;
+}
+    $action = $_POST['action'];
 
     if($action === 'edit')
     {
@@ -182,11 +178,7 @@ $action = $_POST['action'];
             #firstlabel{
                 padding-right: 26px;
             }
-            #table td input{
-                border:none;
-                background:none;
-                font-size: 14px;
-            }
+
 		</style>
 	</head>
 	<body id = "all">
@@ -210,19 +202,7 @@ $action = $_POST['action'];
                 foreach ($colleges as $college){
                     ?>
                     <tr>
-                        <td> <h1><?php  echo $college['name']; ?></h1></td>
-                        <td>
-                            <form action="mycollege.php" method="post" name="editing">
-                                <input type="submit" value="edit" name="submit"/>
-                                <input type="hidden" value="edit" name="action"/>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="mycollege.php" method="post" name="deleting">
-                                <input type="submit" value="delete" name="submit"/>
-                                <input type="hidden" value="delete" name="action"/>
-                            </form>
-                        </td>
+                    <option> <?php  echo $college['name']; ?></option>
                     </tr>
                 <?php
                 }
