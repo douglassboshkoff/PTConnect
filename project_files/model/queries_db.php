@@ -1,7 +1,7 @@
 <?php
    function add_query($question) {
        global $db;
-       $query = "INSERT INTO queries (question) VALUES ($question)";
+       $query = "INSERT INTO queries (question) VALUES ('$question')";
        $db->exec($query);
     }
 
