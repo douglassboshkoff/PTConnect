@@ -6,6 +6,9 @@
  * Time: 11:55 AM
  **/
 
+include "../model/university_db.php";
+include "../model/database.php";
+
 //test array
 $arr = array("goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
 
@@ -13,12 +16,30 @@ $arr = array("goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "hello
 $collegeID = "Tom Ato";
 $class = 2015;
 
+if(isset($_POST['name'])){
+    $nameIn = $_POST['name'];
+}
+else{
+    $nameIn = "";
+}
+if(isset($_POST['location'])){
+    $locationIn = $_POST['location'];
+}
+else{
+    $locationIn = "";
+}
+if(isset($_POST['type'])){
+    $typeIn = $_POST['type'];
+}
+else{
+    $typeIn = "";
+}
+
+
 //filters
-$filter1_array = array("hello","world","how's","it","goin?");
-$filter2_array = array("hello","world","how's","it","goin?");
-$filter3_array = array("hello","world","how's","it","goin?");
-$filter4_array = array("hello","world","how's","it","goin?");
-$filter5_array = array("hello","world","how's","it","goin?");
+$name_array = array("hello","world","how's","it","goin?");
+$location_array = array("hello","world","how's","it","goin?");
+$type_array = array("hello","world","how's","it","goin?");
 
 //
 $secondaryinfo_array = "";
@@ -207,40 +228,46 @@ $name_array = "";
 
     <div class="line"></div>
 
-    <p>1st Filter</p>
-    <select>
-        <?php foreach ($filter1_array as $year) : ?>
-            <option value="<?php echo $year ?>"><?php echo $year ?></option>
+    <form action="college_filter.php" method="post">
+    <p>Name</p>
+    <select name="name">
+        <?php if($nameIn != "") : ?>
+            <option value="<?php echo $nameIn?>"><?php echo $nameIn ?></option>
+        <?php endif ; ?>
+        <?php foreach ($name_array as $name) : ?>
+            <?php if($name['name'] != $nameIn) : ?>
+                <option value="<?php echo $name['name'] ?>"><?php echo $name['name'] ?></option>
+            <?php endif ; ?>
         <?php endforeach ; ?>
     </select>
 
-    <p>2nd Filter</p>
-    <select>
-        <?php foreach ($filter2_array as $college) : ?>
-            <option value="<?php echo $college ?>"><?php echo $college ?></option>
+    <p>Location</p>
+    <select name="location">
+        <?php if($locationIn != "") : ?>
+            <option value="<?php echo $locationIn?>"><?php echo $locationIn ?></option>
+        <?php endif ; ?>
+        <?php foreach ($location_array as $location) : ?>
+            <?php if($location['location'] != $locationIn) : ?>
+                <option value="<?php echo $location['location'] ?>"><?php echo $location['location'] ?></option>
+            <?php endif ; ?>
         <?php endforeach ; ?>
     </select>
 
-    <p>3rd Filter</p>
-    <select>
-        <?php foreach ($filter3_array as $major) : ?>
-            <option value="<?php echo $major ?>"><?php echo $major ?></option>
+    <p>Type</p>
+    <select name="type">
+        <?php if($typeIn != "") : ?>
+            <option value="<?php echo $typeIn?>"><?php echo $typeIn ?></option>
+        <?php endif ; ?>
+        <?php foreach ($type_array as $type) : ?>
+            <?php if($type['type'] != $typeIn) : ?>
+                <option value="<?php echo $type['type'] ?>"><?php echo $type['type'] ?></option>
+            <?php endif ; ?>
         <?php endforeach ; ?>
     </select>
 
-    <p>4th Filter</p>
-    <select>
-        <?php foreach ($filter4_array as $type) : ?>
-            <option value="<?php echo $type ?>"><?php echo $type ?></option>
-        <?php endforeach ; ?>
-    </select>
 
-    <p>5th Filter</p>
-    <select>
-        <?php foreach ($filter5_array as $title) : ?>
-            <option value="<?php echo $title ?>"><?php echo $title ?></option>
-        <?php endforeach ; ?>
-    </select>
+    <input class="submit" type="submit" value="Search">
+    </form>
 
 </div>
 
@@ -256,7 +283,7 @@ $name_array = "";
             <div class="results">
                 <div class="top">
                     <input class="propic" type="image" src="../resources/College.jpg" alt="Submit">
-                    <!--<img class="propic" src="../resources/BlankFace.jpg"> -->
+
                 </div>
                 <div class="bottom">
                     <div class="info">

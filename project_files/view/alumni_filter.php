@@ -233,7 +233,6 @@ $name_array = "";
 
         <p>Major</p>
         <select name="major">
-
             <?php if($majorIn != "") : ?>
                 <option value="<?php echo $majorIn?>"><?php echo $majorIn ?></option>
             <?php endif ; ?>
