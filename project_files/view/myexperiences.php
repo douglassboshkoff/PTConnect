@@ -30,7 +30,7 @@ else
 
 if($action === 'display')
 {
-    $experiences = get_experience(1);
+    $experience = get_specific_experience(1)->fetch();
 }
 else if($action === 'edit')
 {
