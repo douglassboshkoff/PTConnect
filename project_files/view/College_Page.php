@@ -9,15 +9,9 @@ if(isset($_POST["college_ID"])){
 
     $collegeID = $_POST["college_ID"];
 }
-$comment_arr = array();
 
 /** Will correspond with the questions held in $arr (if page is on question 2, these will be question 2 comments */
-$comment_arr[0] = "Comment 1";
-$comment_arr[1] = "Comment 2";
-$comment_arr[2] = "Comment 3";
-$comment_arr[3] = "Comment 4";
-$comment_arr[4] = "Comment 5";
-$comment_arr[5] = "Comment 6";
+
 
 
 /** $arr holds the values of the questions, $pageNum/$_GET[pageNum] will determine which question is used */
