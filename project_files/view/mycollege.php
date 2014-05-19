@@ -5,13 +5,7 @@
 
     //echo $user['id'];
     $colleges = get_college_by_user(1);
-    $colleges = array();
-    $colleges[0] = array();
-    $colleges[1] = array();
-    $college[2] = array();
-    $colleges[0]['name'] = "Purdue School of Two";
-    $colleges[1]['name'] = "Danny Institute";
-    $colleges[2]['name'] = "Douglass Acadamy";
+
 
 $action = $_POST['action'];
 

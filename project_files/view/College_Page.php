@@ -1,5 +1,5 @@
 <?php
-
+    include("../model/queries_db.php");
 // gets the collegeID from the college filter page
 
 $collegeID = "";
@@ -17,7 +17,6 @@ $comment_arr[3] = "Comment 4";
 $comment_arr[4] = "Comment 5";
 $comment_arr[5] = "Comment 6";
 
-
 /** $arr holds the values of the questions, $pageNum/$_GET[pageNum] will determine which question is used */
 $arr = array();
 $arr[0] = "test";
@@ -25,7 +24,7 @@ $arr[1] = "test1";
 $arr[2] = "test2";
 $arr[3] = "test3";
 $arr[4] = "test4";
-
+$arr = get_queries();
 /** Manages what question page the page is on (cycles through them using the q_next and q_prev divs */
 if(isset($_GET['pageNum'])){
     $pageNum = $_GET['pageNum'];
