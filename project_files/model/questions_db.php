@@ -8,6 +8,14 @@ function get_question($userID, $collegeID, $questionID) {
     return $response;
 }
 
+function get_questions($collegeID, $questionID) {
+    global $db;
+    $query = "SELECT * FROM questions
+	      WHERE question_id == '$questionID' AND university_id == '$collegeID'";
+    $response = $db->query($query);
+    return $response;
+}
+
 function add_question($question_id, $response, $university_id, $accounts_id) {
     global $db;
     $query = "INSERT INTO questions (question_id, response, university_id, accounts_id) VALUES ('$question_id','$response','$university_id','$accounts_id')";

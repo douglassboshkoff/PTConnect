@@ -21,7 +21,7 @@
         global $db;
         $query = "SELECT DISTINCT * FROM queries ORDER BY id";
         $ret = $db->query($query);
-        return $ret;
+        return $ret->fetchAll();
     }
 
     function get_query($id) {

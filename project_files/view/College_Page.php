@@ -1,5 +1,7 @@
 <?php
+    include("../model/database.php");
     include("../model/queries_db.php");
+    include("../model/questions_db.php");
 // gets the collegeID from the college filter page
 
 $collegeID = "";
@@ -17,14 +19,18 @@ $comment_arr[3] = "Comment 4";
 $comment_arr[4] = "Comment 5";
 $comment_arr[5] = "Comment 6";
 
+
 /** $arr holds the values of the questions, $pageNum/$_GET[pageNum] will determine which question is used */
-$arr = array();
-$arr[0] = "test";
-$arr[1] = "test1";
-$arr[2] = "test2";
-$arr[3] = "test3";
-$arr[4] = "test4";
+
 $arr = get_queries();
+
+$arr_queries = array();
+
+for($i = 0; $i < count($arr); $i++){
+    $arr_queries[$i] = $arr[$i];
+
+}
+
 /** Manages what question page the page is on (cycles through them using the q_next and q_prev divs */
 if(isset($_GET['pageNum'])){
     $pageNum = $_GET['pageNum'];
@@ -44,6 +50,7 @@ if($_GET['next'] == 1){
     }
 }
 }
+$comment_arr = get_questions($collegeID, $pageNum);
 ?>
 <html>
 <head>
@@ -190,7 +197,8 @@ if($_GET['next'] == 1){
         </div>
     </a>
     <div id = "question_display">
-        <?php echo $arr[$pageNum]; ?>
+
+        <?php echo $arr[$pageNum]['question']; ?>
     </div>
     <a href = "College_Page.php?next=1&pageNum=<?php echo $pageNum ?>">
         <div class = "nav" id = "next_q">
@@ -204,7 +212,7 @@ if($_GET['next'] == 1){
             <ul id="bullets">
                 <li id="active"><a href="#" id="current">Item one</a></li>
                 <?php for($i = 0; $i < count($comment_arr); $i++){?>
-                    <li><a href="#"><?php echo $comment_arr[$i];?> </a></li>
+                    <li><a href="#"><?php echo $comment_arr[$i]['response'];?> </a></li>
 
                 <?php } ?>
             </ul>
