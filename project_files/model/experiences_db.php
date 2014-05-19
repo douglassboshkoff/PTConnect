@@ -4,7 +4,13 @@ function get_experiences($id) {
     global $db;
     $query = "SELECT * FROM experiences WHERE accounts_id = '$id'";
     $result = $db->query($query);
-    echo $result['accounts_id'];
+    return $result;
+}
+//Made by Douglass
+function get_specific_experience($id) {
+global $db;
+$query = "SELECT * FROM experiences WHERE id = '$id'";
+$result = $db->query($query);
     return $result;
 }
 
@@ -22,14 +28,6 @@ function get_all_titles() {
     return $result;
 
 }
-//=======
-/**
- * Created by JetBrains PhpStorm.
- * User: Danny
- * Date: 4/28/14
- * Time: 1:32 PM
- * To change this template use File | Settings | File Templates.
- */
  
   function get_types() {
     global $db;
@@ -37,7 +35,7 @@ function get_all_titles() {
     FROM experiences
     ORDER BY type';
     $result = $db->query($query);
-    return $result;
+    return $result->fetchAll(PDO::FETCH_COLUMN,0);
   }
 ?>
 

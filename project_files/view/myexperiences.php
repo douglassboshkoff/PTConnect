@@ -5,18 +5,8 @@ include('../model/questions_db.php');
 include('../model/experiences_db.php');
 include('../model/database.php');
 $fields = new Register\fields();
-$experience = array(
-    'id'=>'1',
-    'type'=>'Other',
-    'title'=>'title',
-    'content'=>'content',
-    'accounts_id'=>'1'
-);
-$type= array();
-$type[0] = 'CS Competition';
-$type[1] = 'Internship';
-$type[2] = 'Other';
-
+$experiences = get_experiences(1);
+$type= get_types();
 
 $fields->addField('type','You must choose your type of experience.');
 $fields->addField('title','You must choose the title of your experience.');
@@ -36,12 +26,11 @@ else
     $action='display';
 }
 
-//$experiences = get_experiences(1);
 
 
 if($action === 'display')
 {
-    //$experiences = get_experiences(1);
+    $experiences = get_experience(1);
 }
 else if($action === 'edit')
 {
@@ -240,7 +229,7 @@ echo $action;
 	<body>
 		<div id='table'>
 			<table>
-                <?php // foreach($experiences as $experience) { ?>
+                <?php  foreach($experiences as $experience) { ?>
 				<tr>
 					<td><h1><?php echo $experience['title']; ?></h1></td>
 
@@ -258,7 +247,7 @@ echo $action;
                         </form>
 
 				</tr>
-                <?php // } ?>
+                <?php  } ?>
 			</table>
 		</div>
 		<div id="add">
@@ -266,9 +255,12 @@ echo $action;
 			<form method="post" action="myexperiences.php">
 				<label>Type</label>
 				<select class="dropdown">
-                <?php for($i = 0; $i < count($type); $i++) { ?>
-					<option <?php if($experience['type'] === $type[$i] ) { ?> selected <?php } ?>><?php echo $type[$i] ?>
-                   <?php } ?>
+                    <?php for($i = 0; $i < count($type); $i++) { ?>
+                        <?php if($action === 'edit') { ?>
+                            <option <?php if($experience['type'] === $type[$i] ) { ?> selected <?php } ?>><?php echo $type[$i] ?>
+                        <?php }else { ?> <option><?php echo $type[$i] ?> <?php } ?>
+                    <?php } ?>
+
 				</select>
 				<br/>
 				<label style="margin-right: 25px">Title</label>
