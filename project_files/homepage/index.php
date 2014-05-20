@@ -27,7 +27,7 @@ else if($action == 'mycollege')
      * let those colleges populate the table...
      */
     include('header.php');
-    include('mycollege.php');
+    include('../view/mycollege.php');
 }
 else if($action == 'delete_college_from_user')
 {
@@ -43,6 +43,7 @@ else if($action == 'login')
     $email = $_POST['email'];
     $password = $_POST['password'];
     if(validate_password($email, $password) == true){
+        include('header.php');
         include('main.php');
     }
     else {
