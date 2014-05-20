@@ -90,6 +90,8 @@ $arr_exp = array();
         </div>
         <div class = "sub">
             Colleges:
+            <br/>
+            <a href = "College_Page.php"> Hi </a>
         </div>
         <div class = "sub">
             Experiences: <br/>
