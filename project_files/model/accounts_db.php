@@ -22,31 +22,32 @@ function get_users() {
 
 function get_user($email) {
     global $db;
-    $query = "SELECT * FROM accounts WHERE email == '$email'";
+    $query = "SELECT * FROM accounts WHERE email = '$email'";
     $user = $db->query($query);
     return $user;
 }
 
 function get_user_by_id($id) {
     global $db;
-    $query = "SELECT * FROM accounts WHERE email == '$id'";
+    $query = "SELECT * FROM accounts WHERE id = '$id'";
     $user = $db->query($query);
     return $user;
 }
 
 function validate_password($email, $password) {
     global $db;
-    $query = "SELECT * FROM accounts WHERE email == '$email'";
+    $query = "SELECT * FROM accounts WHERE email = '$email'";
     $result = $db->query($query);
     $user = $result->fetch();
-    $upass = $user['password'];
-    if($password == $upass) {
+
+
+    $pass = $user['password'];
+    if($password == $pass) {
         return true;
     }
     else {
         return false;
     }
-    //hope this workds
 }
 
 function get_bio($id) {

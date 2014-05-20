@@ -46,8 +46,8 @@ else if($action == 'login')
         include('main.php');
     }
     else {
-        include('homepage.php');
         include('homepage_header.php');
+        include('homepage.php');
     }
 }
 else if($action == 'register')
