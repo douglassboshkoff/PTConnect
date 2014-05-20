@@ -105,7 +105,7 @@ function filter($university, $location, $major) {
     }
 
     if($major != null) {
-        $paramBuilder .= "AND WHERE name = '$major'' ";
+        $paramBuilder .= "AND WHERE name = '$major'";
     }
 
     $result = $db->query($query + $paramBuilder);
