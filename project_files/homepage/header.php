@@ -161,9 +161,9 @@
 <div id='tabs'>
     <ul>
         <li class='active'><a href='main.html'><span>Home</span></a></li>
-        <li><a href='mycollege.php'><span>My College</span></a></li>
+        <li><a href='../view/mycollege.php'><span>My College</span></a></li>
         <li><a href='#'><span>My Employer</span></a></li>
-        <li class='last'><a href='#'><span>My Profile</span></a></li>
+        <li><a href='../view/User_Profilepage.php'><span>My Profile</span></a></li>
     </ul>
 </div>
 </body>

@@ -8,9 +8,23 @@ function get_experiences($id) {
 }
 //Made by Douglass
 function get_specific_experience($id) {
-global $db;
-$query = "SELECT * FROM experiences WHERE id = '$id'";
-$result = $db->query($query);
+    global $db;
+    $query = "SELECT * FROM experiences WHERE id = '$id'";
+    $result = $db->query($query);
+    return $result;
+}
+//made by Douglass
+function delete_experience($id) {
+    global $db;
+    $query = "Delete FROM experiences WHERE id = '$id'";
+    $result = $db->exec($query);
+    return $result;
+}
+
+function add_experience($id) {
+    global $db;
+    $query = "Delete FROM experiences WHERE id = '$id'";
+    $result = $db->exec($query);
     return $result;
 }
 
@@ -28,14 +42,29 @@ function get_all_titles() {
     return $result;
 
 }
- 
-  function get_types() {
+
+function get_types() {
     global $db;
     $query = 'SELECT DISTINCT type
     FROM experiences
     ORDER BY type';
     $result = $db->query($query);
     return $result->fetchAll(PDO::FETCH_COLUMN,0);
-  }
+}
+
+function add_experience($id, $type, $title, $content, $accounts_id){
+    global $db;
+    $query = "INSERT INTO experiences (id, type, title, content, accounts_id)
+    VALUES ( '$id', '$type', '$title', '$content', '$accounts_id')";
+    $result = $db->query($query);
+    return $result;
+}
+
+function update_experience(){
+    global $db;
+    $query = "";
+    $result = $db->query($query);
+    return $result;
+}
 ?>
 

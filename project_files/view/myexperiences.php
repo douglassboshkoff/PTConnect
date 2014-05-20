@@ -5,7 +5,6 @@ include('../model/questions_db.php');
 include('../model/experiences_db.php');
 include('../model/database.php');
 $fields = new Register\fields();
-$experiences = get_experiences(1);
 $type= get_types();
 
 $fields->addField('type','You must choose your type of experience.');
@@ -27,27 +26,31 @@ else
 }
 
 
-
 if($action === 'display')
 {
-    $experience = get_specific_experience(1)->fetch();
+
 }
 else if($action === 'edit')
 {
-    //grab data from the userid.
+
 }
 else if($action === 'populate_edit')
 {
-    //populate the text boxes with edit data
+    $id = $_POST['id'];
+    $sp_experience = get_specific_experience($id)->fetch();
 }
 else if($action === 'add')
 {
-    //update the data for a user with the specified fields.
+
 }
 else if($action === 'delete')
 {
-    //delete the data
+    echo $_POST['id'];
+    $id = $_POST['id'];
+    delete_experience($id);
 }
+$experiences = get_experiences(1);
+echo $sp_experience['type']."\n";
 
 echo $action;
 ?>
@@ -235,14 +238,15 @@ echo $action;
 
 					<td>
                         <form action="myexperiences.php" method="post">
-                        <input type="submit" value="edit" name="submit"/>
-                        <input type="hidden" value="edit" name="action"/>
+                        <input type="hidden" value="populate_edit" name="action"/>
                         <input type="hidden" value="<?php echo $experience['id'] ?>" name="id"/>
+                        <input type="submit" value="edit" name="submit"/>
                         </form>
                     </td>
 					<td>
                         <form action="myexperiences.php" method="post">
                             <input type="submit" value="delete" name="submit"/>
+                            <input type="hidden" value="<?php echo $experience['id'] ?>" name="id"/>
                             <input type="hidden" value="delete" name="action"/>
                         </form>
 
@@ -254,13 +258,13 @@ echo $action;
 			<h1><?php if($action==='display') { echo "Add Experience";} else { echo "Edit Experience";} ?></h1>
 			<form method="post" action="myexperiences.php">
 				<label>Type</label>
-				<select class="dropdown">
+				<select class="dropdown" id="titleselect">
                     <?php for($i = 0; $i < count($type); $i++) { ?>
                         <?php if($action === 'edit') { ?>
-                            <option <?php if($experience['type'] === $type[$i] ) { ?> selected <?php } ?>><?php echo $type[$i] ?>
-                        <?php }else { ?> <option><?php echo $type[$i] ?> <?php } ?>
+                            <option <?php if($sp_experience['type'] === $type[$i] ) { ?> selected <?php } ?>><?php echo $type[$i] ?></option>
+                        <?php }else { ?> <option><?php echo $type[$i] ?> <?php } ?></option>
                     <?php } ?>
-
+                    <option value="1">Other</option>
 				</select>
 				<br/>
 				<label style="margin-right: 25px">Title</label>
