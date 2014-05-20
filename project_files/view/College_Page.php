@@ -8,6 +8,8 @@ $collegeID = "";
 if(isset($_POST["college_ID"])){
 
     $collegeID = $_POST["college_ID"];
+}else{
+    $collegeID = 1;
 }
 
 /** Will correspond with the questions held in $arr (if page is on question 2, these will be question 2 comments */
@@ -206,6 +208,7 @@ $comment_arr = get_questions($collegeID, $pageNum);
             <ul id="bullets">
                 <li id="active"><a href="#" id="current">Item one</a></li>
                 <?php for($i = 0; $i < count($comment_arr); $i++){?>
+                    <?php echo isset($comment_arr[$i]) .  "s"; ?>
                     <li><a href="#"><?php echo $comment_arr[$i]['response'];?> </a></li>
 
                 <?php } ?>
