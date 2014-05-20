@@ -35,6 +35,13 @@ function get_colleges() {
         return $request;
 }
 
+function get_college_locations(){
+    global $db;
+    $query = "Select Distinct location from universities order by location";
+    $request = $db->query($query);
+    return $request;
+}
+
 function update_colleges($id, $name, $location, $image_link) {
     global $db;
     $query = "UPDATE universities SET name = '$name', location = '$location', image_link = '$image_link'";

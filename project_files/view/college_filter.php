@@ -37,13 +37,13 @@ else{
 
 
 //filters
-$name_array = array("hello","world","how's","it","goin?");
-$location_array = array("hello","world","how's","it","goin?");
+$name_array = get_colleges();
+$location_array = get_college_locations();
 $type_array = array("hello","world","how's","it","goin?");
 
 //
-$secondaryinfo_array = "";
-$name_array = "";
+$secondary_info_array = "";
+$secondary_name_array = "";
 ?>
 
 <html>
