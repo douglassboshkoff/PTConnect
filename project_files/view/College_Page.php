@@ -207,11 +207,11 @@ $comment_arr = get_questions($collegeID, $pageNum);
         <div id="clip">
             <ul id="bullets">
                 <li id="active"><a href="#" id="current">Item one</a></li>
-                <?php for($i = 0; $i < count($comment_arr); $i++){?>
-                    <?php echo isset($comment_arr[$i]) .  "s"; ?>
-                    <li><a href="#"><?php echo $comment_arr[$i]['response'];?> </a></li>
+                <?php foreach($comment_arr as $comment){ ?>
+                    <li><a href = "#"><?php echo $comment['response'];?></a></li>
+              <?php  } ?>
 
-                <?php } ?>
+
             </ul>
         </div>
     </div>

@@ -11,7 +11,7 @@ function get_question($userID, $collegeID, $questionID) {
 function get_questions($collegeID, $questionID) {
     global $db;
     $query = "SELECT * FROM questions
-	      WHERE question_id == '$questionID' AND university_id == '$collegeID'";
+	      WHERE question_id = '$questionID' AND university_id = '$collegeID'";
     $response = $db->query($query);
     return $response;
 }
