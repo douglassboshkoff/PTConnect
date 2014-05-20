@@ -13,6 +13,20 @@ $query = "SELECT * FROM experiences WHERE id = '$id'";
 $result = $db->query($query);
     return $result;
 }
+//made by Douglass
+function delete_experience($id) {
+    global $db;
+    $query = "Delete FROM experiences WHERE id = '$id'";
+    $result = $db->exec($query);
+    return $result;
+}
+
+function add_experience($id) {
+    global $db;
+    $query = "Delete FROM experiences WHERE id = '$id'";
+    $result = $db->exec($query);
+    return $result;
+}
 
 function get_content($id) {
     global $db;
