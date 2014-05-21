@@ -1,4 +1,8 @@
 <?php
+    include("../model/database.php");
+    include("../model/university_db.php");
+
+
 /**
  * Created by JetBrains PhpStorm.
  * User: Adam
@@ -7,12 +11,13 @@
  * To change this template use File | Settings | File Templates.
  */
 $cur_pic = "../test_material/bullets_picture/Bullet_Arrow_R.png";
-
 //gets userID from alum filter
-$userID = "";
+$userID = 1;
 if(isset($_POST["userID"])){
     $userID = $_POST["userID"];
 }
+$g_colleges = get_college($userID);
+
 
 $arr_exp = array();
 
@@ -90,8 +95,10 @@ $arr_exp = array();
         </div>
         <div class = "sub">
             Colleges:
+            <?php foreach($g_colleges as $g_college){ ?>
             <br/>
-            <a href = "College_Page.php"> Hi </a>
+            <a href = "College_Page.php?university_id=<?php echo $g_college['university_id'] ?>"> <?php echo get_college_name($g_college['university_id'])->fetch()['name']; ?> </a>
+            <?php } ?>
         </div>
         <div class = "sub">
             Experiences: <br/>

@@ -2,12 +2,15 @@
     include("../model/database.php");
     include("../model/queries_db.php");
     include("../model/questions_db.php");
+    include("../model/university_db.php");
 // gets the collegeID from the college filter page
 
 $collegeID = "";
 if(isset($_POST["college_ID"])){
 
     $collegeID = $_POST["college_ID"];
+}else if(isset($_GET['university_id'])){
+    $collegeID = $_GET['university_id'];
 }else{
     $collegeID = 1;
 }
@@ -173,7 +176,7 @@ $comment_arr = get_questions($collegeID, $pageNum);
 </head>
 <body>
 <div id = "college_name">
-    PURDUE UNIVERSITY
+    <?php echo get_college_name($collegeID)->fetch()['name']; ?>
 </div>
 <br/>
 <div id = "main1">

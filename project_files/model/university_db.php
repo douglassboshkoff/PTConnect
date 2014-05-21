@@ -20,11 +20,17 @@ function remove_college($id) {
 
 function get_college($userID) {
     global $db;
-    $query = "SELECT university_id FROM questions WHERE account_id = '$userID'";
+    $query = "SELECT distinct university_id FROM questions WHERE accounts_id = '$userID'";
     $college = $db->query($query);
     return $college;
 }
 
+function get_college_name($collegeID){
+    global$db;
+    $query = "Select * from universities where id = '$collegeID'";
+    $name = $db->query($query);
+    return $name;
+}
 
 function get_colleges() {
         global $db;
