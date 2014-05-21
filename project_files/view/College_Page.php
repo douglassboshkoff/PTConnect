@@ -156,14 +156,18 @@ $comment_arr = get_questions($collegeID, $pageNum);
             margin: 0;
         }
         li{
-            background: url("../resources/BlankFace.jpg") no-repeat left top;
             width: 4em;
             height: 4em;
             padding-left: 5em;
             padding-top: 1em;
 
         }
-
+        #bullets:img{
+            display: inline-block;
+        }
+        #bullets:li{
+            display: inline-block
+        }
         ul{
 
         }
@@ -209,9 +213,12 @@ $comment_arr = get_questions($collegeID, $pageNum);
     <div id = "post_bar">
         <div id="clip">
             <ul id="bullets">
+
+                <img src = "../resources/BlankFace.jpg"/>
                 <li id="active"><a href="#" id="current">Item one</a></li>
                 <?php foreach($comment_arr as $comment){ ?>
-                    <li><a href = "#"><?php echo $comment['response'];?></a></li>
+                    <img src = "../resources/BlankFace.jpg"/>
+                    <li><?php echo $comment['response'];?></li>
               <?php  } ?>
 
 
