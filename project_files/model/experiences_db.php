@@ -48,7 +48,7 @@ function get_types() {
 //thanks
 function add_experience($id, $type, $title, $content, $accounts_id){
     global $db;
-    $query = "INSERT INTO experiences (id, type, title, content, accounts_id)
+    $query = "INSERT INTO experiences (type, title, content, accounts_id)
     VALUES ( '$id', '$type', '$title', '$content', '$accounts_id')";
     $result = $db->query($query);
     return $result;
@@ -58,7 +58,7 @@ function add_experience($id, $type, $title, $content, $accounts_id){
 function update_experience($id, $type, $title, $content, $accounts_id){
     global $db;
     $query = "UPDATE experiences
-    SET id='$id', type='$type', title='$title', content='$content', accounts_id ='$accounts_id'
+    SET type='$type', title='$title', content='$content', accounts_id ='$accounts_id'
     WHERE id='$id'";
     $result = $db->query($query);
     return $result;

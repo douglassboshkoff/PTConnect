@@ -26,13 +26,15 @@ else
 }
 
 
-if($action === 'display')
+if($action === 'edit')
 {
-
-}
-else if($action === 'edit')
-{
-
+    //nonfunctional
+    echo "hello";
+    $id = $_POST['id'];
+    $content = $_POST['content'];
+    $type = $_POST['type'];
+    $title = $_POST['title'];
+    update_experience($id, $type, $title, $content, 1);
 }
 else if($action === 'populate_edit')
 {
@@ -41,7 +43,11 @@ else if($action === 'populate_edit')
 }
 else if($action === 'add')
 {
-
+    $id = $_POST['id'];
+    $content = $_POST['content'];
+    $type = $_POST['type'];
+    $title = $_POST['title'];
+    add_experience($id, $type, $title, $content, 1);
 }
 else if($action === 'delete')
 {
@@ -256,7 +262,7 @@ echo $action;
 			<h1><?php if($action==='display') { echo "Add Experience";} else { echo "Edit Experience";} ?></h1>
 			<form method="post" action="myexperiences.php">
 				<label>Type</label>
-				<select class="dropdown" id="titleselect">
+				<select class="dropdown" id="titleselect" name="type">
                     <?php for($i = 0; $i < count($type); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
                             <option <?php if($sp_experience['type'] === $type[$i] ) { ?> selected <?php } ?>><?php echo $type[$i] ?></option>
@@ -266,7 +272,7 @@ echo $action;
 				</select>
 				<br/>
 				<label style="margin-right: 25px">Title</label>
-				<select class="dropdown" id = "titleselect">
+				<select class="dropdown" id = "titleselect" name="title">
                     <!-- for loop goes through all the types if the current option text equals the one from the selected then make it selected -->
 					<option>Miami of Ohio CS Competition</option>
 					<option selected>Google Internship</option>
@@ -278,7 +284,7 @@ echo $action;
                 <textarea class="other_box" hidden="hidden"></textarea>
 				<br/>
 				<h2>Describe your experience</h2>
-				<textarea class="questions" rows="4" ><?php if($action==='populate_edit') { echo $sp_experience['content']; } ?></textarea>
+				<textarea class="questions" rows="4" name="content" ><?php if($action==='populate_edit') { echo $sp_experience['content']; } ?></textarea>
                 <input type="submit" id="addButton" value="submit"/>
                 <input type="hidden" name="action" value="<?php
                 if($action === 'display')
@@ -287,7 +293,11 @@ echo $action;
                 }
                 else{
                     $action='edit';
-                }?>">
+                }
+                ?>">
+                <?php if($action==='populate_edit') { ?>
+                    <input type="hidden" name="id" value="<?php echo $sp_experience['id'] ?>"
+                <?php } ?>
 			</form>
 		</div>
 	</body>
