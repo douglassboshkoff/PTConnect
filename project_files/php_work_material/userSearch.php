@@ -109,38 +109,38 @@
 		</div>
 		<div id="content">
 			<div id="user">
-				<a href="profile.html"><img src="profile.png"/></a>
-				<a href="profile.html"><h2>Alex Gottwald</h2></a>
+				<a href="profile.php"><img src="profile.png"/></a>
+				<a href="profile.php"><h2>Alex Gottwald</h2></a>
 				<h3>PT 2015</h3>
 			</div>
 			<div id="user">
-				<a href="profile.html"><img src="profile.png"/></a>
-				<a href="profile.html"><h2>Alex Gottwald</h2></a>
+				<a href="profile.php"><img src="profile.png"/></a>
+				<a href="profile.php"><h2>Alex Gottwald</h2></a>
 				<h3>PT 2015</h3>
 			</div>
 			<div id="user">
-				<a href="profile.html"><img src="profile.png"/></a>
-				<a href="profile.html"><h2>Alex Gottwald</h2></a>
+				<a href="profile.php"><img src="profile.png"/></a>
+				<a href="profile.php"><h2>Alex Gottwald</h2></a>
 				<h3>PT 2015</h3>
 			</div>
 			<div id="user">
-				<a href="profile.html"><img src="profile.png"/></a>
-				<a href="profile.html"><h2>Alex Gottwald</h2></a>
+				<a href="profile.php"><img src="profile.png"/></a>
+				<a href="profile.php"><h2>Alex Gottwald</h2></a>
 				<h3>PT 2015</h3>
 			</div>
 			<div id="user">
-				<a href="profile.html"><img src="profile.png"/></a>
-				<a href="profile.html"><h2>Alex Gottwald</h2></a>
+				<a href="profile.php"><img src="profile.png"/></a>
+				<a href="profile.php"><h2>Alex Gottwald</h2></a>
 				<h3>PT 2015</h3>
 			</div>
 			<div id="user">
-				<a href="profile.html"><img src="profile.png"/></a>
-				<a href="profile.html"><h2>Alex Gottwald</h2></a>
+				<a href="profile.php"><img src="profile.png"/></a>
+				<a href="profile.php"><h2>Alex Gottwald</h2></a>
 				<h3>PT 2015</h3>
 			</div>
 			<div id="user">
-				<a href="profile.html"><img src="profile.png"/></a>
-				<a href="profile.html"><h2>Alex Gottwald</h2></a>
+				<a href="profile.php"><img src="profile.png"/></a>
+				<a href="profile.php"><h2>Alex Gottwald</h2></a>
 				<h3>PT 2015</h3>
 			</div>
 		</div>
