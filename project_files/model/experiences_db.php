@@ -21,13 +21,6 @@ function delete_experience($id) {
     return $result;
 }
 
-function add_experience($id) {
-    global $db;
-    $query = "Delete FROM experiences WHERE id = '$id'";
-    $result = $db->exec($query);
-    return $result;
-}
-
 function get_content($id) {
     global $db;
     $query = "SELECT content FROM experiences WHERE accounts_id = '$id'";

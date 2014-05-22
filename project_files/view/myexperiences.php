@@ -50,8 +50,6 @@ else if($action === 'delete')
     delete_experience($id);
 }
 $experiences = get_experiences(1);
-echo $sp_experience['type']."\n";
-
 echo $action;
 ?>
 <!DOCTYPE html>
@@ -199,7 +197,7 @@ echo $action;
 				background: red;
 				color: white;
 				border: 0;
-				width: 50px;
+				width: 60px;
 				font-size: 16px;
 				font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
 				float: right;
@@ -260,7 +258,7 @@ echo $action;
 				<label>Type</label>
 				<select class="dropdown" id="titleselect">
                     <?php for($i = 0; $i < count($type); $i++) { ?>
-                        <?php if($action === 'edit') { ?>
+                        <?php if($action === 'populate_edit') { ?>
                             <option <?php if($sp_experience['type'] === $type[$i] ) { ?> selected <?php } ?>><?php echo $type[$i] ?></option>
                         <?php }else { ?> <option><?php echo $type[$i] ?> <?php } ?></option>
                     <?php } ?>
@@ -280,7 +278,8 @@ echo $action;
                 <textarea class="other_box" hidden="hidden"></textarea>
 				<br/>
 				<h2>Describe your experience</h2>
-				<textarea class="questions" rows="4" ></textarea>
+				<textarea class="questions" rows="4" ><?php if($action==='populate_edit') { echo $sp_experience['content']; } ?></textarea>
+                <input type="submit" id="addButton" value="submit"/>
                 <input type="hidden" name="action" value="<?php
                 if($action === 'display')
                 {
@@ -289,7 +288,6 @@ echo $action;
                 else{
                     $action='edit';
                 }?>">
-                <input type="submit" id="addButton" value="Add">
 			</form>
 		</div>
 	</body>
