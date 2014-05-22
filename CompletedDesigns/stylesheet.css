@@ -125,10 +125,11 @@ body, html {
 
 #footer {
 	display: block;
-	position: absolute;
+	position: relative;
 	bottom: 0;
 	width: 100%;
-	margin: 70px auto 0px auto;
+	margin-top: -70px; /* negative value of footer height */
+	height: 70px;
 	padding: 0;
 	background: #000000;
 	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
@@ -141,6 +142,13 @@ body, html {
 	float: right;
 	padding-right: 10px;
 }
+#wrapper1 {
+	min-height: 100%;
+	}
+#wrapper2 {
+	overflow:auto;
+	padding-bottom: 70px;
+	}  /* must be same height as the footer */
 
 /**
 	Index Page Styles
