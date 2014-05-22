@@ -4,8 +4,6 @@
     include "../model/university_db.php";
 
     //echo $user['id'];
-    $colleges = get_college_by_user(1);
-
 
 $action = $_POST['action'];
 
@@ -204,7 +202,7 @@ $action = $_POST['action'];
                 foreach ($colleges as $college){
                     ?>
                     <tr>
-                        <td> <h1><?php  echo $college['name']; ?></h1></td>
+                        <td> <h1><?php echo $college['name']; ?></h1></td>
                         <td>
                             <form action="mycollege.php" method="post" name="editing">
                                 <input type="submit" value="edit" name="submit"/>
@@ -221,14 +219,13 @@ $action = $_POST['action'];
                 <?php
                 }
                 ?>
+                <?php foreach($colleges as $college){?>
 				<tr>
-					<td><h1><php echo $colleges['name']?></h1></td>
-<!--NOTE: MAKE THIS INTO A FOR-LOOP TO GO THROUGH EVERY INDEX AND
-MAKE EACH INDEX INTO A ROW OF THE TABLE-->
+					<td><h1><?php echo $college['name']?></h1></td>
 					<td><a href="http://google.com">edit</a></td>
 					<td><a href="http://google.com">delete</a></td>
-
 				</tr>
+                <?php }?>
 			</table>
 		</div>
 
