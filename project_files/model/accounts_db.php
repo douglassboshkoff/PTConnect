@@ -86,17 +86,30 @@ function get_college_by_user($id) {
     return $result;
 }
 
-function get_names_by_filter($arryId) {
+function filter($university, $location, $major) {
+    //Initial Database Fetch
     global $db;
-    $results = array();
-    $i = 0;
-    foreach($arryId as $id) {
-        $query = 'SELECT CONCAT(first_name, " ", last_name) as Name FROM accounts WHERE id = "$id"';
-        $name = $db->query($query);
-        $results[$i] = $name;
-        $i++;
+    $query = "SELECT * FROM accounts LEFT JOIN questions ON accounts.id = questions.accounts_id LEFT JOIN concentration ON accounts.id = concentration.accounts_id";
+
+    //Refined Filtration
+    $paramBuilder = "";
+    if($university != null) {
+        $query = "SELECT id FROM universities WHERE name='$university'"; //UNIVERSITY NAME IN PARAM; NOT ID!
+        $university_id = $db->query($query);
+        $university_id = $university_id->fetch();
+        $paramBuilder .= "WHERE university_id = '$university_id' ";
     }
-    return $results;
-    //I cannot check this function at this time, my phpstorm still does not work, this functions takes in an array of
-    // ids and returns and array of names. sorry if my syntax is wrong.
+
+    if($location != null) {
+       $paramBuilder .= "AND WHERE location = '$location' ";
+    }
+
+    if($major != null) {
+        $paramBuilder .= "AND WHERE name = '$major'";
+    }
+
+    $result = $db->query($query + $paramBuilder);
+    $result = $result->fetch();
+
+    return $result;
 }
