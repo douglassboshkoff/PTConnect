@@ -2,6 +2,11 @@
 <?php
 require('../model/database.php');
 require('../model/accounts_db.php');
+require('../model/concentration_db.php');
+require('../model/experiences_db.php');
+require('../model/queries_db.php');
+require('../model/questions_db.php');
+require('../model/university_db.php');
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
@@ -26,6 +31,7 @@ else if($action == 'mycollege')
      * loop through array
      * let those colleges populate the table...
      */
+    $colleges = get_colleges();
     include('header.php');
     include('../view/mycollege.php');
 }
@@ -35,7 +41,6 @@ else if($action == 'delete_college_from_user')
      * we have the user...
      * take the college name...
      * delete it from the user himself...
-     * but be careful to not make it delete the actual college...
      */
 }
 else if($action == 'login')
@@ -80,6 +85,18 @@ else if($action == 'continue_as_guest')
 else if($action=='college_filter')
 {
     include('../view/college_filter.php');
+}
+else if($action=='add_response')
+{
+
+}
+else if($action=='edit_college')
+{
+
+}
+else if($action=='delete_college')
+{
+
 }
 else if($action=='alumni_filter')
 {

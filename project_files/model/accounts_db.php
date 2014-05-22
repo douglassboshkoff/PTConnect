@@ -40,7 +40,6 @@ function validate_password($email, $password) {
     $result = $db->query($query);
     $user = $result->fetch();
 
-
     $pass = $user['password'];
     if($password == $pass) {
         return true;

@@ -164,6 +164,7 @@
         <li><a href='../view/mycollege.php'><span>My College</span></a></li>
         <li><a href='#'><span>My Employer</span></a></li>
         <li><a href='../view/User_Profilepage.php'><span>My Profile</span></a></li>
+
     </ul>
 </div>
 </body>

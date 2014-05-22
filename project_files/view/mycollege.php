@@ -222,15 +222,12 @@ $action = $_POST['action'];
                 }
                 ?>
 				<tr>
-					<td><h1>Purdue University</h1></td>
+					<td><h1><php echo $colleges['name']?></h1></td>
+<!--NOTE: MAKE THIS INTO A FOR-LOOP TO GO THROUGH EVERY INDEX AND
+MAKE EACH INDEX INTO A ROW OF THE TABLE-->
 					<td><a href="http://google.com">edit</a></td>
 					<td><a href="http://google.com">delete</a></td>
 
-				</tr>
-				<tr>
-					<td><h1>Harvard University</h1></td>
-					<td><a href="http://google.com">edit</a></td>
-					<td><a href="http://google.com">delete</a></td>
 				</tr>
 			</table>
 		</div>
