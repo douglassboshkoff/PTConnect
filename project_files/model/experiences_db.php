@@ -55,6 +55,7 @@ function get_types() {
 }
 
 //danny took your job
+//thanks
 function add_experience($id, $type, $title, $content, $accounts_id){
     global $db;
     $query = "INSERT INTO experiences (id, type, title, content, accounts_id)
@@ -63,6 +64,7 @@ function add_experience($id, $type, $title, $content, $accounts_id){
     return $result;
 }
 //danny took your job
+//thanks
 function update_experience($id, $type, $title, $content, $accounts_id){
     global $db;
     $query = "UPDATE experiences
