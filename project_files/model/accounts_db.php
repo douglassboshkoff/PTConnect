@@ -69,10 +69,11 @@ function get_grad_years() {
 
 function get_name($id) {
     global $db;
-    $query = "SELECT first_name
+    $query = "SELECT *
         FROM accounts
         WHERE id = '$id'";
-
+    $result = $db->query($query);
+    return $result->fetch();
 }
 
 function get_college_by_user($id) {
