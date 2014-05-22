@@ -1,0 +1,812 @@
+/**
+	Common Styles
+**/
+
+body, html {
+	min-width: 700px;
+	max-width: 1000px;
+	margin: 0 auto;
+	height:100%;
+}
+#top {
+	box-shadow: 0px 5px 5px #888888;
+}
+.button {
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 16px;
+	margin: 10px auto 0px auto;
+	float: center;
+	display: block;
+	-webkit-appearance: none;
+	border-radius: 0;
+	background: transparent;
+	background: red;
+	color: white;
+	border: 0;
+	box-shadow: 0px 2px 2px #888888;
+}
+.button:active {
+	position: relative;
+	top: 1px;
+	box-shadow: inset 0 0 1px 1px #888888;
+}
+#create {
+	float: right;
+}
+#white {
+	color: white;
+}
+#red {
+	color: red;
+}
+
+/**
+	Header Styles
+**/
+
+
+#navTop {
+	background: #000000;
+}
+#navTop ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: block;
+  font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+  display: table;
+  clear: both;
+}
+#navTop li {
+  display: block;
+  float: left;
+  font-size: 32px;
+  padding: 15px 0px 10px 15px;
+}
+#navTop img {
+	display: block;
+	float: right;
+	width: 30px;
+	height: 42px;
+	padding: 10px 15px 5px 0px;
+}
+#navTop a {
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+	color: red;
+	float: right;
+	font-size: 10px;
+	padding: 25px 17px 5px 0px;
+	background: black;
+}
+#navTop h1 {
+	color: red;
+}
+#tabs {
+	box-shadow: 0px 5px 5px #888888;
+}
+#tabs ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: block;
+  background: #000000;
+  font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+  display: table;
+  clear: both;
+}
+#tabs li {
+  display: block;
+  float: left;
+  margin: 0;
+  width: calc(25% - 2px);
+  border: 1px solid white;
+}
+#tabs li a {
+  display: block;
+  float: center;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 5px 0px 5px 0px;
+}
+#tabs li a:hover {
+  color: red;
+}
+#tabs li.active a {
+  color: red;
+}
+
+/**
+	Footer Styles
+**/
+
+#footer {
+	display: block;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	margin-top: -70px; /* negative value of footer height */
+	height: 70px;
+	padding: 0;
+	background: #000000;
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+	box-shadow: 0px 5px 5px #888888;
+}
+#footer h1 {
+	font-size: 14px;
+	color: white;
+	font-weight: normal;
+	float: right;
+	padding-right: 10px;
+}
+#wrapper1 {
+	min-height: 100%;
+	}
+#wrapper2 {
+	overflow:auto;
+	padding-bottom: 70px;
+	}  /* must be same height as the footer */
+
+/**
+	Index Page Styles
+**/
+
+#top ul {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	display: block;
+	background: #000000;
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+	display: table;
+	clear: both;
+}
+#top li {
+	display: block;
+	float: left;
+	font-size: 32px;
+	padding: 15px 0px 10px 15px;
+}
+#top img {
+	display: block;
+	float: right;
+	width: 30px;
+	height: 42px;
+	padding: 10px 15px 5px 0px;
+}
+#gradyear {
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+	background: transparent;
+	width: 100%;
+	padding: 4px;
+	font-size: 16px;
+	line-height: 1;
+	border: 0;
+	border-radius: 0;
+	-webkit-appearance: none;
+	background: url("http://cdn.bavotasan.com/wp-content/uploads/2011/05/down_arrow_select.jpg") no-repeat right white;
+	border: 1px solid #ccc;
+	box-shadow: inset 1px 1px 0px 0px #dddddd;
+}
+#gradyear option {
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+}
+#login {
+	float: right;
+	padding: 20px 20px 20px 0px;
+}
+#login input[type="text"], #login input[type="password"] {
+	font-size: 16px;
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+	width: 150px;
+}
+#loginButton {
+	-webkit-appearance: none;
+	border-radius: 0;
+	background: transparent;
+	background: red;
+	color: white;
+	border: 0;
+	width: 50px;
+	font-size: 16px;
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+}
+#loginButton:active {
+	position: relative;
+	top: 1px;
+	box-shadow: inset 0 0 1px 1px #888888;
+}
+#guestSide, #ptcsSide {
+	width: 35%;
+	border: 1px solid black;
+	background: black;
+	padding: 20px 0px 20px 0px;
+}
+#guestSide {
+	float: left;
+	margin: 70px 0px 0px 10%;
+}
+#ptcsSide {
+	float: right;
+	margin: 70px 10% 0px 0px;
+}
+#guestSide h1, #ptcsSide h1 {
+	font-size: 16px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: normal;
+	text-align: center;
+	color: white;
+}
+#guestLogin, #ptcsCreate {
+	width: 35%;
+	border: 1px solid black;
+	background: white;
+	padding: 0px 0px 20px 0px;
+	height: 220px;
+	margin-bottom: 70px;
+	box-shadow: 0px 5px 5px #888888;
+}
+#guestLogin {
+	float: left;
+	margin-left: 10%;
+}
+#ptcsCreate {
+	float: right;
+	margin-right: 10%;
+}
+#guestLogin p {
+	padding: 5px 10px 5px 10px;
+	font-size: 16px;
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+}
+#ptcsCreate form {
+	padding: 15px 15px 5px 15px;
+}
+#ptcsCreate form input {
+	font-size: 16px;
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+}
+#fname {
+	width: 44%;
+	float: left;
+}
+#lname {
+	width: 44%;
+	float: right;
+}
+#email, #password, #verification, #gradyear {
+	width: 98%;
+	margin-top: 10px;
+}
+
+/**
+	Main Page Styles
+**/
+
+#userSearchIcon, #collegeSearchIcon {
+	margin-top: 40px;
+	width: 30%;
+	border: 1px solid black;
+	background: white;
+	padding: 0px 0px 20px 0px;
+	height: 180px;
+}
+#userSearchIcon {
+	float: left;
+	margin-left: 13%;
+}
+#collegeSearchIcon {
+	float: right;
+	margin-right: 13%;
+}
+#userSearchIcon img {
+	height: calc(100%);
+	display: block;
+	margin: 10px auto 0 auto;
+}
+#collegeSearchIcon img {
+	width: calc(100%);
+	max-width: 300px;
+	display: block;
+	margin: 20px auto 20px auto;
+}
+#userSearchDescription, #collegeSearchDescription {
+	width: 30%;
+	border: 1px solid black;
+	background: black;
+	padding: 0px 0px 0px 0px;
+	height: 200px;
+	font-size: 16px;
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+	color: white;
+	box-shadow: 0px 5px 5px #888888;
+}
+#userSearchDescription:hover, #collegeSearchDescription:hover {
+	height: 205px;
+}
+#userSearchDescription:hover h1, #collegeSearchDescription:hover h1 {
+	color: red;
+}
+#userSearchDescription {
+	float: left;
+	margin-left: 13%;
+}
+#collegeSearchDescription {
+	float: right;
+	margin-right: 13%;
+}
+#userSearchDescription h1, #collegeSearchDescription h1 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: normal;
+	padding: 0px 10px 0px 10px;
+}
+#userSearchDescription a, #collegeSearchDescription a {
+	text-decoration: none;
+	color: white;
+}
+#userSearchDescription a:hover, #collegeSearchDescription a:hover {
+	text-decoration: none;
+	color: red;
+}
+#userSearchDescription p, #collegeSearchDescription p {
+	padding: 0px 15px 0px 15px;
+}
+
+/**
+	Recover Page Styles
+**/
+
+#recoverText {
+	border: 1px solid black;
+	background: black;
+	padding: 20px 0px 20px 0px;
+	height: 50px;
+	width: 400px;
+	color: white;
+	margin: auto;
+	margin-top: 70px;
+}
+#recoverText h1 {
+	font-weight: normal;
+	text-align: center;
+	font-size: 26px;
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+}
+#main {
+	height: 300px;
+	width: 400px;
+	margin: auto;
+	border: 1px solid black;
+	box-shadow: 0px 5px 5px #888888;
+}
+#recoverButton {
+	float: right;
+	-webkit-appearance: none;
+	border-radius: 0;
+	background: transparent;
+	background: red;
+	color: white;
+	border: 0;
+	font-size: 16px;
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+	margin: 130px 50px 0px 0px;
+	box-shadow: 0px 2px 2px #888888;
+}
+#recoverButton:active {
+	position: relative;
+	top: 1px;
+	box-shadow: inset 0 0 1px 1px #888888;
+}
+#main #email {
+	font-size: 16px;
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+	margin: 130px 0px 0px 30px;
+	width: 200px;
+}
+
+/**
+	College Page Styles
+**/
+
+#name, #alumni, #questions {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+}
+#name {
+	margin-left: 50px;
+}
+h1 {
+	font-weight: normal;
+}
+#alumni h1, #questions h1 {
+	font-size: 21px;
+	font-weight: 600;
+}
+#logo, #alumni, #questions {
+	border: 1px solid black;
+	box-shadow: 0px 5px 5px #888888;
+}
+#logo {
+	display: inline;
+	height: 200px;
+	width: 200px;
+	margin-left: 50px;
+	float: left;
+}
+#logo img {
+	height: 200px;
+	width: 200px;
+}
+#alumni {
+	display: inline;
+	width: calc(100% - 345px);
+	height: 200px;
+	float: right;
+	padding-left: 20px;
+	margin: 0px 50px 20px 0px;
+}
+#questions {
+	margin: 50px;
+	clear: both;
+}
+#questions h1 {
+	text-align: center;
+}
+#questions img {
+	height: 50px;
+	width: 35px;
+	margin-left: 50px;
+	display: inline-block;
+}
+#questions p {
+	width: calc(100% - 160px);
+	margin-left: 30px;
+	display: inline-block;
+	font-size: 12px;
+}
+#questions button {
+	position:relative;
+	margin: 20px 10px 10px 10px;
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 16px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	background: transparent;
+	background: black;
+	color: white;
+	border: 0;
+	width: 75px;
+	box-shadow: 0px 2px 2px #888888;
+}
+#prev {
+	float: left;
+}
+#prev:active {
+	position: relative;
+	top: 1px;
+	background-color: red;
+}
+#next {
+	float: right;
+}
+#next:active {
+	position: relative;
+	top: 1px;
+	background-color: red;
+}
+
+/**
+	Search Pages Styles
+**/
+
+#filters {
+	margin: 2px 10px 0px 10px;
+	min-width: 250px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+	border-right: 1px solid black;
+	display: inline-block;
+	float: left;
+	height:100%;
+}
+#filters h1 {
+	border-bottom: 1px solid black;
+	margin-right: 10px;
+	font-weight: normal;
+}
+#dropdown {
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+	background: transparent;
+	width: 90%;
+	padding: 4px;
+	font-size: 16px;
+	line-height: 1;
+	border: 0;
+	border-radius: 0;
+	-webkit-appearance: none;
+    background: url("http://cdn.bavotasan.com/wp-content/uploads/2011/05/down_arrow_select.jpg") no-repeat right white;
+    border: 1px solid #ccc;
+    box-shadow: inset 1px 1px 0px 0px #dddddd;
+    margin-bottom: 10px;
+}
+#content {
+	display: inline-block;
+	float: left;
+	width: calc(90% - 250px);
+	min-width: 250px;
+	padding: 20px;
+	text-align: right;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+}
+#content img {
+	border: 1px solid black;
+	margin-bottom: 5px; 
+	box-shadow: 0px 5px 5px #888888;
+}
+#content #user img {
+	width: 100px;
+	height: 150px;
+}
+#content #college img {
+	width: 150px;
+	height: 150px;
+}
+#content h2, #content h3 {
+	font-weight: normal;
+	margin: 0px;
+}
+#content h2 {
+	font-size: 16px;
+}
+#content h3 {
+	font-size: 12px;
+}
+#user, #college {
+	display: inline-block;
+	float: left;
+	margin: 15px;
+}
+#user a, #college a {
+	color: black;
+}
+
+/**
+	"My" Pages Styles
+**/
+
+
+#table {
+	border: 1px solid black;
+	width: 70%;
+	display: block;
+	margin: 20px auto 0 auto;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+	box-shadow: 0px 5px 5px #888888;
+}
+#table table {
+	min-width: 100%;
+}
+#table td {
+	padding: 10px 10px 10px 10px;
+}
+#table #name {
+	float: right;
+}
+#table td h1 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+	text-decoration: none;
+	font-weight: normal;
+	font-size: 24px;
+}
+#table td a {
+	color: black;
+}
+.dropdown2 {
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+	background: transparent;
+	padding: 4px;
+	font-size: 16px;
+	line-height: 1;
+	border: 0;
+	border-radius: 0;
+	-webkit-appearance: none;
+    background: url("http://cdn.bavotasan.com/wp-content/uploads/2011/05/down_arrow_select.jpg") no-repeat right white;
+    border: 1px solid #ccc;
+    box-shadow: inset 1px 1px 0px 0px #dddddd;
+}
+.dropdown2 option {
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+}
+#add {
+	width: 70%;
+	display: block;
+	margin: 20px auto 0 auto;
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+}
+#add h1 {
+	font-weight: normal;
+}
+#add h2 {
+	font-weight: normal;
+}
+#type, #title {
+	width: 240px;
+}
+#title {
+	margin-left: 5px;
+}
+#college2 {
+	width: 240px;
+	margin-left: 5px; 
+}
+label {
+	padding-right: 20px;
+}
+.questions {
+	display: inline-block;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#addButton {
+	-webkit-appearance: none;
+	border-radius: 0;
+	background: transparent;
+	background: red;
+	color: white;
+	border: 0;
+	width: 50px;
+	font-size: 16px;
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+	float: right;
+	box-shadow: 0px 2px 2px #888888;
+	margin: 10px 0px 20px 0px;
+}		
+#addButton:active {
+	position: relative;
+	top: 1px;
+	box-shadow: inset 0 0 1px 1px #888888;
+}
+
+
+/**
+	Profile Page Styles
+**/
+
+#profile {
+	margin: 75px;
+}
+#profilePicture {
+	width: 100px;
+	height: 150px;
+	border: 1px solid black;
+	float: left;
+	margin-bottom: 20px;
+	box-shadow: 0px 5px 5px #888888;
+}
+#profilePicture img {
+	height: 150px;
+	width: 100px;
+}
+#profileInfo {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+	float: right;
+	text-align: right;
+	font-size: 14px;
+}
+#profileInfo h1, #bio h1, #colleges h1, #experiences h1 {
+	font-weight: 500;
+	font-size: 21px;
+}
+#bio, #colleges, #experiences {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+	border: 1px solid black;
+	clear: left;
+	margin-top: 20px;
+	padding: 0px 10px 0px 10px;
+	box-shadow: 0px 5px 5px #888888;
+}
+#bio ul, #colleges ul, #experiences ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+/**
+	My Profile Page Styles
+**/
+
+#mainform {
+	border: 1px solid black;
+	margin: 40px 0px 20px 40px;
+	font-size: 16px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+	width: 70%;
+	float: left;
+	display: inline-block;
+	box-shadow: 0px 5px 5px #888888;
+}
+#upload {
+	border: 1px solid black;
+	margin: 40px 40px 20px 0px;
+	font-size: 16px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+	width: 15%;
+	float: right;
+	display: inline-block;
+	box-shadow: 0px 5px 5px #888888;
+}
+#mainform form {
+	padding: 15px;
+}
+#mainform label {
+	float: left;
+	padding: 5px 15px 5px 0px;
+	font-size: 20px;
+}
+#mainform form input {
+	font-size: 16px;
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+}
+#upload img {
+	height: 150px;
+	width: 100px;
+	display: block;
+	margin: auto;
+}
+#upload button {
+	display: block;
+	margin: auto;
+	margin-bottom: 10px;
+}
+#mainform #fname {
+	width: 30%;
+	float: left;
+}
+#mainform #lname {
+	width: 30%;
+	float: left;
+	margin-left: 5%;
+}
+#mainform #email, #mainform #password, #mainform #gradyear {
+	width: 65.9%;
+	margin-top: 10px;
+	float: left;
+}
+#mainform #bioEdit {
+	width: 66%;
+	margin-top: 10px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 16px;
+}
+#mainform #gradyear {
+	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+	background: transparent;
+	width: 67%;
+	padding: 4px;
+	font-size: 16px;
+	line-height: 1;
+	border: 0;
+	border-radius: 0;
+	-webkit-appearance: none;
+    background: url("http://cdn.bavotasan.com/wp-content/uploads/2011/05/down_arrow_select.jpg") no-repeat right white;
+    border: 1px solid #ccc;
+    box-shadow: inset 1px 1px 0px 0px #dddddd;
+}
+#saveButton {
+	margin-top: 10px;
+	float: right;
+	-webkit-appearance: none;
+	border-radius: 0;
+	background: transparent;
+	background: red;
+	color: white;
+	border: 0;
+	box-shadow: 0px 2px 2px #888888;
+}
+#saveButton:active {
+	position: relative;
+	top: 1px;
+	box-shadow: inset 0 0 1px 1px #888888;
+}
