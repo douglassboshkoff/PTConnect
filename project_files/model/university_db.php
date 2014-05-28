@@ -59,4 +59,38 @@ function update_colleges($name, $location, $image_link) {
     $query = "UPDATE universities SET name = '$name', location = '$location', image_link = '$image_link'";
     $db->exec($query);
 }
+
+function get_graduated() {
+    global $db;
+    $grad = 0;
+    $query = "SELECT graduated FROM universites";
+    $result = $db->query($query);
+    
+    $result->setFetchMode(PDO::FETCH_ASSOC);
+    
+    while($row = $result->fetch()) {
+        if($row['graduated'] == 1) {
+            $grad++;
+        }
+    }
+    
+    return $grad;
+}
+
+function get_attend() {
+     global $db;
+    $attend = 0;
+    $query = "SELECT graduated FROM universites";
+    $result = $db->query($query);
+    
+    $result->setFetchMode(PDO::FETCH_ASSOC);
+    
+    while($row = $result->fetch()) {
+        if($row['graduated'] == 0) {
+            $attend++;
+        }
+    }
+    
+    return $attend;
+}
 ?>
