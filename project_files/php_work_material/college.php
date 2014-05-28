@@ -70,9 +70,15 @@ $comment_arr = get_questions($collegeID, $pageNum);
             <p>5 alumni attend this college</p>
         </div>
         <div id="questions">
+            <a href = "college.php?next=-1&pageNum=<?php echo $pageNum ?>">
             <button id="prev">Previous</button>
+                </a>
+            <a href = "college.php?next=1&pageNum=<?php echo $pageNum ?>">
+
             <button id="next">Next</button>
+                </a>
             <h1> <?php echo $arr[$pageNum]['question']; ?></h1>
+
             <?php foreach($comment_arr as $comment){ ?>
             <img src="profile.png"/><p><?php echo $comment['response']; ?></p>
             <?php } ?>

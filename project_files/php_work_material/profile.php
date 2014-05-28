@@ -38,7 +38,7 @@ $g_colleges = get_college($userID);
         <h1>Colleges</h1>
         <ul>
             <?php foreach($g_colleges as $g_college){ ?>
-                <li><a href = "college.php?university_id=<?php echo $g_college['university_id'] ?>"> <?php echo get_college_name($g_college['university_id'])->fetch()['name']; ?> </a></li>
+                <li><a href = "college.php?university_id=<?php echo $g_college['university_id'] ?>&userID=<?php echo $userID ?>"> <?php echo get_college_name($g_college['university_id'])->fetch()['name']; ?> </a></li>
             <?php } ?>
         </ul>
     </div>
