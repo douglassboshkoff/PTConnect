@@ -56,10 +56,10 @@ function get_bio($id) {
     return $result->fetch();
 }
 
-function get_grad_years() {
+function get_grad_years($collegeID) {
     global $db;
     $query = "SELECT DISTINCT pt_grad_year
-        FROM accounts
+        FROM accounts where university_id = '$collegeID'
         ORDER BY pt_grad_year";
     $result = $db->query($query);
     return $result;
