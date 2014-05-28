@@ -54,7 +54,7 @@ function get_students_attending($collegeID){
     $request = $db->query($query);
     return $request;
 }
-function update_colleges($id, $name, $location, $image_link) {
+function update_colleges($name, $location, $image_link) {
     global $db;
     $query = "UPDATE universities SET name = '$name', location = '$location', image_link = '$image_link'";
     $db->exec($query);

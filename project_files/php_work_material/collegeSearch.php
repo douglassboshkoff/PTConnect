@@ -2,6 +2,7 @@
 
 include "../model/university_db.php";
 include "../model/database.php";
+include "header.php";
 
 //test array
 $arr = array("goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
@@ -87,9 +88,17 @@ $secondary_name_array = "";
                 -->
             </select></br>
         </div>
+
+
+        
         <div id="content">
             <?php foreach($arr as $value) : ?>
-                <!-- add place for action -->
+            <div id="college">
+                <a href="../html_originals/college.html"><img src="purdue.png"/></a>
+                <a href="../html_originals/college.html"><h2><?php echo $value ?></h2></a>
+                <h3>West Lafayette, IN</h3>
+                </div>
+                <!-- form stuff
                 <form action="College_Page.php" method="post">
                     <input type="hidden" name="college_ID" value="<?php echo $collegeID ?>">
                     <div id="college">
@@ -107,6 +116,7 @@ $secondary_name_array = "";
                         </div>
                     </div>
                 </form>
+                -->
             <?php endforeach; ?>
             <div id="college">
                 <a href="../html_originals/college.html"><img src="purdue.png"/></a>
@@ -152,4 +162,5 @@ $secondary_name_array = "";
     </div>
 </div>
 </body>
+<?php include "footer.php"; ?>
 </html>

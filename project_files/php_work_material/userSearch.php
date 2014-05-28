@@ -1,4 +1,60 @@
-<!DOCTYPE html>
+<?php
+include "../model/accounts_db.php";
+include "../model/university_db.php";
+include "../model/concentration_db.php";
+include "../model/experiences_db.php";
+include "../model/database.php";
+
+include "header.php";
+
+$arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
+
+// temporary values
+$class = 2015;
+// identification value
+$user_email = "Tom Ato";
+
+$grad_year_array = get_grad_years();
+$college_array = get_colleges();
+$major_array = get_majors();
+$experience_type_array = get_types();
+$experience_title_array = get_all_titles();
+
+if(isset($_POST['year'])){
+    $yearIn = $_POST['year'];
+}
+else{
+    $yearIn = "";
+}
+if(isset($_POST['college'])){
+    $collegeIn = $_POST['college'];
+}
+else{
+    $collegeIn = "";
+}
+if(isset($_POST['major'])){
+    $majorIn = $_POST['major'];
+}
+else{
+    $majorIn = "";
+}
+if(isset($_POST['type'])){
+    $typeIn = $_POST['type'];
+}
+else{
+    $typeIn = "";
+}
+if(isset($_POST['title'])){
+    $titleIn = $_POST['title'];
+}
+else{
+    $titleIn = "";
+}
+
+
+$class_array = "";
+$name_array = "";
+?>
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
@@ -145,4 +201,5 @@
 			</div>
 		</div>
 	</body>
+<?php include "footer.php" ?>
 </html>
