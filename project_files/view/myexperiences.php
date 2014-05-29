@@ -1,62 +1,5 @@
 <?php
-include('../validate/fields.php');
-include('../validate/validate.php');
-include('../model/questions_db.php');
-include('../model/experiences_db.php');
 include('../model/database.php');
-$fields = new Register\fields();
-$type= get_types();
-
-$fields->addField('type','You must choose your type of experience.');
-$fields->addField('title','You must choose the title of your experience.');
-$fields->addField('other','Must choose a type.');
-
-//$type = new Register\field('type','Must choose a type.');
-$title = new Register\field('title','You must choose a title for your experience.');
-$other = new Register\field('other');
-$validate = new Register\validate();
-
-if(isset($_POST['action']))
-{
-    $action = $_POST['action'];
-}
-else
-{
-    $action='display';
-}
-
-
-if($action === 'edit')
-{
-    //nonfunctional
-    echo "hello";
-    $id = $_POST['id'];
-    $content = $_POST['content'];
-    $type = $_POST['type'];
-    $title = $_POST['title'];
-    update_experience($id, $type, $title, $content, 1);
-}
-else if($action === 'populate_edit')
-{
-    $id = $_POST['id'];
-    $sp_experience = get_specific_experience($id)->fetch();
-}
-else if($action === 'add')
-{
-    $id = $_POST['id'];
-    $content = $_POST['content'];
-    $type = $_POST['type'];
-    $title = $_POST['title'];
-    add_experience($id, $type, $title, $content, 1);
-}
-else if($action === 'delete')
-{
-    echo $_POST['id'];
-    $id = $_POST['id'];
-    delete_experience($id);
-}
-$experiences = get_experiences(1);
-echo $action;
 ?>
 <!DOCTYPE html>
 <html>
@@ -241,14 +184,14 @@ echo $action;
 					<td><h1><?php echo $experience['title']; ?></h1></td>
 
 					<td>
-                        <form action="myexperiences.php" method="post">
+                        <form action="profile_index.php" method="post">
                         <input type="hidden" value="populate_edit" name="action"/>
                         <input type="hidden" value="<?php echo $experience['id'] ?>" name="id"/>
                         <input type="submit" value="edit" name="submit"/>
                         </form>
                     </td>
 					<td>
-                        <form action="myexperiences.php" method="post">
+                        <form action="profile_index.php" method="post">
                             <input type="submit" value="delete" name="submit"/>
                             <input type="hidden" value="<?php echo $experience['id'] ?>" name="id"/>
                             <input type="hidden" value="delete" name="action"/>
@@ -260,7 +203,8 @@ echo $action;
 		</div>
 		<div id="add">
 			<h1><?php if($action==='display') { echo "Add Experience";} else { echo "Edit Experience";} ?></h1>
-			<form method="post" action="myexperiences.php">
+
+			<form method="post" action="profile_index.php">
 				<label>Type</label>
 				<select class="dropdown" id="titleselect" name="type">
                     <?php for($i = 0; $i < count($type); $i++) { ?>
@@ -285,7 +229,6 @@ echo $action;
 				<br/>
 				<h2>Describe your experience</h2>
 				<textarea class="questions" rows="4" name="content" ><?php if($action==='populate_edit') { echo $sp_experience['content']; } ?></textarea>
-                <input type="submit" id="addButton" value="submit"/>
                 <input type="hidden" name="action" value="<?php
                 if($action === 'display')
                 {
@@ -295,8 +238,9 @@ echo $action;
                     $action='edit';
                 }
                 ?>">
+                <input type="submit" id="addButton" value="submit"/>
                 <?php if($action==='populate_edit') { ?>
-                    <input type="hidden" name="id" value="<?php echo $sp_experience['id'] ?>"
+                <input type="hidden" name="id" value="<?php echo $sp_experience['id'] ?>"/>
                 <?php } ?>
 			</form>
 		</div>

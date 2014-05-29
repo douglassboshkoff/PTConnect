@@ -231,7 +231,7 @@ $action = $_POST['action'];
 
 		<div id="add">
 			<h1>Add College</h1>
-			<form method="post" id = "form1" action="index.php">
+			<form method="post" id = "form1" action="profile_index.php">
 				<label id = "firstlabel">School</label>
 				<select class="dropdown" id="college">
 					<option>College</option>
