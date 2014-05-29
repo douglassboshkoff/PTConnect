@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 29, 2014 at 08:53 PM
+-- Generation Time: May 29, 2014 at 09:06 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `pt_grad_year` int(11) NOT NULL,
   `bio` varchar(200) NOT NULL,
   `password` varchar(45) NOT NULL,
+  `image_link` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
@@ -41,9 +42,9 @@ CREATE TABLE IF NOT EXISTS `accounts` (
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`id`, `first_name`, `last_name`, `email`, `pt_grad_year`, `bio`, `password`) VALUES
-(1, 'matthew', 'muhoberac', 'mmuhoberac@parktudor.org', 2015, 'this is a bio', 'pass'),
-(2, 'ruben', 'schuckit', 'rschuckit@parktudor.org', 2014, 'this is a bio', 'pass');
+INSERT INTO `accounts` (`id`, `first_name`, `last_name`, `email`, `pt_grad_year`, `bio`, `password`, `image_link`) VALUES
+(1, 'matthew', 'muhoberac', 'mmuhoberac@parktudor.org', 2015, 'this is a bio', 'pass', ''),
+(2, 'ruben', 'schuckit', 'rschuckit@parktudor.org', 2014, 'this is a bio', 'pass', '');
 
 -- --------------------------------------------------------
 
