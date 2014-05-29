@@ -1,5 +1,5 @@
 <?php
-
+/** php to determine which page we are on, and the color of the text in the corresponding tab to red **/
 ?>
 <html>
 <head>
