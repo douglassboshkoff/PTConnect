@@ -13,7 +13,7 @@
 </head>
 <body>
 <div id="wrapper1">
-    <div id'"wrapper2'>
+    <div id='wrapper2'>
     <div id='top'>
         <ul>
             <li><span id="white">PT</span><span id="red">Connect</span></li>
