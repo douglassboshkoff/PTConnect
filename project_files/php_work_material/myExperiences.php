@@ -4,6 +4,8 @@
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 	</head>
 	<body>
+	<div id="wrapper1">
+    	<div id='wrapper2'>
 		<div id='table'>
 			<table>
 				<tr>
@@ -38,5 +40,8 @@
 				<textarea class="questions" rows="4"></textarea>
 				<input type="submit" id="addButton" value="Add">
 			</form>
-		</div>	</body>
+		</div>
+		</div>
+		</div>
+		</body>
 </html>
