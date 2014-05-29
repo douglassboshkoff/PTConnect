@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 14, 2014 at 02:12 PM
+-- Generation Time: May 29, 2014 at 08:53 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -130,6 +130,7 @@ CREATE TABLE IF NOT EXISTS `universities` (
   `name` varchar(45) NOT NULL,
   `location` varchar(45) NOT NULL,
   `image_link` varchar(45) NOT NULL,
+  `public/private` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
@@ -137,9 +138,9 @@ CREATE TABLE IF NOT EXISTS `universities` (
 -- Dumping data for table `universities`
 --
 
-INSERT INTO `universities` (`id`, `name`, `location`, `image_link`) VALUES
-(1, 'Purdue', 'Lafayette, IN', 'test...'),
-(2, 'Harvard', 'Cambridge, MA', 'https://ddd');
+INSERT INTO `universities` (`id`, `name`, `location`, `image_link`, `public/private`) VALUES
+(1, 'Purdue', 'Lafayette, IN', 'test...', 0),
+(2, 'Harvard', 'Cambridge, MA', 'https://ddd', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
