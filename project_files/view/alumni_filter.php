@@ -8,6 +8,8 @@ include "../model/database.php";
 //test array
 $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
 
+$newArr = filter("Purdue", "Lafayette, IN", "Computer Science");
+
 // temporary values
 $class = 2015;
 // identification value

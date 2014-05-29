@@ -40,6 +40,7 @@ $type_array = array("hello","world","how's","it","goin?");
 $secondary_info_array = "";
 $secondary_name_array = "";
 ?>
+<!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />

@@ -56,7 +56,18 @@ function get_bio($id) {
     return $result->fetch();
 }
 
-function get_grad_years($collegeID) {
+function get_grad_years() {
+    global $db;
+    $query = "SELECT DISTINCT pt_grad_year
+        FROM accounts
+        ORDER BY pt_grad_year";
+    $result = $db->query($query);
+    return $result;
+
+    //the sql command works, however the phpcode might not.
+}
+
+function get_grad_years_by_college($collegeID) {
     global $db;
     $query = "SELECT DISTINCT pt_grad_year
         FROM accounts where university_id = '$collegeID'
@@ -97,6 +108,7 @@ function filter($university, $location, $major) {
         $query = "SELECT id FROM universities WHERE name='$university'"; //UNIVERSITY NAME IN PARAM; NOT ID!
         $university_id = $db->query($query);
         $university_id = $university_id->fetch();
+        $university_id = $university_id['id'];
         $paramBuilder .= "WHERE university_id = '$university_id' ";
     }
 
@@ -109,7 +121,7 @@ function filter($university, $location, $major) {
     }
 
     $result = $db->query($query + $paramBuilder);
-    $result = $result->fetch();
+    //$result = $result->fetch();
 
     return $result;
 }

@@ -64,106 +64,93 @@ $name_array = "";
 			<h1>Filters</h1>
 			<label>PT Grad Year</label></br>
 			<select id="dropdown">
-					<option>PT Grad Year</option>
-					<option>2017</option>
-					<option>2016</option>
-					<option>2015</option>
-					<option>2014</option>
-					<option>2013</option>
-					<option>2012</option>
-					<option>2011</option>
-					<option>2010</option>
-					<option>2010</option>
-					<option>2010</option>
-					<option>2009</option>
-					<option>2008</option>
-					<option>2007</option>
-					<option>2006</option>
-					<option>2005</option>
-					<option>2004</option>
+                <?php if($yearIn != "") : ?>
+                    <option value="<?php echo $yearIn?>"><?php echo $yearIn ?></option>
+                <?php endif ; ?>
+                <?php foreach ($grad_year_array as $year) : ?>
+                    <?php if($year['pt_grad_year'] != $yearIn) : ?>
+                        <option value="<?php echo $year['pt_grad_year'] ?>"><?php echo $year['pt_grad_year'] ?></option>
+                    <?php endif ; ?>
+                <?php endforeach ; ?>
 			</select></br>
 			<label>College</label></br>
 			<select id="dropdown">
-					<option>College</option>
-					<option>2017</option>
-					<option>2016</option>
-					<option>2015</option>
-					<option>2014</option>
-					<option>2013</option>
-					<option>2012</option>
-					<option>2011</option>
-					<option>2010</option>
-					<option>2010</option>
-					<option>2010</option>
-					<option>2009</option>
-					<option>2008</option>
-					<option>2007</option>
-					<option>2006</option>
-					<option>2005</option>
-					<option>2004</option>
+                <?php if($collegeIn != "") : ?>
+                    <option value="<?php echo $collegeIn?>"><?php echo $collegeIn ?></option>
+                <?php endif ; ?>
+                <?php foreach ($college_array as $college) : ?>
+                    <?php if($college['name'] != $collegeIn) : ?>
+                        <option value="<?php echo $college['name'] ?>"><?php echo $college['name'] ?></option>
+                    <?php endif ; ?>
+                <?php endforeach ; ?>
 			</select></br>
 			<label>Major</label></br>
 			<select id="dropdown">
-					<option>Major</option>
-					<option>2017</option>
-					<option>2016</option>
-					<option>2015</option>
-					<option>2014</option>
-					<option>2013</option>
-					<option>2012</option>
-					<option>2011</option>
-					<option>2010</option>
-					<option>2010</option>
-					<option>2010</option>
-					<option>2009</option>
-					<option>2008</option>
-					<option>2007</option>
-					<option>2006</option>
-					<option>2005</option>
-					<option>2004</option>
+                <?php if($majorIn != "") : ?>
+                    <option value="<?php echo $majorIn?>"><?php echo $majorIn ?></option>
+                <?php endif ; ?>
+                <?php foreach ($major_array as $major) : ?>
+                    <?php if($major['name'] != $majorIn) : ?>
+                        <option value="<?php echo $major['name'] ?>"><?php echo $major['name'] ?></option>
+                    <?php endif ; ?>
+                <?php endforeach ; ?>
 			</select></br>
 			<label>Experience Type</label></br>
 			<select id="dropdown">
-					<option>Experience Type</option>
-					<option>2017</option>
-					<option>2016</option>
-					<option>2015</option>
-					<option>2014</option>
-					<option>2013</option>
-					<option>2012</option>
-					<option>2011</option>
-					<option>2010</option>
-					<option>2010</option>
-					<option>2010</option>
-					<option>2009</option>
-					<option>2008</option>
-					<option>2007</option>
-					<option>2006</option>
-					<option>2005</option>
-					<option>2004</option>
+                <?php if($typeIn != "") : ?>
+                    <option value="<?php echo $typeIn?>"><?php echo $typeIn ?></option>
+                <?php endif ; ?>
+                <?php foreach ($experience_type_array as $type) : ?>
+                    <?php if($type['type'] != $typeIn) : ?>
+                        <option value="<?php echo $type['type'] ?>"><?php echo $type['type'] ?></option>
+                    <?php endif ; ?>
+                <?php endforeach ; ?>
 			</select></br>
 			<label>Experience Title</label></br>
 			<select id="dropdown">
-					<option>Experience Title</option>
-					<option>2017</option>
-					<option>2016</option>
-					<option>2015</option>
-					<option>2014</option>
-					<option>2013</option>
-					<option>2012</option>
-					<option>2011</option>
-					<option>2010</option>
-					<option>2010</option>
-					<option>2010</option>
-					<option>2009</option>
-					<option>2008</option>
-					<option>2007</option>
-					<option>2006</option>
-					<option>2005</option>
-					<option>2004</option>
+                <?php if($titleIn != "") : ?>
+                    <option value="<?php echo $titleIn?>"><?php echo $titleIn ?></option>
+                <?php endif ; ?>
+                <?php foreach ($experience_title_array as $title) : ?>
+                    <?php if($title['title'] != $titleIn) : ?>
+                        <option value="<?php echo $title['title'] ?>"><?php echo $title['title'] ?></option>
+                    <?php endif ; ?>
+                <?php endforeach ; ?>
 			</select></br>
 		</div>
+
+
 		<div id="content">
+
+            <?php foreach($arr as $name) : ?>
+
+                <div id="user">
+                    <a href="profile.php"><img src="profile.png"/></a>
+                    <a href="profile.php"><h2><?php echo $name?></h2></a>
+                    <h3>PT 2015</h3>
+                </div>
+                <!-- add place for action
+                <form action="User_Profilepage.php" method="post">
+                    <input type="hidden" name="userID" value="<?php echo $user_email ?>">
+                    <div class="results">
+                        <div class="top">
+                            <input class="propic" type="image" src="../resources/BlankFace.jpg" alt="Submit">
+                            <!--<img class="propic" src="../resources/BlankFace.jpg">
+                        </div>
+                        <div class="bottom">
+                            <div class="info">
+                                <div class="name">
+                                    <?php echo $name?>
+                                </div>
+                                <div class="class_number">
+                                    <?php echo $class?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form> -->
+            <?php endforeach; ?>
+
 			<div id="user">
 				<a href="profile.php"><img src="profile.png"/></a>
 				<a href="profile.php"><h2>Alex Gottwald</h2></a>

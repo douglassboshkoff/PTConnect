@@ -41,7 +41,8 @@ function get_types() {
     FROM experiences
     ORDER BY type';
     $result = $db->query($query);
-    return $result->fetchAll(PDO::FETCH_COLUMN,0);
+    return $result;
+    //return $result->fetchAll(PDO::FETCH_COLUMN,0);
 }
 
 //danny took your job
