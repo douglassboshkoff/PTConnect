@@ -125,3 +125,11 @@ function filter($university, $location, $major) {
 
     return $result;
 }
+
+
+//will not work until the column is added to the database by Ruben
+function  add_image($image_link, $id) {
+    global $db;
+    $query = "UPDATE accounts SET image_link = '$image_link' WHERE id = '$id'";
+    $db->exec($query);
+}
