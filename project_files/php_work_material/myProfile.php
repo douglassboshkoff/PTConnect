@@ -4,6 +4,8 @@
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 	</head>
 	<body>
+		<div id="wrapper1">
+    		<div id='wrapper2'>
 		<div id="mainform">
 			<form>
 				<label style="padding-right: 79px;">Name</label><input id="fname" type="text" value="Alex"/>
@@ -36,6 +38,8 @@
 		<div id="upload">
 			<img src="profile.png"/><br>
 			<button>Upload</button>
+		</div>
+		</div>
 		</div>
 	</body>
 </html>
