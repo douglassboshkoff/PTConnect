@@ -1,5 +1,4 @@
 <?php
-//Shouldn't this be getComments()/getAnswers()?
 function get_question($userID, $collegeID, $questionID) {
     global $db;
     $query = "SELECT response FROM questions

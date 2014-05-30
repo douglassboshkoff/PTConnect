@@ -41,21 +41,18 @@ function get_types() {
     FROM experiences
     ORDER BY type';
     $result = $db->query($query);
-    return $result;
-    //return $result->fetchAll(PDO::FETCH_COLUMN,0);
+    return $result->fetchAll(PDO::FETCH_COLUMN,0);
 }
 
-//danny took your job
-//thanks
-function add_experience($id, $type, $title, $content, $accounts_id){
+
+function add_experience( $type, $title, $content, $accounts_id){
     global $db;
     $query = "INSERT INTO experiences (type, title, content, accounts_id)
-    VALUES ( '$id', '$type', '$title', '$content', '$accounts_id')";
+    VALUES ('$type', '$title', '$content', '$accounts_id')";
     $result = $db->query($query);
     return $result;
 }
-//danny took your job
-//thanks
+
 function update_experience($id, $type, $title, $content, $accounts_id){
     global $db;
     $query = "UPDATE experiences

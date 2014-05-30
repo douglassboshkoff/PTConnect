@@ -232,10 +232,10 @@ include('../model/database.php');
                 <input type="hidden" name="action" value="<?php
                 if($action === 'display')
                 {
-                    $action='add';
+                    echo 'add';
                 }
                 else{
-                    $action='edit';
+                    echo 'edit';
                 }
                 ?>">
                 <input type="submit" id="addButton" value="submit"/>
