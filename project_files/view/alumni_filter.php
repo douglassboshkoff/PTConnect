@@ -240,6 +240,7 @@ $name_array = "";
             <?php endif ; ?>
             <?php foreach ($major_array as $major) : ?>
                 <?php if($major['name'] != $majorIn) : ?>
+                    <?php echo $major['name'] ?>
                     <option value="<?php echo $major['name'] ?>"><?php echo $major['name'] ?></option>
                 <?php endif ; ?>
             <?php endforeach ; ?>

@@ -34,7 +34,7 @@ else{
 //filters
 $name_array = get_colleges();
 $location_array = get_college_locations();
-$type_array = array("hello","world","how's","it","goin?");
+$type_array = array("Private", "Public");
 
 //
 $secondary_info_array = "";
@@ -73,10 +73,11 @@ $secondary_name_array = "";
                     <?php endif ; ?>
                 <?php endforeach ; ?>
             </select></br>
-
+            <!-- 0 is private, 1 is public  -->
             <label>Type</label></br>
             <select name="type" id="dropdown">
-                <option value=""></option>
+                <option value="0">Private</option>
+                <option value="1">Public</option>
                 <!--
                 <?php if($typeIn != "") : ?>
                     <option value="<?php echo $typeIn?>"><?php echo $typeIn ?></option>
@@ -90,14 +91,12 @@ $secondary_name_array = "";
             </select></br>
         </div>
 
-
-        
         <div id="content">
             <?php foreach($arr as $value) : ?>
-            <div id="college">
-                <a href="../html_originals/college.html"><img src="purdue.png"/></a>
-                <a href="../html_originals/college.html"><h2><?php echo $value ?></h2></a>
-                <h3>West Lafayette, IN</h3>
+                <div id="college">
+                    <a href="../html_originals/college.html"><img src="purdue.png"/></a>
+                    <a href="../html_originals/college.html"><h2><?php echo $value ?></h2></a>
+                    <h3>West Lafayette, IN</h3>
                 </div>
                 <!-- form stuff
                 <form action="College_Page.php" method="post">
@@ -129,38 +128,9 @@ $secondary_name_array = "";
                 <a href="../html_originals/college.html"><h2>Purdue University</h2></a>
                 <h3>West Lafayette, IN</h3>
             </div>
-            <div id="college">
-                <a href="../html_originals/college.html"><img src="purdue.png"/></a>
-                <a href="../html_originals/college.html"><h2>Purdue University</h2></a>
-                <h3>West Lafayette, IN</h3>
-            </div>
-            <div id="college">
-                <a href="../html_originals/college.html"><img src="purdue.png"/></a>
-                <a href="../html_originals/college.html"><h2>Purdue University</h2></a>
-                <h3>West Lafayette, IN</h3>
-            </div>
-            <div id="college">
-                <a href="../html_originals/college.html"><img src="purdue.png"/></a>
-                <a href="../html_originals/college.html"><h2>Purdue University</h2></a>
-                <h3>West Lafayette, IN</h3>
-            </div>
-            <div id="college">
-                <a href="../html_originals/college.html"><img src="purdue.png"/></a>
-                <a href="../html_originals/college.html"><h2>Purdue University</h2></a>
-                <h3>West Lafayette, IN</h3>
-            </div>
-            <div id="college">
-                <a href="../html_originals/college.html"><img src="purdue.png"/></a>
-                <a href="../html_originals/college.html"><h2>Purdue University</h2></a>
-                <h3>West Lafayette, IN</h3>
-            </div>
-            <div id="college">
-                <a href="../html_originals/college.html"><img src="purdue.png"/></a>
-                <a href="../html_originals/college.html"><h2>Purdue University</h2></a>
-                <h3>West Lafayette, IN</h3>
-            </div>
         </div>
     </div>
+</div>
 </div>
 </body>
 <?php include "footer.php"; ?>

@@ -101,4 +101,5 @@ function get_attend($collegeID) {
     
     return $attend;
 }
+
 ?>
