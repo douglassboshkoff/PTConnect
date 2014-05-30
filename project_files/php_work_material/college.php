@@ -62,12 +62,12 @@ $comment_arr = get_questions($collegeID, $pageNum);
             <h1><?php echo get_college_name($collegeID)->fetch()['name'] . " - " . get_college_name($collegeID)->fetch()['location']; ?> </h1>
         </div>
         <div id="logo">
-            <img src="purdue.png" />
+            <img src="<?php echo get_college_image($collegeID); ?>" />
         </div>
         <div id="alumni">
             <h1>Alumni</h1>
-            <p><?php  ?> alumni graduated from this college</p>
-            <p>5 alumni attend this college</p>
+            <p><?php echo get_graduated($collegeID); ?> alumni graduated from this college</p>
+            <p><?php echo get_attend($collegeID); ?> alumni attend this college</p>
         </div>
         <div id="questions">
             <a href = "college.php?next=-1&pageNum=<?php echo $pageNum ?>">

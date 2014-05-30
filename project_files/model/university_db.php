@@ -12,6 +12,13 @@ function add_college($name, $location, $image_link) {
     $db->exec($query);
 }
 
+function get_college_image($collegeID){
+    global $db;
+    $query = "SELECT image_link FROM universities WHERE id = '$collegeID'";
+    $result = $db->query($query);
+    return $result->fetch()['image_link'];
+}
+
 function remove_college($id) {
     global $db;
     $query = "DELETE FROM universities WHERE id = '$id'";
@@ -60,16 +67,17 @@ function update_colleges($name, $location, $image_link) {
     $db->exec($query);
 }
 
-function get_graduated() {
+function get_graduated($collegeID) {
     global $db;
     $grad = 0;
-    $query = "SELECT graduated FROM universites";
-    $result = $db->query($query);
+    $query = $db->prepare("SELECT graduated FROM universities WHERE id = '$collegeID'");
+    $query->execute();
+
+    $result = $query->fetchAll(PDO::FETCH_COLUMN, 0);
+
     
-    $result->setFetchMode(PDO::FETCH_ASSOC);
-    
-    while($row = $result->fetch()) {
-        if($row['graduated'] == 1) {
+    for($i = 0; $i < count($result); $i++) {
+        if($result[$i] == 1) {
             $grad++;
         }
     }
@@ -77,16 +85,16 @@ function get_graduated() {
     return $grad;
 }
 
-function get_attend() {
+function get_attend($collegeID) {
      global $db;
     $attend = 0;
-    $query = "SELECT graduated FROM universites";
-    $result = $db->query($query);
+    $query = $db->prepare("SELECT graduated FROM universities where id = '$collegeID'");
+    $query->execute();
     
-    $result->setFetchMode(PDO::FETCH_ASSOC);
-    
-    while($row = $result->fetch()) {
-        if($row['graduated'] == 0) {
+    $result = $query->fetchAll(PDO::FETCH_COLUMN, 0);
+
+    for($i = 0; $i < count($result); $i++) {
+        if($result[$i] == 1) {
             $attend++;
         }
     }
