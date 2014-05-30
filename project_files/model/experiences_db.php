@@ -31,7 +31,7 @@ function get_all_titles() {
     global $db;
     $query = "SELECT title FROM experiences";
     $result = $db->query($query);
-    return $result;
+    return $result->fetchAll(PDO::FETCH_COLUMN,0);
 
 }
 
@@ -47,7 +47,7 @@ function get_types() {
 
 function add_experience( $type, $title, $content, $accounts_id){
     global $db;
-    $query = "INSERT INTO experiences (type, title, content, accounts_id)
+    $query = "INSERT INTO experiences (`type`, `title`, `content`, `accounts_id`)
     VALUES ('$type', '$title', '$content', '$accounts_id')";
     $result = $db->query($query);
     return $result;

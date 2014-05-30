@@ -41,7 +41,7 @@ function get_college_name($collegeID){
 
 function get_colleges() {
         global $db;
-        $query = "SELECT DISTINCT name
+        $query = "SELECT *
         FROM universities
         ORDER BY name";
         $request = $db->query($query);

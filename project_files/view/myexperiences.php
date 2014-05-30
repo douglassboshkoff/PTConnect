@@ -188,6 +188,7 @@ include('../model/database.php');
                         <input type="hidden" value="populate_edit" name="action"/>
                         <input type="hidden" value="<?php echo $experience['id'] ?>" name="id"/>
                         <input type="submit" value="edit" name="submit"/>
+                        <input type="hidden" value="experience" name="page"/>
                         </form>
                     </td>
 					<td>
@@ -195,6 +196,7 @@ include('../model/database.php');
                             <input type="submit" value="delete" name="submit"/>
                             <input type="hidden" value="<?php echo $experience['id'] ?>" name="id"/>
                             <input type="hidden" value="delete" name="action"/>
+                            <input type="hidden" value="experience" name="page"/>
                         </form>
 
 				</tr>
@@ -211,15 +213,18 @@ include('../model/database.php');
                         <?php if($action === 'populate_edit') { ?>
                             <option <?php if($sp_experience['type'] === $type[$i] ) { ?> selected <?php } ?>><?php echo $type[$i] ?></option>
                         <?php }else { ?> <option><?php echo $type[$i] ?> <?php } ?></option>
+                        <?php echo 'test: '.$type[$i]; ?>
                     <?php } ?>
                     <option value="1">Other</option>
 				</select>
 				<br/>
 				<label style="margin-right: 25px">Title</label>
 				<select class="dropdown" id = "titleselect" name="title">
-                    <!-- for loop goes through all the types if the current option text equals the one from the selected then make it selected -->
-					<option>Miami of Ohio CS Competition</option>
-					<option selected>Google Internship</option>
+                    <?php for($i = 0; $i < count($titles); $i++) { ?>
+                        <?php if($action === 'populate_edit') { ?>
+                            <option <?php if($sp_experience['title'] === $titles[$i] ) { ?> selected <?php } ?>><?php echo $titles[$i] ?></option>
+                        <?php }else { ?> <option><?php echo $titles[$i] ?> <?php } ?></option>
+                    <?php } ?>
 				    <option value = "1" >Other</option>
                 </select>
                 <div id = "titlediv">  <input type="text" id="titletextbox" />  </div>
@@ -242,6 +247,7 @@ include('../model/database.php');
                 <?php if($action==='populate_edit') { ?>
                 <input type="hidden" name="id" value="<?php echo $sp_experience['id'] ?>"/>
                 <?php } ?>
+                <input type="hidden" value="experience" name="page"/>
 			</form>
 		</div>
 	</body>

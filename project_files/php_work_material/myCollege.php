@@ -8,16 +8,28 @@
     	<div id='wrapper2'>
 		<div id='table'>
 			<table>
-				<tr>
-					<td><h1>Purdue University</h1></td>
-					<td><a href="http://google.com">edit</a></td>
-					<td><a href="http://google.com">delete</a></td>
-				</tr>
-				<tr>
-					<td><h1>Harvard University</h1></td>
-					<td><a href="http://google.com">edit</a></td>
-					<td><a href="http://google.com">delete</a></td>
-				</tr>
+                <?php  foreach($colleges as $college) { ?>
+                    <tr>
+                        <td><h1><?php echo $college['name']; ?></h1></td>
+
+                        <td>
+                            <form action="../view/profile_index.php" method="post">
+                                <input type="hidden" value="populate_edit" name="action"/>
+                                <input type="hidden" value="<?php echo $college['location'] ?>" name="id"/>
+                                <input type="submit" value="edit" name="submit"/>
+                                <input type="hidden" value="college" name="page"/>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="../view/profile_index.php" method="post">
+                                <input type="submit" value="delete" name="submit"/>
+                                <input type="hidden" value="<?php echo $college['id'] ?>" name="id"/>
+                                <input type="hidden" value="delete" name="action"/>
+                                <input type="hidden" value="college" name="page"/>
+                            </form>
+
+                    </tr>
+                <?php  } ?>
 			</table>
 		</div>
 		<div id="add">
@@ -32,28 +44,37 @@
 				<br>
 				<label>Major 1</label>
 				<select class="dropdown2">
-					<option>Major 1</option>
-					<option>Computer Engineering</option>
-					<option>Computer Science</option>
+                    <?php for($i = 0; $i < count($majors); $i++) { ?>
+                        <?php if($action === 'populate_edit') { ?>
+                            <option <?php if($sp_college['type'] === $majors[$i] ) { ?> selected <?php } ?>><?php echo $majors[$i] ?></option>
+                        <?php }else { ?> <option><?php echo $majors[$i] ?> <?php } ?></option>
+                    <?php } ?>
 				</select>
 				<label>Major 2</label>
 				<select class="dropdown2">
-					<option>Major 2</option>
-					<option>Computer Engineering</option>
-					<option>Computer Science</option>
+                    <?php for($i = 0; $i < count($majors); $i++) { ?>
+                        <?php if($action === 'populate_edit') { ?>
+                            <option <?php if($sp_experience['type'] === $majors[$i] ) { ?> selected <?php } ?>><?php echo $majors[$i] ?></option>
+                        <?php }else { ?> <option><?php echo $majors[$i] ?> <?php } ?></option>
+                    <?php } ?>
+                    <option>none</option>
 				</select>
 				<br>
 				<label>Minor 1</label>
 				<select class="dropdown2">
-					<option>Minor 1</option>
-					<option>Computer Engineering</option>
-					<option>Computer Science</option>
+                    <?php for($i = 0; $i < count($minors); $i++) { ?>
+                        <?php if($action === 'populate_edit') { ?>
+                            <option <?php if($sp_experience['type'] === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
+                        <?php }else { ?> <option><?php echo $minors[$i] ?> <?php } ?></option>
+                    <?php } ?>
 				</select>
 				<label>Minor 2</label>
 				<select class="dropdown2">
-					<option>Minor 2</option>
-					<option>Computer Engineering</option>
-					<option>Computer Science</option>
+                    <?php for($i = 0; $i < count($minors); $i++) { ?>
+                        <?php if($action === 'populate_edit') { ?>
+                            <option <?php if($sp_experience['type'] === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
+                        <?php }else { ?> <option><?php echo $minors[$i] ?> <?php } ?></option>
+                    <?php } ?>
 				</select>
 				<h2>Question 1 Text</h2>
 				<textarea class="questions" rows="4"></textarea>

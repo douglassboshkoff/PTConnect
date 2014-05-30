@@ -11,9 +11,9 @@ include('../model/questions_db.php');
 include('../model/experiences_db.php');
 include('../model/database.php');
 include('../model/university_db.php');
+include('../model/concentration_db.php');
 //$fields = new Register\fields();
-$type= get_types();
-$titles = get_all_titles();
+
 
 /**$fields->addField('type','You must choose your type of experience.');
 $fields->addField('title','You must choose the title of your experience.');
@@ -35,6 +35,17 @@ else
 
 $page = 'college';
 
+if($page === 'college')
+{
+    $majors = get_majors();
+    $minors = get_minors();
+}else if($page === 'experience')
+{
+    $type= get_types();
+    $titles = get_all_titles();
+}
+
+
 
 if($action==='display')
 {
@@ -46,7 +57,7 @@ if($action==='display')
     else if($page === 'college')
     {
         $colleges = get_colleges();
-        include('../php_work_material/mycollege.php');
+        include('mycollege.php');
     }
 }
 else if($action === 'edit')
