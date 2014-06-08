@@ -31,8 +31,15 @@ function get_all_titles() {
     global $db;
     $query = "SELECT title FROM experiences";
     $result = $db->query($query);
-    return $result;
+    return $result->fetchAll(PDO::FETCH_COLUMN,0);
 
+}
+
+function danny_get_all_titles(){
+    global $db;
+    $query = "SELECT title FROM experiences";
+    $result = $db->query($query);
+    return $result;
 }
 
 function get_types() {
@@ -41,9 +48,17 @@ function get_types() {
     FROM experiences
     ORDER BY type';
     $result = $db->query($query);
-    return $result;
+    return $result->fetchAll(PDO::FETCH_COLUMN,0);
 }
 
+function danny_get_types(){
+    global $db;
+    $query = 'SELECT DISTINCT type
+    FROM experiences
+    ORDER BY type';
+    $result = $db->query($query);
+    return $result;
+}
 
 function add_experience( $type, $title, $content, $accounts_id){
     global $db;
