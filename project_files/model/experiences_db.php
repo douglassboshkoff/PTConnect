@@ -31,7 +31,7 @@ function get_all_titles() {
     global $db;
     $query = "SELECT title FROM experiences";
     $result = $db->query($query);
-    return $result->fetchAll(PDO::FETCH_COLUMN,0);
+    return $result;
 
 }
 
@@ -41,7 +41,7 @@ function get_types() {
     FROM experiences
     ORDER BY type';
     $result = $db->query($query);
-    return $result->fetchAll(PDO::FETCH_COLUMN,0);
+    return $result;
 }
 
 

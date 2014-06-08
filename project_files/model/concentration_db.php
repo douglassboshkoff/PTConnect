@@ -14,7 +14,7 @@
    WHERE major_minor = 0
    ORDER BY name';
    $result = $db->query($query);
-   return $result->fetchAll(PDO::FETCH_COLUMN,0);
+   return $result;
  }
 
  function get_minors() {
