@@ -45,7 +45,12 @@ else if($action === 'edit')
     $id = $_POST['id'];
     $content = $_POST['content'];
     $type = $_POST['type'];
+    if($_POST['title'] === '1')
+    {
+        $title = $_POST['titletextbox'];
+    }else{
     $title = $_POST['title'];
+    }
     update_experience($id, $type, $title, $content, 1);
     $experiences = get_experiences(1);
     $action = 'display';
@@ -76,6 +81,8 @@ else if($action === 'delete')
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+        <script type="text/javascript" src="../js/jQuery.js"></script>
+        <script type="text/javascript" src="../js/dropdown_text_exp.js"></script>
 	</head>
 	<body>
 	<div id="wrapper1">
@@ -110,31 +117,35 @@ else if($action === 'delete')
             <h1><?php if($action==='display') { echo "Add Experience";} else { echo "Edit Experience";} ?></h1>
 
             <form method="post" action="myExperiences.php">
+
                 <label>Type</label>
-                <select class="dropdown2" id="titleselect" name="type">
+
+                <select class="dropdown2" name="type">
                     <?php for($i = 0; $i < count($type); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
                             <option <?php if($sp_experience['type'] === $type[$i] ) { ?> selected <?php } ?>><?php echo $type[$i] ?></option>
                         <?php }else { ?> <option><?php echo $type[$i] ?> <?php } ?></option>
-                        <?php echo 'test: '.$type[$i]; ?>
                     <?php } ?>
-                    <!--<option value="1">Other</option> -->
+                    <option>Other</option>
                 </select>
+
                 <br/>
                 <label>Title</label>
+
                 <select class="dropdown2" id = "titleselect" name="title">
                     <?php for($i = 0; $i < count($titles); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
                             <option <?php if($sp_experience['title'] === $titles[$i] ) { ?> selected <?php } ?>><?php echo $titles[$i] ?></option>
                         <?php }else { ?> <option><?php echo $titles[$i] ?> <?php } ?></option>
                     <?php } ?>
-                    <<!--<option value = "1" >Other</option>-->
+                    <option value = "1" >Other</option>
                 </select>
-                <!--<div id = "titlediv">  <input type="text" id="titletextbox" />  </div> --->
+
+
+                <div id = "titlediv">  <input type="text" id="titletextbox" name="titletextbox" />  </div>
 
                 <br/>
-                <textarea class="other_box" hidden="hidden"></textarea>
-                <br/>
+
                 <h2>Describe your experience</h2>
                 <textarea class="questions" rows="4" name="content" ><?php if($action==='populate_edit') { echo $sp_experience['content']; } ?></textarea>
                 <input type="hidden" name="action" value="<?php
@@ -150,7 +161,6 @@ else if($action === 'delete')
                 <?php if($action==='populate_edit') { ?>
                     <input type="hidden" name="id" value="<?php echo $sp_experience['id'] ?>"/>
                 <?php } ?>
-                <input type="hidden" value="experience" name="page"/>
             </form>
         </div>
 		</div>
