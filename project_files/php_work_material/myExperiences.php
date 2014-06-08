@@ -128,9 +128,9 @@ else if($action === 'delete')
                             <option <?php if($sp_experience['title'] === $titles[$i] ) { ?> selected <?php } ?>><?php echo $titles[$i] ?></option>
                         <?php }else { ?> <option><?php echo $titles[$i] ?> <?php } ?></option>
                     <?php } ?>
-                    <!--<option value = "1" >Other</option>-->
+                    <<!--<option value = "1" >Other</option>-->
                 </select>
-                <div id = "titlediv">  <input type="text" id="titletextbox" />  </div>
+                <!--<div id = "titlediv">  <input type="text" id="titletextbox" />  </div> --->
 
                 <br/>
                 <textarea class="other_box" hidden="hidden"></textarea>
