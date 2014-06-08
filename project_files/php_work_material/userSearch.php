@@ -16,9 +16,9 @@ $user_email = "Tom Ato";
 
 $grad_year_array = get_grad_years();
 $college_array = get_colleges();
-$major_array = get_majors();
-$experience_type_array = get_types();
-$experience_title_array = get_all_titles();
+$major_array = danny_get_majors();
+$experience_type_array = danny_get_types();
+$experience_title_array = danny_get_all_titles();
 
 if(isset($_POST['year'])){
     $yearIn = $_POST['year'];
@@ -59,6 +59,17 @@ $name_array = "";
 	<head>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 	</head>
+    <style>
+        form input[type="submit"]{
+
+            background: none;
+            border: none;
+            color: black;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
 	<body>
 		<div id="filters">
 			<h1>Filters</h1>
@@ -126,7 +137,12 @@ $name_array = "";
 
                 <div id="user">
                     <a href="profile.php"><img src="profile.png"/></a>
-                    <a href="profile.php"><h2><?php echo $name?></h2></a>
+                    <form action="profile.php" method="post">
+                        <input type="submit" value="<?php echo $name?>">
+                        <input type="hidden" name="name" value="<?php echo $name?>">
+                    </form>
+                    <!--<a href="profile.php"><h2><?php echo $name?></h2></a>
+                    -->
                     <h3>PT 2015</h3>
                 </div>
                 <!-- add place for action
