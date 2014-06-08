@@ -16,13 +16,13 @@
                             <form action="../view/profile_index.php" method="post">
                                 <input type="hidden" value="populate_edit" name="action"/>
                                 <input type="hidden" value="<?php echo $college['location'] ?>" name="id"/>
-                                <input type="submit" value="edit" name="submit"/>
+                                <input id="submitLink" type="submit" value="edit" name="submit"/>
                                 <input type="hidden" value="college" name="page"/>
                             </form>
                         </td>
                         <td>
                             <form action="../view/profile_index.php" method="post">
-                                <input type="submit" value="delete" name="submit"/>
+                                <input id="submitLink" type="submit" value="delete" name="submit"/>
                                 <input type="hidden" value="<?php echo $college['id'] ?>" name="id"/>
                                 <input type="hidden" value="delete" name="action"/>
                                 <input type="hidden" value="college" name="page"/>
