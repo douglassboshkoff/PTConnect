@@ -34,8 +34,7 @@ function get_minors() {
    WHERE major_minor = 1
    ORDER BY name';
     $result = $db->query($query);
-    $majors = $result->fetch();
-    return $majors;
+    return $result->fetchAll(PDO::FETCH_COLUMN,0);
 }
 
 function add_concentration($name, $major_minor) {

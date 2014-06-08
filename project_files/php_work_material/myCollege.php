@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <?php
-//include('../validate/fields.php');
-//include('../validate/validate.php');
-include('../model/database.php');
-include('../model/university_db.php');
-include('../model/concentration_db.php');
-//$fields = new Register\fields();
+include "../model/database.php";
+include "../model/accounts_db.php";
+include "../model/university_db.php";
+include "../model/concentration_db.php";
+
 $majors = get_majors();
 $minors = get_minors();
-
-/**$fields->addField('type','You must choose your type of experience.');
-$fields->addField('title','You must choose the title of your experience.');
-$fields->addField('other','Must choose a type.');
-
-//$type = new Register\field('type','Must choose a type.');
-$title = new Register\field('title','You must choose a title for your experience.');
-$other = new Register\field('other');
-$validate = new Register\validate(); **/
 
 if(isset($_POST['action']))
 {
@@ -32,7 +22,6 @@ else
 if($action==='display')
 {
         $colleges = get_colleges();
-        include('../php_work_material/mycollege.php');
 }
 else if($action === 'edit')
 {
@@ -56,6 +45,12 @@ else if($action === 'delete')
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
         <script type="text/javascript" src="../js/jQuery.js"></script>
         <script type="text/javascript" src="../js/dropdown_text.js"></script>
+        <style>
+
+          .dropdown2{
+              width:240px;
+          }
+            </style>
 	</head>
 	<body>
 	<div id="wrapper1">
@@ -95,6 +90,7 @@ else if($action === 'delete')
 					<option>Harvard University</option>
 					<option>Purdue University</option>
 				</select>
+                <div id = "hiddendiv">  <input type="text" id="othertextbox" />  </div>
 				<br>
 				<label style="margin-right: 2px;">Major 1</label>
 				<select class="dropdown2">
@@ -103,7 +99,10 @@ else if($action === 'delete')
                             <option <?php if($sp_college['type'] === $majors[$i] ) { ?> selected <?php } ?>><?php echo $majors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $majors[$i] ?> <?php } ?></option>
                     <?php } ?>
-				</select>
+                    <option value = "1" class = ".textexp"> Other </option>
+                </select>
+                <div id = "hiddendiv">  <input type="text" id="majorothertextbox" />  </div>
+
 				<label style="margin-left: 2px;">Major 2</label>
 				<select class="dropdown2">
                     <?php for($i = 0; $i < count($majors); $i++) { ?>
@@ -112,8 +111,11 @@ else if($action === 'delete')
                         <?php }else { ?> <option><?php echo $majors[$i] ?> <?php } ?></option>
                     <?php } ?>
                     <option>none</option>
-				</select>
+                    <option value = "1" class = ".textexp"> Other </option>
+                </select>
+                <div id = "hiddendiv">  <input type="text" id="majorothertextbox2" />  </div>
 				<br>
+
 				<label style="margin-right: 1px;">Minor 1</label>
 				<select class="dropdown2">
                     <?php for($i = 0; $i < count($minors); $i++) { ?>
@@ -121,15 +123,22 @@ else if($action === 'delete')
                             <option <?php if($sp_experience['type'] === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $minors[$i] ?> <?php } ?></option>
                     <?php } ?>
-				</select>
-				<label style="margin-left: 2px;">Minor 2</label>
+                    <option value = "1" class = ".textexp"> Other </option>
+                </select>
+
+                <div id = "hiddendiv">  <input type="text" id="minorothertextbox" />  </div>
+
+                <label style="margin-left: 2px;">Minor 2</label>
 				<select class="dropdown2">
                     <?php for($i = 0; $i < count($minors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
                             <option <?php if($sp_experience['type'] === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $minors[$i] ?> <?php } ?></option>
                     <?php } ?>
-				</select>
+                    <option value = "1" class = ".textexp"> Other </option>
+                </select>
+                <div id = "hiddendiv">  <input type="text" id="minorothertextbox2" />  </div>
+
 				<h2>Question 1 Text</h2>
 				<textarea class="questions" rows="4"></textarea>
 				<h2>Question 2 Text</h2>
