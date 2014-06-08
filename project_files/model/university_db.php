@@ -6,9 +6,9 @@
  * Time: 1:44 PM
  */
 
-function add_college($name, $location, $image_link) {
+function add_college($name, $location, $image_link, $graduated) {
     global $db;
-    $query = "INSERT INTO universities (name, location, image_link) VALUES ('$name','$location', '$image_link')";
+    $query = "INSERT INTO universities (name, location, image_link, graduated) VALUES ('$name','$location', '$image_link', '$graduated')";
     $db->exec($query);
 }
 
@@ -18,7 +18,13 @@ function get_college_image($collegeID){
     $result = $db->query($query);
     return $result->fetch()['image_link'];
 }
+function get_students($collegeID) {
+    global $db;
+    $query = "SELECT accounts_id FROM questions WHERE university_id = '$collegeID'";
+    $result = $db->query($query);
+    return $result->fetchAll();
 
+}
 function remove_college($id) {
     global $db;
     $query = "DELETE FROM universities WHERE id = '$id'";

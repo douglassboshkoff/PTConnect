@@ -34,6 +34,12 @@ function get_user_by_id($id) {
     return $user;
 }
 
+function get_image($id){
+    global $db;
+    $query = "SELECT image_link FROM accounts WHERE id = '$id'";
+    $res = $db->query($query);
+    return $res->fetch();
+}
 function validate_password($email, $password) {
     global $db;
     $query = "SELECT * FROM accounts WHERE email = '$email'";

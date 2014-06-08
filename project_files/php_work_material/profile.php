@@ -20,7 +20,7 @@ $g_colleges = get_college($userID);
 <body>
 <div id="profile">
     <div id="profilePicture">
-        <img src="profile.png"/>
+        <img src="<?php echo get_image($userID)['image_link']; ?>"/>
     </div>
     <div id="profileInfo">
         <h1><?php $name = get_name($userID); echo $name['first_name'] . " " . $name['last_name'];?></h1>
