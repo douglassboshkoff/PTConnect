@@ -33,7 +33,7 @@ else
     $action='display';
 }
 
-$page = 'college';
+$page = 'experience';
 
 if($page === 'college')
 {

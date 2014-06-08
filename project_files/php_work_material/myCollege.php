@@ -83,6 +83,7 @@
 				<h2>Question 3 Text</h2>
 				<textarea class="questions" rows="4"></textarea>
 				<input type="submit" id="addButton" value="Add">
+                <input type="hidden" name="page" value="college"/>
 			</form>
 		</div>
 		</div>
