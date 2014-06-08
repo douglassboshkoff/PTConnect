@@ -83,6 +83,21 @@ include("header.php");
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
         <script type="text/javascript" src="../js/jQuery.js"></script>
         <script type="text/javascript" src="../js/dropdown_text_exp.js"></script>
+        <style>
+            form input[type="submit"]{
+
+                background: none;
+                border: none;
+                color: black;
+                text-decoration: underline;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            .dropdown2{
+                width: 320px;
+                margin-right:4px;
+            }
+        </style>
 	</head>
 	<body>
 	<div id="wrapper1">
@@ -132,7 +147,7 @@ include("header.php");
                 </select>
 
                 <br/>
-                <label>Title</label>
+                <label style="margin-right: 5px;">Title</label>
 
                 <select class="dropdown2" id = "titleselect" name="title">
                     <?php for($i = 0; $i < count($titles); $i++) { ?>

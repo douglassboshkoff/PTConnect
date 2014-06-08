@@ -29,7 +29,7 @@ function get_content($id) {
 
 function get_all_titles() {
     global $db;
-    $query = "SELECT title FROM experiences";
+    $query = "SELECT distinct title FROM experiences";
     $result = $db->query($query);
     return $result->fetchAll(PDO::FETCH_COLUMN,0);
 
