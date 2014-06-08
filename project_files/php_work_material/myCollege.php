@@ -1,4 +1,56 @@
 <!DOCTYPE html>
+<?php
+//include('../validate/fields.php');
+//include('../validate/validate.php');
+include('../model/database.php');
+include('../model/university_db.php');
+include('../model/concentration_db.php');
+//$fields = new Register\fields();
+$majors = get_majors();
+$minors = get_minors();
+
+/**$fields->addField('type','You must choose your type of experience.');
+$fields->addField('title','You must choose the title of your experience.');
+$fields->addField('other','Must choose a type.');
+
+//$type = new Register\field('type','Must choose a type.');
+$title = new Register\field('title','You must choose a title for your experience.');
+$other = new Register\field('other');
+$validate = new Register\validate(); **/
+
+if(isset($_POST['action']))
+{
+    $action = $_POST['action'];
+}
+else
+{
+    $action='display';
+}
+
+
+
+if($action==='display')
+{
+        $colleges = get_colleges();
+        include('../php_work_material/mycollege.php');
+}
+else if($action === 'edit')
+{
+
+}
+else if($action === 'populate_edit')
+{
+
+}
+else if($action === 'add')
+{
+
+}
+else if($action === 'delete')
+{
+
+}
+?>
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
