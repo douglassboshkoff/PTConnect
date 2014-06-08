@@ -54,6 +54,8 @@ else if($action === 'delete')
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+        <script type="text/javascript" src="../js/jQuery.js"></script>
+        <script type="text/javascript" src="../js/dropdown_text.js"></script>
 	</head>
 	<body>
 	<div id="wrapper1">
