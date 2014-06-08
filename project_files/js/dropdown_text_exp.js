@@ -10,6 +10,7 @@ $(document).ready(function(){
         $(window).load(function(){
             $('#titlediv').hide();
             $('#titletextbox').val("Enter New Experience");
+           // $('#titletextbox').text("");
         });
 
         $('#titleselect').change(function(){
@@ -24,14 +25,16 @@ $(document).ready(function(){
         });
         $("#titletextbox").change(function()
         {
-            $("#titleselect").val($("#titletextbox").text());
+
+
         });
 
         $( "#titletextbox").click(function(){
             $(this).val("");
         });
         $("#titletextbox").focusout(function(){
-                $(this).val($("#titletextbox").text());
+           // $(this).text("");
+           // $(this).val($(this).text());
 
         });
 
