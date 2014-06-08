@@ -69,15 +69,12 @@ else if($action === 'edit')
     update_experience($id, $type, $title, $content, 1);
     $experiences = get_experiences(1);
     $action = 'display';
-    include('myexperiences.php');
-
 }
 else if($action === 'populate_edit')
 {
     $id = $_POST['id'];
     $sp_experience = get_specific_experience($id)->fetch();
     $experiences = get_experiences(1);
-    include('myexperiences.php');
 }
 else if($action === 'add')
 {
@@ -87,7 +84,6 @@ else if($action === 'add')
     add_experience($type, $title, $content, 1);
     $experiences = get_experiences(1);
     $action = 'display';
-    include('myexperiences.php');
 }
 else if($action === 'delete')
 {
@@ -95,6 +91,5 @@ else if($action === 'delete')
     delete_experience($id);
     $experiences = get_experiences(1);
     $action = 'display';
-    include('myexperiences.php');
 }
 ?>

@@ -78,6 +78,7 @@ else if($action === 'delete')
     $experiences = get_experiences(1);
     $action = 'display';
 }
+include("header.php");
 ?>
 <html>
 	<head>
@@ -124,7 +125,9 @@ else if($action === 'delete')
                 <select class="dropdown2" name="type">
                     <?php for($i = 0; $i < count($type); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
+
                             <option <?php if($sp_experience['type'] === $type[$i] ) { ?> selected <?php } ?>><?php echo $type[$i] ?></option>
+
                         <?php }else { ?> <option><?php echo $type[$i] ?> <?php } ?></option>
                     <?php } ?>
                     <option>Other</option>
@@ -169,4 +172,5 @@ else if($action === 'delete')
 		</div>
 		</div>
 		</body>
+<?php include('footer.php') ?>
 </html>
