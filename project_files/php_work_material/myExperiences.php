@@ -24,7 +24,6 @@ $fields->addField('other','Must choose a type.');
 $title = new Register\field('title','You must choose a title for your experience.');
 $other = new Register\field('other');
 $validate = new Register\validate(); **/
-
 if(isset($_POST['action']))
 {
     $action = $_POST['action'];
@@ -45,7 +44,6 @@ else if($action === 'edit')
     $id = $_POST['id'];
     $content = $_POST['content'];
     $type = $_POST['type'];
-    echo "the title is ".$_POST['title'];
     if($_POST['title'] === '1')
     {
         $title = $_POST['titletextbox'];
