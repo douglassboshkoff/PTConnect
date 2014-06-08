@@ -42,7 +42,7 @@
 					<option>Purdue University</option>
 				</select>
 				<br>
-				<label>Major 1</label>
+				<label style="margin-right: 2px;">Major 1</label>
 				<select class="dropdown2">
                     <?php for($i = 0; $i < count($majors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
@@ -50,7 +50,7 @@
                         <?php }else { ?> <option><?php echo $majors[$i] ?> <?php } ?></option>
                     <?php } ?>
 				</select>
-				<label>Major 2</label>
+				<label style="margin-left: 2px;">Major 2</label>
 				<select class="dropdown2">
                     <?php for($i = 0; $i < count($majors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
@@ -60,7 +60,7 @@
                     <option>none</option>
 				</select>
 				<br>
-				<label>Minor 1</label>
+				<label style="margin-right: 1px;">Minor 1</label>
 				<select class="dropdown2">
                     <?php for($i = 0; $i < count($minors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
@@ -68,7 +68,7 @@
                         <?php }else { ?> <option><?php echo $minors[$i] ?> <?php } ?></option>
                     <?php } ?>
 				</select>
-				<label>Minor 2</label>
+				<label style="margin-left: 2px;">Minor 2</label>
 				<select class="dropdown2">
                     <?php for($i = 0; $i < count($minors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
