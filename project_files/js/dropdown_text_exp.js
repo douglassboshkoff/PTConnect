@@ -31,7 +31,8 @@ $(document).ready(function(){
             $(this).val("");
         });
         $("#titletextbox").focusout(function(){
-            $(this).val("Enter New Experience");
+                $(this).val($("#titletextbox").text());
+
         });
 
 

@@ -45,6 +45,7 @@ else if($action === 'edit')
     $id = $_POST['id'];
     $content = $_POST['content'];
     $type = $_POST['type'];
+    echo "the title is ".$_POST['title'];
     if($_POST['title'] === '1')
     {
         $title = $_POST['titletextbox'];
@@ -135,10 +136,12 @@ else if($action === 'delete')
                 <select class="dropdown2" id = "titleselect" name="title">
                     <?php for($i = 0; $i < count($titles); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
+
                             <option <?php if($sp_experience['title'] === $titles[$i] ) { ?> selected <?php } ?>><?php echo $titles[$i] ?></option>
+
                         <?php }else { ?> <option><?php echo $titles[$i] ?> <?php } ?></option>
                     <?php } ?>
-                    <option value = "1" >Other</option>
+                    <option value="1" >Other</option>
                 </select>
 
 
