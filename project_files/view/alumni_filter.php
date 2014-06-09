@@ -8,8 +8,8 @@ include "../model/database.php";
 //test array
 $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
 
-$newArr = filter("Purdue", "Lafayette, IN", "Computer Science");
-
+$newArr = accounts_filter("", "", "");//->fetchAll(PDO::FETCH_COLUMN,0);;
+//for($i = 0; $i < $newArr)
 // temporary values
 $class = 2015;
 // identification value
@@ -17,9 +17,9 @@ $user_email = "Tom Ato";
 
 $grad_year_array = get_grad_years();
 $college_array = get_colleges();
-$major_array = get_majors();
-$experience_type_array = get_types();
-$experience_title_array = get_all_titles();
+$major_array = danny_get_majors();
+$experience_type_array = danny_get_types();
+$experience_title_array = danny_get_all_titles();
 
 if(isset($_POST['year'])){
     $yearIn = $_POST['year'];
@@ -280,7 +280,7 @@ $name_array = "";
 <div class="divider"></div>
 <div class="results_container">
     <!-- php for statement making rows of 4 profiles -->
-    <?php foreach($arr as $name) : ?>
+    <?php foreach($newArr as $name) : ?>
         <!-- add place for action -->
         <form action="User_Profilepage.php" method="post">
             <input type="hidden" name="userID" value="<?php echo $user_email ?>">
@@ -292,7 +292,8 @@ $name_array = "";
                 <div class="bottom">
                     <div class="info">
                         <div class="name">
-                            <?php echo $name?>
+                            <?php echo $name['first_name']." ".$name['last_name']?>
+
                         </div>
                         <div class="class_number">
                             <?php echo $class?>

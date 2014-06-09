@@ -6,7 +6,7 @@ include "../model/experiences_db.php";
 include "../model/database.php";
 
 include "header.php";
-
+$newArr = accounts_filter("", "", "");
 $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
 
 // temporary values
@@ -133,17 +133,17 @@ $name_array = "";
 
 <div id="content">
 
-    <?php foreach($arr as $name) : ?>
+    <?php foreach($newArr as $name) : ?>
 
         <div id="user">
             <a href="profile.php"><img src="profile.png"/></a>
             <form action="profile.php" method="post">
-                <input type="submit" value="<?php echo $name?>">
-                <input type="hidden" name="name" value="<?php echo $name?>">
+                <input type="submit" value="<?php echo $name['first_name']." ".$name['last_name']?>">
+                <input type="hidden" name="name" value="<?php echo $name['email']?>">
             </form>
             <!--<a href="profile.php"><h2><?php echo $name?></h2></a>
                     -->
-            <h3>PT 2015</h3>
+            <h3>PT <?php echo $name['pt_grad_year'] ?></h3>
         </div>
         <!-- add place for action
                 <form action="User_Profilepage.php" method="post">
