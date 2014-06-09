@@ -23,7 +23,6 @@ if($action == 'login')
 
         $_SESSION['id'] = get_id_by_email($email)['id'];
         include('main.php');
-        exit();
     }
     else {
         $error=true;
@@ -56,11 +55,9 @@ else if($action == 'continue_as_guest')
     include('main.php');
 
 }
-else if($action=='alumni_filter')
+else if($action === 'homepage')
 {
-    include('../view/alumni_filter.php');
-}else if($action === 'homepage')
-{
+    session_destroy();
     include('homepage.php');
 }
 

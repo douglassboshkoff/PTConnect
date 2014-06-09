@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: Douglass
@@ -24,6 +25,8 @@ $fields->addField('other','Must choose a type.');
 $title = new Register\field('title','You must choose a title for your experience.');
 $other = new Register\field('other');
 $validate = new Register\validate(); **/
+
+$id = $_SESSION['id'];
 if(isset($_POST['action']))
 {
     $action = $_POST['action'];
@@ -50,8 +53,8 @@ else if($action === 'edit')
     }else{
     $title = $_POST['title'];
     }
-    update_experience($id, $type, $title, $content, 1);
-    $experiences = get_experiences(1);
+    update_experience($id, $type, $title, $content, $id);
+    $experiences = get_experiences($id);
     $type = get_types();
     $titles = get_all_titles();
     $action = 'display';
@@ -72,8 +75,8 @@ else if($action === 'add')
     }else{
         $title = $_POST['title'];
     }
-    add_experience($type, $title, $content, 1);
-    $experiences = get_experiences(1);
+    add_experience($type, $title, $content, $id);
+    $experiences = get_experiences($id);
     $type = get_types();
     $titles = get_all_titles();
     $action = 'display';

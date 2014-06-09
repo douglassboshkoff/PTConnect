@@ -1,8 +1,14 @@
 <?php
-
+session_start();
+if(isset($_SESSION['id']))
+{
+    $_SESSION['id'] = $_SESSION['id'];
+}
+echo $_SESSION['id'];
 include "../model/university_db.php";
 include "../model/database.php";
 include "header.php";
+
 
 //test array
 $arr = array("goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");

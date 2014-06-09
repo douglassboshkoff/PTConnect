@@ -1,4 +1,9 @@
-<?php include('header.php') ?>
+<?php
+echo $_SESSION['id'];
+include('header.php')
+
+
+?>
 <!DOCTYPE html>
 
 
