@@ -98,7 +98,7 @@ function get_graduated($collegeID) {
     return $grad;
 }
 
-function get_attend($collegeID) {
+function get_attended($collegeID) {
      global $db;
     $attend = 0;
     $query = $db->prepare("SELECT graduated FROM universities where id = '$collegeID'");
@@ -119,7 +119,7 @@ function increment_graduated($collegeID) {
     global $db;
     $graduated = get_graduated($collegeID);
     $graduated = $graduated + 1;
-    $query = "UPDATE univirsites SET graduated = '$graduated' WHERE id = '$collegeID'";
+    $query = "UPDATE universites SET graduated = '$graduated' WHERE id = '$collegeID'";
     $db->exec($query);
 }
 
@@ -127,7 +127,17 @@ function increment_attended($collegeID) {
     global $db;
     $attended = get_attended($collegeID);
     $attended = $attended + 1;
-    $query = "UPDATE univirsites SET attended = '$attended' WHERE id = '$collegeID'";
+    $query = "UPDATE universites SET attended = '$attended' WHERE id = '$collegeID'";
+    $db->exec($query);
+}
+
+function graduate($collegeID) {
+    global $db;
+    $attended = get_attended($collegeID);
+    $graduated = get_graduated($collegeID);
+    $attended = $attended - 1;
+    $graduated = $graduated + 1;
+    $query = "UPDATE universities SET attended = '$attended', graduated = '$graduated' WHERE id = '$collegeID'";
     $db->exec($query);
 }
 
