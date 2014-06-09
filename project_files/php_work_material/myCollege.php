@@ -96,18 +96,23 @@ include "header.php";
                             </form>
                             
                     </tr>
-                <?php  } ?>
+                <?php  } unset($college) ?>
 			</table>
 		</div>
 		<div id="add">
-			<h1><?php if($action==='display') { echo "Add Experience";} else { echo "Edit Experience";} ?></h1>
+			<h1><?php if($action==='display') { echo "Add College";} else { echo "Edit College";} ?></h1>
 			<form method="post" action="myCollege.php">
 				<label>School</label>
 				<select class="dropdown2" id="college2">
-					<?php foreach($colleges as $college) { ?>
+                    <?php $colleges = get_colleges(); ?>
+                        <?php  foreach($colleges as $college) { ?>
+
                         <?php if($action==='populate_edit') { ?>
-                            <option <?php if($sp_college['name'] === $college['name'] ) { ?> selected <?php } ?>><?php echo $college['name']; ?></option>
-                      <?php }else { ?>
+
+                                <option <?php if($sp_college['name'] === $college['name'] ) { ?> selected <?php } ?>> <?php echo $college['name']; ?></option>
+
+                            <?php }else { ?>
+
                             <option><?php echo $college['name'] ?></option>
                         <?php } ?>
                     <?php } ?>
