@@ -60,7 +60,7 @@ else if($action === 'delete')
                 <?php  foreach($colleges as $college) { ?>
                     <tr>
                         <td><h1><?php echo $college['name']; ?></h1></td>
-
+                        
                         <td>
                             <form action="../view/profile_index.php" method="post">
                                 <input type="hidden" value="populate_edit" name="action"/>
@@ -76,7 +76,7 @@ else if($action === 'delete')
                                 <input type="hidden" value="delete" name="action"/>
                                 <input type="hidden" value="college" name="page"/>
                             </form>
-
+                            
                     </tr>
                 <?php  } ?>
 			</table>
