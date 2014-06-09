@@ -46,6 +46,7 @@ else if($action === 'delete')
     $colleges = get_colleges();
     $action = 'display';
 }
+include "header.php"
 ?>
 <html>
 	<head>
@@ -178,3 +179,5 @@ else if($action === 'delete')
 		</div>
 	</body>
 </html>
+
+<?php include "footer.php" ?>
