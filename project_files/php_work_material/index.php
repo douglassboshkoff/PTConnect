@@ -3,7 +3,9 @@ include_once "../model/database.php";
 include_once "../model/accounts_db.php";
 $error=false;
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];

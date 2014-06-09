@@ -4,7 +4,6 @@ if(isset($_SESSION['id']))
 {
     $_SESSION['id'] = $_SESSION['id'];
 }
-echo $_SESSION['id'];
 include "../model/university_db.php";
 include "../model/database.php";
 include "header.php";
