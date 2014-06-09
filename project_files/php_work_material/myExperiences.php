@@ -52,6 +52,8 @@ else if($action === 'edit')
     }
     update_experience($id, $type, $title, $content, 1);
     $experiences = get_experiences(1);
+    $type = get_types();
+    $titles = get_all_titles();
     $action = 'display';
 }
 else if($action === 'populate_edit')
@@ -64,9 +66,16 @@ else if($action === 'add')
 {
     $content = $_POST['content'];
     $type = $_POST['type'];
-    $title = $_POST['title'];
+    if($_POST['title'] === '1')
+    {
+        $title = $_POST['titletextbox'];
+    }else{
+        $title = $_POST['title'];
+    }
     add_experience($type, $title, $content, 1);
     $experiences = get_experiences(1);
+    $type = get_types();
+    $titles = get_all_titles();
     $action = 'display';
 }
 else if($action === 'delete')
@@ -105,6 +114,7 @@ include("header.php");
 
             }
 
+
         </style>
 	</head>
 	<body>
@@ -118,7 +128,7 @@ include("header.php");
 
                         <td>
                             <form action="myExperiences.php" method="post">
-                                <input type="hidden" value="populate_edit" name="action"/>
+                                <input type="hidden" value="populate_edit" name="action" />
                                 <input type="hidden" value="<?php echo $experience['id'] ?>" name="id"/>
                                 <input type="submit" value="edit" name="submit"/>
                                 <input type="hidden" value="experience" name="page"/>
@@ -126,7 +136,7 @@ include("header.php");
                         </td>
                         <td>
                             <form action="myExperiences.php" method="post">
-                                <input type="submit" value="delete" name="submit"/>
+                                <input type="submit" value="delete" name="submit" />
                                 <input type="hidden" value="<?php echo $experience['id'] ?>" name="id"/>
                                 <input type="hidden" value="delete" name="action"/>
                                 <input type="hidden" value="experience" name="page"/>
@@ -184,7 +194,7 @@ include("header.php");
                     echo 'edit';
                 }
                 ?>">
-                <input type="submit" id="addButton" value="submit"/>
+                <input type="submit" id="addButton" value="submit" style="text-decoration: none"/>
                 <?php if($action==='populate_edit') { ?>
                     <input type="hidden" name="id" value="<?php echo $sp_experience['id'] ?>"/>
                 <?php } ?>

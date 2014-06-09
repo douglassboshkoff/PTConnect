@@ -25,19 +25,24 @@ if($action==='display')
 }
 else if($action === 'edit')
 {
-
 }
 else if($action === 'populate_edit')
 {
-
+    $id = $_POST['id'];
+    $sp_college = get_specific_college($id);
+    $colleges = get_colleges();
 }
 else if($action === 'add')
 {
+    $id = $_POST['id'];
 
 }
 else if($action === 'delete')
 {
-
+    $id = $_POST['id'];
+    remove_college($id);
+    $colleges = get_colleges();
+    $action = 'display';
 }
 ?>
 <html>
@@ -50,6 +55,16 @@ else if($action === 'delete')
           .dropdown2{
               width:240px;
           }
+            #majordiv1, #majordiv2, #minordiv1, #minordiv2 {
+                display:inline-block;
+                margin-left: 77px;
+
+            }
+            #majordiv1 input, #majordiv2 input, #minordiv1 input, #minordiv2 input {
+                width: 235px;
+                font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+                font-size: 16px;
+            }
             </style>
 	</head>
 	<body>
@@ -62,15 +77,15 @@ else if($action === 'delete')
                         <td><h1><?php echo $college['name']; ?></h1></td>
                         
                         <td>
-                            <form action="../view/profile_index.php" method="post">
+                            <form action="myCollege.php" method="post">
                                 <input type="hidden" value="populate_edit" name="action"/>
-                                <input type="hidden" value="<?php echo $college['location'] ?>" name="id"/>
+                                <input type="hidden" value="<?php echo $college['id'] ?>" name="id"/>
                                 <input id="submitLink" type="submit" value="edit" name="submit"/>
                                 <input type="hidden" value="college" name="page"/>
                             </form>
                         </td>
                         <td>
-                            <form action="../view/profile_index.php" method="post">
+                            <form action="myCollege.php" method="post">
                                 <input id="submitLink" type="submit" value="delete" name="submit"/>
                                 <input type="hidden" value="<?php echo $college['id'] ?>" name="id"/>
                                 <input type="hidden" value="delete" name="action"/>
@@ -86,9 +101,14 @@ else if($action === 'delete')
 			<form>
 				<label>School</label>
 				<select class="dropdown2" id="college2">
-					<option>College</option>
-					<option>Harvard University</option>
-					<option>Purdue University</option>
+					<?php foreach($colleges as $college) { ?>
+                        <?php if($action==='populate_edit') { ?>
+                            <option <?php if($sp_college['name'] === $college['name'] ) { ?> selected <?php } ?>><?php echo $college['name']; ?></option>
+                      <?php }else { ?>
+                            <option><?php echo $college['name'] ?></option>
+                     <?php } ?>
+                    <?php } ?>
+
                     <option value = "1" class = ".textexp"> Other </option>
 
                 </select>
@@ -98,7 +118,7 @@ else if($action === 'delete')
 				<select class="dropdown2" id = "major1">
                     <?php for($i = 0; $i < count($majors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
-                            <option <?php if($sp_college['type'] === $majors[$i] ) { ?> selected <?php } ?>><?php echo $majors[$i] ?></option>
+                            <option <?php if($sp_college['major'] === $majors[$i] ) { ?> selected <?php } ?>><?php echo $majors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $majors[$i] ?> <?php } ?></option>
                     <?php } ?>
                     <option value = "1" class = ".textexp"> Other </option>
@@ -148,7 +168,7 @@ else if($action === 'delete')
 				<textarea class="questions" rows="4"></textarea>
 				<h2>Question 3 Text</h2>
 				<textarea class="questions" rows="4"></textarea>
-				<input type="submit" id="addButton" value="Add">
+				<input type="submit" id="addButton" value="submit">
                 <input type="hidden" name="page" value="college"/>
 			</form>
 		</div>

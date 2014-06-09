@@ -38,6 +38,13 @@ function get_college($userID) {
     return $college;
 }
 
+function get_specific_college($collegeid) {
+    global $db;
+    $query = "SELECT * FROM experiences WHERE id = '$collegeid'";
+    $result = $db->query($query);
+    return $result;
+}
+
 function get_college_name($collegeID){
     global$db;
     $query = "Select * from universities where id = '$collegeID'";
