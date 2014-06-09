@@ -101,7 +101,7 @@ else if($action === 'delete')
                     <?php } ?>
                     <option value = "1" class = ".textexp"> Other </option>
                 </select>
-                <div id = "hiddendiv">  <input type="text" id="majorothertextbox" />  </div>
+                <div id = "majordiv1">  <input type="text" id="majorothertextbox" />  </div>
 
 				<label style="margin-left: 2px;">Major 2</label>
 				<select class="dropdown2">
@@ -113,7 +113,7 @@ else if($action === 'delete')
                     <option>none</option>
                     <option value = "1" class = ".textexp"> Other </option>
                 </select>
-                <div id = "hiddendiv">  <input type="text" id="majorothertextbox2" />  </div>
+                <div id = "majordiv2">  <input type="text" id="majorothertextbox2" />  </div>
 				<br>
 
 				<label style="margin-right: 1px;">Minor 1</label>
@@ -126,7 +126,7 @@ else if($action === 'delete')
                     <option value = "1" class = ".textexp"> Other </option>
                 </select>
 
-                <div id = "hiddendiv">  <input type="text" id="minorothertextbox" />  </div>
+                <div id = "minordiv1">  <input type="text" id="minorothertextbox" />  </div>
 
                 <label style="margin-left: 2px;">Minor 2</label>
 				<select class="dropdown2">
@@ -137,7 +137,7 @@ else if($action === 'delete')
                     <?php } ?>
                     <option value = "1" class = ".textexp"> Other </option>
                 </select>
-                <div id = "hiddendiv">  <input type="text" id="minorothertextbox2" />  </div>
+                <div id = "minordiv2">  <input type="text" id="minorothertextbox2" />  </div>
 
 				<h2>Question 1 Text</h2>
 				<textarea class="questions" rows="4"></textarea>

@@ -26,10 +26,6 @@ $(document).ready(function() {
                 $("#hiddendiv").hide();
             }
         });
-        $("#othertextbox").change(function()
-        {
-            $("#college").val($("#othertextbox").text());
-        });
 
 //major1
         $("#major1").change(function()
@@ -43,18 +39,12 @@ $(document).ready(function() {
                 $("#majordiv1").hide();
             }
         });
-        $("#majorothertextbox").change(function()
-        {
-            $("#major1").val($("#majorothertextbox").text());
-        });
 
         //
         $( "#majorothertextbox").click(function(){
             $(this).val("");
         });
-        $("#majorothertextbox").focusout(function(){
-            $(this).val("Enter New Minor Here");
-        });
+
         //major2
         $("#major2").change(function()
         {
@@ -66,17 +56,10 @@ $(document).ready(function() {
                 $("#majordiv2").hide();
             }
         });
-        $("#majorothertextbox2").change(function()
-        {
-            $("#major2").val($("#majorothertextbox2").text());
-        });
 
         //
         $( "#majorothertextbox2").click(function(){
             $(this).val("");
-        });
-        $("#majorothertextbox2").focusout(function(){
-            $(this).val("Enter New Major Here");
         });
 
         //minor1
@@ -94,14 +77,10 @@ $(document).ready(function() {
         $("#minorothertextbox").change(function()
         {
             var v = $(this).val();
-            alert(v);
         });
     //
         $( "#minorothertextbox").click(function(){
             $(this).val("");
-        });
-        $("#minorothertextbox").focusout(function(){
-            $(this).val("Enter New Minor Here");
         });
 
         //minor2
@@ -115,17 +94,11 @@ $(document).ready(function() {
                 $("#minordiv2").hide();
             }
         });
-        $("#minorothertextbox2").change(function()
-        {
-            var v = $(this).val();
-            alert(v);
-        });
+
         $( "#minorothertextbox2").click(function(){
             $(this).val("");
         });
-        $("#minorothertextbox2").focusout(function(){
-            $(this).val("Enter New Minor Here");
-        });
+
 
 
 
