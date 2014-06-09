@@ -103,7 +103,7 @@ else if($action === 'delete')
                     <?php } ?>
                     <option value = "1" class = ".textexp"> Other </option>
                 </select>
-                <div id = "majordiv1">  <input type="text" id="majorothertextbox" />  </div>
+                <div id = "majordiv1" >  <input type="text" id="majorothertextbox" />  </div>
 
 				<label style="margin-left: 2px;">Major 2</label>
 				<select class="dropdown2" id = "major2">
