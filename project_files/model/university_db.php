@@ -140,7 +140,23 @@ function graduate($collegeID) {
     $query = "UPDATE universities SET attended = '$attended', graduated = '$graduated' WHERE id = '$collegeID'";
     $db->exec($query);
 }
+function get_college_from_email($email) {
+    global $db;
 
+    $query = "SELECT id FROM accounts WHERE email = '$email'";
+    $result = $db->query($query);
+    $id = $result->fetch()[0];
+
+    $query = "SELECT university_id FROM questions WHERE accounts_id = '$id'";
+    $result = $db->query($query);
+    $id = $result->fetch()[0];
+
+    $query = "SELECT name FROM universities WHERE id = '$id'";
+    $result = $db->query($query);
+    $name = $result->fetch()[0];
+    return $name;
+
+}
 
 
 ?>
