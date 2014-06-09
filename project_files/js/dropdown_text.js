@@ -12,7 +12,6 @@ $(document).ready(function() {
             $('#minorothertextbox').val("Enter New Minor Here");
             $('#minorothertextbox2').val("Enter New Minor Here");
 
-
         });
 
         $("#college2").change(function()
@@ -98,6 +97,7 @@ $(document).ready(function() {
         $( "#minorothertextbox2").click(function(){
             $(this).val("");
         });
+
 
 
 

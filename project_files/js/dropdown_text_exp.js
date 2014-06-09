@@ -10,13 +10,6 @@ $(document).ready(function(){
         $(window).load(function(){
             $('#titlediv').hide();
             $('#titletextbox').val("Enter New Experience");
-            var selected = $("#typeselect").find(":selected").text();
-                $.post('selected',
-                    {
-                        select: selected
-
-                    });
-                event.preventDefault() ;
         });
 
         $('#titleselect').change(function(){
