@@ -5,7 +5,7 @@ include "../model/concentration_db.php";
 include "../model/experiences_db.php";
 include "../model/database.php";
 
-include "header.php";
+
 $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
 
 // temporary values
@@ -56,6 +56,7 @@ $class_array = "";
 $name_array = "";
 ?>
 <html>
+<?php include "header.php"; ?>
 <head>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
@@ -73,61 +74,65 @@ $name_array = "";
 <body>
 <div id="filters">
     <h1>Filters</h1>
-    <label>PT Grad Year</label></br>
-    <select id="dropdown">
-        <?php if($yearIn != "") : ?>
-            <option value="<?php echo $yearIn?>"><?php echo $yearIn ?></option>
-        <?php endif ; ?>
-        <?php foreach ($grad_year_array as $year) : ?>
-            <?php if($year['pt_grad_year'] != $yearIn) : ?>
-                <option value="<?php echo $year['pt_grad_year'] ?>"><?php echo $year['pt_grad_year'] ?></option>
+    <form action="userSearch.php" method="post">
+        <label>PT Grad Year</label></br>
+        <select name="year" id="dropdown">
+            <?php if($yearIn != "") : ?>
+                <option value="<?php echo $yearIn?>"><?php echo $yearIn ?></option>
             <?php endif ; ?>
-        <?php endforeach ; ?>
-    </select></br>
-    <label>College</label></br>
-    <select id="dropdown">
-        <?php if($collegeIn != "") : ?>
-            <option value="<?php echo $collegeIn?>"><?php echo $collegeIn ?></option>
-        <?php endif ; ?>
-        <?php foreach ($college_array as $college) : ?>
-            <?php if($college['name'] != $collegeIn) : ?>
-                <option value="<?php echo $college['name'] ?>"><?php echo $college['name'] ?></option>
+            <?php foreach ($grad_year_array as $year) : ?>
+                <?php if($year['pt_grad_year'] != $yearIn) : ?>
+                    <option value="<?php echo $year['pt_grad_year'] ?>"><?php echo $year['pt_grad_year'] ?></option>
+                <?php endif ; ?>
+            <?php endforeach ; ?>
+        </select></br>
+        <label>College</label></br>
+        <select name="college" id="dropdown">
+            <?php if($collegeIn != "") : ?>
+                <option value="<?php echo $collegeIn?>"><?php echo $collegeIn ?></option>
             <?php endif ; ?>
-        <?php endforeach ; ?>
-    </select></br>
-    <label>Major</label></br>
-    <select id="dropdown">
-        <?php if($majorIn != "") : ?>
-            <option value="<?php echo $majorIn?>"><?php echo $majorIn ?></option>
-        <?php endif ; ?>
-        <?php foreach ($major_array as $major) : ?>
-            <?php if($major['name'] != $majorIn) : ?>
-                <option value="<?php echo $major['name'] ?>"><?php echo $major['name'] ?></option>
+            <?php foreach ($college_array as $college) : ?>
+                <?php if($college['name'] != $collegeIn) : ?>
+                    <option value="<?php echo $college['name'] ?>"><?php echo $college['name'] ?></option>
+                <?php endif ; ?>
+            <?php endforeach ; ?>
+        </select></br>
+        <label>Major</label></br>
+        <select name="major" id="dropdown">
+            <?php if($majorIn != "") : ?>
+                <option value="<?php echo $majorIn?>"><?php echo $majorIn ?></option>
             <?php endif ; ?>
-        <?php endforeach ; ?>
-    </select></br>
-    <label>Experience Type</label></br>
-    <select id="dropdown">
-        <?php if($typeIn != "") : ?>
-            <option value="<?php echo $typeIn?>"><?php echo $typeIn ?></option>
-        <?php endif ; ?>
-        <?php foreach ($experience_type_array as $type) : ?>
-            <?php if($type['type'] != $typeIn) : ?>
-                <option value="<?php echo $type['type'] ?>"><?php echo $type['type'] ?></option>
+            <?php foreach ($major_array as $major) : ?>
+                <?php if($major['name'] != $majorIn) : ?>
+                    <option value="<?php echo $major['name'] ?>"><?php echo $major['name'] ?></option>
+                <?php endif ; ?>
+            <?php endforeach ; ?>
+        </select></br>
+        <label>Experience Type</label></br>
+        <select name="type" id="dropdown">
+            <?php if($typeIn != "") : ?>
+                <option value="<?php echo $typeIn?>"><?php echo $typeIn ?></option>
             <?php endif ; ?>
-        <?php endforeach ; ?>
-    </select></br>
-    <label>Experience Title</label></br>
-    <select id="dropdown">
-        <?php if($titleIn != "") : ?>
-            <option value="<?php echo $titleIn?>"><?php echo $titleIn ?></option>
-        <?php endif ; ?>
-        <?php foreach ($experience_title_array as $title) : ?>
-            <?php if($title['title'] != $titleIn) : ?>
-                <option value="<?php echo $title['title'] ?>"><?php echo $title['title'] ?></option>
+            <?php foreach ($experience_type_array as $type) : ?>
+                <?php if($type['type'] != $typeIn) : ?>
+                    <option value="<?php echo $type['type'] ?>"><?php echo $type['type'] ?></option>
+                <?php endif ; ?>
+            <?php endforeach ; ?>
+        </select></br>
+        <label>Experience Title</label></br>
+        <select name="title" id="dropdown">
+            <?php if($titleIn != "") : ?>
+                <option value="<?php echo $titleIn?>"><?php echo $titleIn ?></option>
             <?php endif ; ?>
-        <?php endforeach ; ?>
-    </select></br>
+            <?php foreach ($experience_title_array as $title) : ?>
+                <?php if($title['title'] != $titleIn) : ?>
+                    <option value="<?php echo $title['title'] ?>"><?php echo $title['title'] ?></option>
+                <?php endif ; ?>
+            <?php endforeach ; ?>
+        </select></br>
+
+        <input class="submit" type="submit" value="Search">
+    </form>
 </div>
 
 
@@ -141,6 +146,9 @@ $name_array = "";
                 <input type="submit" value="<?php echo $name['first_name']." ".$name['last_name']?>">
                 <input type="hidden" name="name" value="<?php echo $name['email']?>">
             </form>
+
+
+
             <!--<a href="profile.php"><h2><?php echo $name?></h2></a>
                     -->
             <h3>PT <?php echo $name['pt_grad_year'] ?></h3>

@@ -114,29 +114,47 @@ function accounts_filter($university, $year, $major, $type, $title) {
     //Refined Filtration
     $paramBuilder = "";
     if($university != "") {
-        $query = "SELECT id FROM universities WHERE name='$university'"; //UNIVERSITY NAME IN PARAM; NOT ID!
-        $university_id = $db->query($query);
+        $query2 = "SELECT id FROM universities WHERE name='$university'"; //UNIVERSITY NAME IN PARAM; NOT ID!
+        $university_id = $db->query($query2);
         $university_id = $university_id->fetch();
         $university_id = $university_id['id'];
-        $paramBuilder .= "WHERE university_id = '$university_id' ";
+        $paramBuilder .= " WHERE university_id = '$university_id' ";
     }
 
     if($year != "") {
-       $paramBuilder .= "AND WHERE pt_grad_year = '$year' ";
+        if($paramBuilder == ""){
+            $paramBuilder .= " WHERE pt_grad_year = '$year'";
+        }
+        else{
+            $paramBuilder .= " AND pt_grad_year = '$year'";
+        }
     }
 
     if($major != "") {
-        $paramBuilder .= "AND WHERE name = '$major'";
+        if($paramBuilder == ""){
+            $paramBuilder .= " WHERE name = '$major'";
+        }
+        else{
+            $paramBuilder .= " AND name = '$major'";
+        }
     }
 
     if($type != ""){
-        $paramBuilder .= "AND WHERE type = '$type";
+        if($paramBuilder == ""){
+            $paramBuilder .= " WHERE type = '$type'";
+        }else{
+            $paramBuilder .= " AND type = '$type'";
+        }
     }
 
     if($title != ""){
-        $paramBuilder .= "AND WHERE title = '$title";
+        if($paramBuilder == ""){
+            $paramBuilder .= " WHERE title = '$title'";
+        }else{
+            $paramBuilder .= " AND title = '$title'";
+        }
     }
-
+    //echo $query.$paramBuilder;
     $result = $db->query($query.$paramBuilder);
     //$result = $result->fetchAll();
 
