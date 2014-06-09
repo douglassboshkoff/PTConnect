@@ -12,13 +12,16 @@ $(document).ready(function(){
             $('#titletextbox').val("Enter New Experience")
             var selected = $('#typeselect').val();
             var populate = "<?php echo get_title_by_type(?> +  selected + <?php);?>";
+            var titleselect = $('#titleselect');
 
         });
 
         $('#typeselect').change(function(){
             selected = $('#typeselect').val();
             populate = "<?php echo get_title_by_type(?> +  selected + <?php);?>";
-
+            var html = $.map(populate, function(populate){
+                return '<option value = "' + populate + '">' + '</option>'}).join(' ');
+            $titleselect.html(html);
         });
 
         $('#titleselect').change(function(){
