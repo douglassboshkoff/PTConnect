@@ -11,13 +11,13 @@ $(document).ready(function(){
             $('#titlediv').hide();
             $('#titletextbox').val("Enter New Experience")
             var selected = $('#typeselect').val();
-            var populate = "<?php echo get_title_by_type(?> +  selected + );";
+            var populate = "<?php echo get_title_by_type(?> +  selected + <?php);?>";
 
         });
 
         $('#typeselect').change(function(){
             selected = $('#typeselect').val();
-            populate = "<?php echo get_title_by_type(?> +  selected + );";
+            populate = "<?php echo get_title_by_type(?> +  selected + <?php);?>";
 
         });
 
