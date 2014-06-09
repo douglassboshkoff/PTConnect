@@ -2,8 +2,8 @@
 function get_question($userID, $collegeID, $questionID) {
     global $db;
     $query = "SELECT response FROM questions
-	      WHERE accounts_id == '$userID' AND question_id == '$questionID' AND university_id == '$collegeID'";
-    $response = $db->query($query);
+	      WHERE accounts_id = '$userID' AND question_id = '$questionID' AND university_id = '$collegeID'";
+    $response = $db->query($query)->fetch()['response'];
     return $response;
 }
 

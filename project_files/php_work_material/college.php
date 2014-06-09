@@ -86,9 +86,11 @@ echo "UserComment2: " . get_question(1, 1, 1);
             <?php if(isset($user_comment)){ ?>
             <img src="profile.png"/><p><?php echo $user_comment . "1st"; ?></p>
             <?php } ?>
+
             <?php foreach($comment_arr as $comment){ ?>
-            <img src="profile.png"/><p><?php echo $comment['response']; ?></p>
-            <?php } ?>
+                <?php if($comment['response'] != $user_comment) { ?>
+                <img src="profile.png"/><p><?php echo $comment['response']; ?></p>
+            <?php }} ?>
         </div>
     </div>
 </div>
