@@ -98,7 +98,7 @@ else if($action === 'delete')
 		</div>
 		<div id="add">
 			<h1><?php if($action==='display') { echo "Add Experience";} else { echo "Edit Experience";} ?></h1>
-			<form>
+			<form method="post" action="myCollege.php">
 				<label>School</label>
 				<select class="dropdown2" id="college2">
 					<?php foreach($colleges as $college) { ?>
