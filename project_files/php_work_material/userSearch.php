@@ -6,7 +6,6 @@ include "../model/experiences_db.php";
 include "../model/database.php";
 
 include "header.php";
-$newArr = accounts_filter("", "", "");
 $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
 
 // temporary values
@@ -51,7 +50,7 @@ else{
     $titleIn = "";
 }
 
-$newArr = accounts_filter("", "", "");
+$newArr = accounts_filter($collegeIn, $yearIn, $majorIn, $typeIn, $titleIn);
 
 $class_array = "";
 $name_array = "";

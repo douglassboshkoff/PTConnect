@@ -103,10 +103,13 @@ function get_college_by_user($id) {
     return $result;
 }
 
-function accounts_filter($university, $location, $major, $type, $title) {
+function accounts_filter($university, $year, $major, $type, $title) {
     //Initial Database Fetch
     global $db;
-    $query = "SELECT * FROM accounts LEFT JOIN questions ON accounts.id = questions.accounts_id LEFT JOIN concentration ON accounts.id = concentration.accounts_id";
+    $query = "SELECT * FROM accounts
+    LEFT JOIN questions ON accounts.id = questions.accounts_id
+    LEFT JOIN concentration ON accounts.id = concentration.accounts_id
+    LEFT JOIN experiences on accounts.id = experiences.accounts_id";
 
     //Refined Filtration
     $paramBuilder = "";
@@ -118,8 +121,8 @@ function accounts_filter($university, $location, $major, $type, $title) {
         $paramBuilder .= "WHERE university_id = '$university_id' ";
     }
 
-    if($location != "") {
-       $paramBuilder .= "AND WHERE location = '$location' ";
+    if($year != "") {
+       $paramBuilder .= "AND WHERE pt_grad_year = '$year' ";
     }
 
     if($major != "") {
@@ -127,11 +130,11 @@ function accounts_filter($university, $location, $major, $type, $title) {
     }
 
     if($type != ""){
-
+        $paramBuilder .= "AND WHERE type = '$type";
     }
 
     if($title != ""){
-
+        $paramBuilder .= "AND WHERE title = '$title";
     }
 
     $result = $db->query($query.$paramBuilder);
