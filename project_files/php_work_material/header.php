@@ -1,6 +1,4 @@
-<?php
-/** php to determine which page we are on, and the color of the text in the corresponding tab to red **/
-?>
+
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
@@ -10,7 +8,7 @@
     <ul>
         <li><span id="white">PT</span><span id="red">Connect</span></li>
         <img src="profile2.png" />
-        <a href="../html_originals/index.html">Logout</a>
+        <a href="index.php">Logout</a>
     </ul>
 </div>
 <div id='tabs'>

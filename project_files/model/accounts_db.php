@@ -139,3 +139,10 @@ function  add_image($image_link, $id) {
     $query = "UPDATE accounts SET image_link = '$image_link' WHERE id = '$id'";
     $db->exec($query);
 }
+function get_id_by_email($email)
+{
+    global $db;
+    $query = "SELECT id FROM accounts WHERE email = '$email'";
+    $result = $db->query($query);
+    return $result->fetch();
+}

@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+
+<?php
+if(isset($_SESSION['id']))
+{
+include('header.php');
+}
+?>
+
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
@@ -6,21 +14,29 @@
 	<body>
 	<div id="wrapper1">
 	<div id= 'wrapper2'>
-		<a href="http://google.com"><div id="userSearchIcon">
+		<a href="userSearch.php"><div id="userSearchIcon">
 			<img src="profile.png" />
 		</div></a>
-		<a href="http://google.com"><div id="collegeSearchIcon">
+		<a href="collegeSearch.php"><div id="collegeSearchIcon">
 			<img src="collegeSearch.png" />
 		</div></a>
-		<a href="http://google.com"><div id="userSearchDescription">
+		<a href="userSearch.php"><div id="userSearchDescription">
 			<h1>Users</h1>
 			<p>Find users by name, grad year, college, major, and employer.</p>
 		</div></a>
-		<a href="http://google.com"><div id="collegeSearchDescription">
+		<a href="collegeSearch.php"><div id="collegeSearchDescription">
 			<h1>Colleges</h1>
 			<p>Find colleges by name, location, and number of PT alumni graduates.</p>
 		</div></a>
 		</div>
 		</div>
 	</body>
+    <?php
+    if(isset($_SESSION['id']))
+    {
+        include('footer.php');
+    }
+    ?>
 </html>
+
+
