@@ -9,8 +9,16 @@ $(document).ready(function(){
     function runIt(){
         $(window).load(function(){
             $('#titlediv').hide();
-            $('#titletextbox').val("Enter New Experience");
+            $('#titletextbox').val("Enter New Experience")
+            var selected = $('#titleselect').find(":selected").text();
+                $.post("B.php",
+                    {
+                        select: selected
+
+                    });
+                event.preventDefault() ;
         });
+
 
         $('#titleselect').change(function(){
             var val = $(this).val();
