@@ -43,6 +43,9 @@ if(isset($_GET['next'])){
     }
 }
 $comment_arr = get_questions($collegeID, $pageNum);
+if(isset($_GET['userID'])){
+$user_comment = get_question($_GET['userID'], $collegeID, $pageNum);
+}
 /**
  * Created by JetBrains PhpStorm.
  * User: Danny
@@ -66,8 +69,7 @@ $comment_arr = get_questions($collegeID, $pageNum);
         </div>
         <div id="alumni">
             <h1>Alumni</h1>
-            <p><?php echo get_graduated($collegeID); ?> alumni graduated from this college</p>
-            <p><?php echo get_attend($collegeID); ?> alumni attend this college</p>
+            <p> Total Students Who Have Attended: <?php echo count(get_students($collegeID)); ?></p>
         </div>
         <div id="questions">
             <a href = "college.php?next=-1&pageNum=<?php echo $pageNum ?>">
@@ -78,7 +80,9 @@ $comment_arr = get_questions($collegeID, $pageNum);
             <button id="next">Next</button>
                 </a>
             <h1> <?php echo $arr[$pageNum]['question']; ?></h1>
-
+            <?php if(isset($user_comment)){ ?>
+            <img src="profile.png"/><p><?php echo $user_comment; ?></p>
+            <?php } ?>
             <?php foreach($comment_arr as $comment){ ?>
             <img src="profile.png"/><p><?php echo $comment['response']; ?></p>
             <?php } ?>
