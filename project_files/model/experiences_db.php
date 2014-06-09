@@ -76,5 +76,11 @@ function update_experience($id, $type, $title, $content, $accounts_id){
     $result = $db->query($query);
     return $result;
 }
+function get_title_by_type($type){
+    global $db;
+    $query = "SELECT title from experiences WHERE type = '$type'";
+    $result = $db->query($query);
+    return $result;
+}
 ?>
 

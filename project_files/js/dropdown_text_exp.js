@@ -16,7 +16,8 @@ $(document).ready(function(){
         });
 
         $('#typeselect').change(function(){
-           
+            selected = $('#typeselect').val();
+            populate = "<?php echo get_title_by_type(?> +  selected + );";
 
         });
 
