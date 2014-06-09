@@ -7,10 +7,10 @@ $(document).ready(function() {
             $("#majordiv2").hide();
             $("#minordiv1").hide();
             $("#minordiv2").hide();
-            $('#majorothertextbox').val("Enter New Major Here");
-            $('#majorothertextbox2').val("Enter New Major Here");
-            $('#minorothertextbox').val("Enter New Minor Here");
-            $('#minorothertextbox2').val("Enter New Minor Here");
+            $('#majorothertextbox').val("Enter New Major 1 Here");
+            $('#majorothertextbox2').val("Enter New Major 2 Here");
+            $('#minorothertextbox').val("Enter New Minor 1 Here");
+            $('#minorothertextbox2').val("Enter New Minor 2 Here");
 
         });
 

@@ -97,7 +97,7 @@ else if($action === 'delete')
 			</table>
 		</div>
 		<div id="add">
-			<h1>Add College</h1>
+			<h1><?php if($action==='display') { echo "Add Experience";} else { echo "Edit Experience";} ?></h1>
 			<form>
 				<label>School</label>
 				<select class="dropdown2" id="college2">
