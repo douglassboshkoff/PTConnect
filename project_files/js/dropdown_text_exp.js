@@ -10,15 +10,15 @@ $(document).ready(function(){
         $(window).load(function(){
             $('#titlediv').hide();
             $('#titletextbox').val("Enter New Experience")
-            var selected = $('#titleselect').find(":selected").text();
-                $.post("B.php",
-                    {
-                        select: selected
+            var selected = $('#typeselect').val();
+            var populate = "<?php echo get_title_by_type(?> +  selected + );";
 
-                    });
-                event.preventDefault() ;
         });
 
+        $('#typeselect').change(function(){
+           
+
+        });
 
         $('#titleselect').change(function(){
             var val = $(this).val();
