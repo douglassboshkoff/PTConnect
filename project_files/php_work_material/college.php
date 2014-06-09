@@ -73,10 +73,10 @@ if(isset($_GET['userID'])){
             <p> Total Students Who Have Attended: <?php echo count(get_students($collegeID)); ?></p>
         </div>
         <div id="questions">
-            <a href = "college.php?next=-1&pageNum=<?php echo $pageNum ?>">
+            <a href = "college.php?next=-1&pageNum=<?php echo $pageNum; ?><?php if(isset($userID)){ echo "&userID=" . $userID;}?>">
             <button id="prev">Previous</button>
                 </a>
-            <a href = "college.php?next=1&pageNum=<?php echo $pageNum ?>">
+            <a href = "college.php?next=1&pageNum=<?php echo $pageNum; ?><?php if(isset($userID)){ echo "&userID=" . $userID;}?>">
 
             <button id="next">Next</button>
                 </a>
