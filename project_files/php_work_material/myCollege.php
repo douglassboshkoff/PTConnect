@@ -106,7 +106,7 @@ else if($action === 'delete')
                             <option <?php if($sp_college['name'] === $college['name'] ) { ?> selected <?php } ?>><?php echo $college['name']; ?></option>
                       <?php }else { ?>
                             <option><?php echo $college['name'] ?></option>
-                     <?php } ?>
+                        <?php } ?>
                     <?php } ?>
 
                     <option value = "1" class = ".textexp"> Other </option>
