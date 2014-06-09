@@ -89,11 +89,13 @@ else if($action === 'delete')
 					<option>College</option>
 					<option>Harvard University</option>
 					<option>Purdue University</option>
-				</select>
+                    <option value = "1" class = ".textexp"> Other </option>
+
+                </select>
                 <div id = "hiddendiv">  <input type="text" id="othertextbox" />  </div>
 				<br>
 				<label style="margin-right: 2px;">Major 1</label>
-				<select class="dropdown2">
+				<select class="dropdown2" id = "major1">
                     <?php for($i = 0; $i < count($majors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
                             <option <?php if($sp_college['type'] === $majors[$i] ) { ?> selected <?php } ?>><?php echo $majors[$i] ?></option>
@@ -104,7 +106,7 @@ else if($action === 'delete')
                 <div id = "majordiv1">  <input type="text" id="majorothertextbox" />  </div>
 
 				<label style="margin-left: 2px;">Major 2</label>
-				<select class="dropdown2">
+				<select class="dropdown2" id = "major2">
                     <?php for($i = 0; $i < count($majors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
                             <option <?php if($sp_experience['type'] === $majors[$i] ) { ?> selected <?php } ?>><?php echo $majors[$i] ?></option>
@@ -117,7 +119,7 @@ else if($action === 'delete')
 				<br>
 
 				<label style="margin-right: 1px;">Minor 1</label>
-				<select class="dropdown2">
+				<select class="dropdown2" id = "minor1">
                     <?php for($i = 0; $i < count($minors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
                             <option <?php if($sp_experience['type'] === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
@@ -129,7 +131,7 @@ else if($action === 'delete')
                 <div id = "minordiv1">  <input type="text" id="minorothertextbox" />  </div>
 
                 <label style="margin-left: 2px;">Minor 2</label>
-				<select class="dropdown2">
+				<select class="dropdown2" id = "minor2">
                     <?php for($i = 0; $i < count($minors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
                             <option <?php if($sp_experience['type'] === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>

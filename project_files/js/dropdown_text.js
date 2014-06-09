@@ -9,13 +9,12 @@ $(document).ready(function() {
             $("#minordiv2").hide();
             $('#majorothertextbox').val("Enter New Major Here");
             $('#majorothertextbox2').val("Enter New Major Here");
-
             $('#minorothertextbox').val("Enter New Minor Here");
             $('#minorothertextbox2').val("Enter New Minor Here");
 
         });
 
-        $("#college").change(function()
+        $("#college2").change(function()
         {
             var val = $(this).val();
 
