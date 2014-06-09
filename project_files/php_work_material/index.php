@@ -4,7 +4,6 @@ include_once "../model/accounts_db.php";
 $error=false;
 
 session_start();
-setcookie()
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
