@@ -95,7 +95,10 @@ $secondary_name_array = "";
             <?php foreach($arr as $value) : ?>
                 <div id="college">
                     <a href="../html_originals/college.html"><img src="purdue.png"/></a>
-                    <a href="../html_originals/college.html"><h2><?php echo $value ?></h2></a>
+                    <form action="college.php" method="post">
+                        <input type="submit" value="<?php echo $value?>">
+                        <input type="hidden" name="name" value="<?php echo $value?>">
+                    </form>
                     <h3>West Lafayette, IN</h3>
                 </div>
                 <!-- form stuff

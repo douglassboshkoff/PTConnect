@@ -56,96 +56,96 @@ $class_array = "";
 $name_array = "";
 ?>
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
-	</head>
-    <style>
-        form input[type="submit"]{
+<head>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+</head>
+<style>
+    form input[type="submit"]{
 
-            background: none;
-            border: none;
-            color: black;
-            text-decoration: underline;
-            cursor: pointer;
-            font-size: 16px;
-        }
-    </style>
-	<body>
-		<div id="filters">
-			<h1>Filters</h1>
-			<label>PT Grad Year</label></br>
-			<select id="dropdown">
-                <?php if($yearIn != "") : ?>
-                    <option value="<?php echo $yearIn?>"><?php echo $yearIn ?></option>
-                <?php endif ; ?>
-                <?php foreach ($grad_year_array as $year) : ?>
-                    <?php if($year['pt_grad_year'] != $yearIn) : ?>
-                        <option value="<?php echo $year['pt_grad_year'] ?>"><?php echo $year['pt_grad_year'] ?></option>
-                    <?php endif ; ?>
-                <?php endforeach ; ?>
-			</select></br>
-			<label>College</label></br>
-			<select id="dropdown">
-                <?php if($collegeIn != "") : ?>
-                    <option value="<?php echo $collegeIn?>"><?php echo $collegeIn ?></option>
-                <?php endif ; ?>
-                <?php foreach ($college_array as $college) : ?>
-                    <?php if($college['name'] != $collegeIn) : ?>
-                        <option value="<?php echo $college['name'] ?>"><?php echo $college['name'] ?></option>
-                    <?php endif ; ?>
-                <?php endforeach ; ?>
-			</select></br>
-			<label>Major</label></br>
-			<select id="dropdown">
-                <?php if($majorIn != "") : ?>
-                    <option value="<?php echo $majorIn?>"><?php echo $majorIn ?></option>
-                <?php endif ; ?>
-                <?php foreach ($major_array as $major) : ?>
-                    <?php if($major['name'] != $majorIn) : ?>
-                        <option value="<?php echo $major['name'] ?>"><?php echo $major['name'] ?></option>
-                    <?php endif ; ?>
-                <?php endforeach ; ?>
-			</select></br>
-			<label>Experience Type</label></br>
-			<select id="dropdown">
-                <?php if($typeIn != "") : ?>
-                    <option value="<?php echo $typeIn?>"><?php echo $typeIn ?></option>
-                <?php endif ; ?>
-                <?php foreach ($experience_type_array as $type) : ?>
-                    <?php if($type['type'] != $typeIn) : ?>
-                        <option value="<?php echo $type['type'] ?>"><?php echo $type['type'] ?></option>
-                    <?php endif ; ?>
-                <?php endforeach ; ?>
-			</select></br>
-			<label>Experience Title</label></br>
-			<select id="dropdown">
-                <?php if($titleIn != "") : ?>
-                    <option value="<?php echo $titleIn?>"><?php echo $titleIn ?></option>
-                <?php endif ; ?>
-                <?php foreach ($experience_title_array as $title) : ?>
-                    <?php if($title['title'] != $titleIn) : ?>
-                        <option value="<?php echo $title['title'] ?>"><?php echo $title['title'] ?></option>
-                    <?php endif ; ?>
-                <?php endforeach ; ?>
-			</select></br>
-		</div>
+        background: none;
+        border: none;
+        color: black;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 16px;
+    }
+</style>
+<body>
+<div id="filters">
+    <h1>Filters</h1>
+    <label>PT Grad Year</label></br>
+    <select id="dropdown">
+        <?php if($yearIn != "") : ?>
+            <option value="<?php echo $yearIn?>"><?php echo $yearIn ?></option>
+        <?php endif ; ?>
+        <?php foreach ($grad_year_array as $year) : ?>
+            <?php if($year['pt_grad_year'] != $yearIn) : ?>
+                <option value="<?php echo $year['pt_grad_year'] ?>"><?php echo $year['pt_grad_year'] ?></option>
+            <?php endif ; ?>
+        <?php endforeach ; ?>
+    </select></br>
+    <label>College</label></br>
+    <select id="dropdown">
+        <?php if($collegeIn != "") : ?>
+            <option value="<?php echo $collegeIn?>"><?php echo $collegeIn ?></option>
+        <?php endif ; ?>
+        <?php foreach ($college_array as $college) : ?>
+            <?php if($college['name'] != $collegeIn) : ?>
+                <option value="<?php echo $college['name'] ?>"><?php echo $college['name'] ?></option>
+            <?php endif ; ?>
+        <?php endforeach ; ?>
+    </select></br>
+    <label>Major</label></br>
+    <select id="dropdown">
+        <?php if($majorIn != "") : ?>
+            <option value="<?php echo $majorIn?>"><?php echo $majorIn ?></option>
+        <?php endif ; ?>
+        <?php foreach ($major_array as $major) : ?>
+            <?php if($major['name'] != $majorIn) : ?>
+                <option value="<?php echo $major['name'] ?>"><?php echo $major['name'] ?></option>
+            <?php endif ; ?>
+        <?php endforeach ; ?>
+    </select></br>
+    <label>Experience Type</label></br>
+    <select id="dropdown">
+        <?php if($typeIn != "") : ?>
+            <option value="<?php echo $typeIn?>"><?php echo $typeIn ?></option>
+        <?php endif ; ?>
+        <?php foreach ($experience_type_array as $type) : ?>
+            <?php if($type['type'] != $typeIn) : ?>
+                <option value="<?php echo $type['type'] ?>"><?php echo $type['type'] ?></option>
+            <?php endif ; ?>
+        <?php endforeach ; ?>
+    </select></br>
+    <label>Experience Title</label></br>
+    <select id="dropdown">
+        <?php if($titleIn != "") : ?>
+            <option value="<?php echo $titleIn?>"><?php echo $titleIn ?></option>
+        <?php endif ; ?>
+        <?php foreach ($experience_title_array as $title) : ?>
+            <?php if($title['title'] != $titleIn) : ?>
+                <option value="<?php echo $title['title'] ?>"><?php echo $title['title'] ?></option>
+            <?php endif ; ?>
+        <?php endforeach ; ?>
+    </select></br>
+</div>
 
 
-		<div id="content">
+<div id="content">
 
-            <?php foreach($arr as $name) : ?>
+    <?php foreach($arr as $name) : ?>
 
-                <div id="user">
-                    <a href="profile.php"><img src="profile.png"/></a>
-                    <form action="profile.php" method="post">
-                        <input type="submit" value="<?php echo $name?>">
-                        <input type="hidden" name="name" value="<?php echo $name?>">
-                    </form>
-                    <!--<a href="profile.php"><h2><?php echo $name?></h2></a>
+        <div id="user">
+            <a href="profile.php"><img src="profile.png"/></a>
+            <form action="profile.php" method="post">
+                <input type="submit" value="<?php echo $name?>">
+                <input type="hidden" name="name" value="<?php echo $name?>">
+            </form>
+            <!--<a href="profile.php"><h2><?php echo $name?></h2></a>
                     -->
-                    <h3>PT 2015</h3>
-                </div>
-                <!-- add place for action
+            <h3>PT 2015</h3>
+        </div>
+        <!-- add place for action
                 <form action="User_Profilepage.php" method="post">
                     <input type="hidden" name="userID" value="<?php echo $user_email ?>">
                     <div class="results">
@@ -165,44 +165,8 @@ $name_array = "";
                         </div>
                     </div>
                 </form> -->
-            <?php endforeach; ?>
-
-			<div id="user">
-				<a href="profile.php"><img src="profile.png"/></a>
-				<a href="profile.php"><h2>Alex Gottwald</h2></a>
-				<h3>PT 2015</h3>
-			</div>
-			<div id="user">
-				<a href="profile.php"><img src="profile.png"/></a>
-				<a href="profile.php"><h2>Alex Gottwald</h2></a>
-				<h3>PT 2015</h3>
-			</div>
-			<div id="user">
-				<a href="profile.php"><img src="profile.png"/></a>
-				<a href="profile.php"><h2>Alex Gottwald</h2></a>
-				<h3>PT 2015</h3>
-			</div>
-			<div id="user">
-				<a href="profile.php"><img src="profile.png"/></a>
-				<a href="profile.php"><h2>Alex Gottwald</h2></a>
-				<h3>PT 2015</h3>
-			</div>
-			<div id="user">
-				<a href="profile.php"><img src="profile.png"/></a>
-				<a href="profile.php"><h2>Alex Gottwald</h2></a>
-				<h3>PT 2015</h3>
-			</div>
-			<div id="user">
-				<a href="profile.php"><img src="profile.png"/></a>
-				<a href="profile.php"><h2>Alex Gottwald</h2></a>
-				<h3>PT 2015</h3>
-			</div>
-			<div id="user">
-				<a href="profile.php"><img src="profile.png"/></a>
-				<a href="profile.php"><h2>Alex Gottwald</h2></a>
-				<h3>PT 2015</h3>
-			</div>
-		</div>
-	</body>
+    <?php endforeach; ?>
+</div>
+</body>
 <?php include "footer.php" ?>
 </html>
