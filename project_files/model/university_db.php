@@ -108,4 +108,20 @@ function get_attend($collegeID) {
     return $attend;
 }
 
+function increment_graduated($collegeID) {
+    global $db;
+    $graduated = get_graduated($collegeID);
+    $graduated = $graduated + 1;
+    $query = "UPDATE univirsites SET graduated = '$graduated' WHERE id = '$collegeID'";
+    $db->exec($query);
+}
+
+function increment_attended($collegeID) {
+    global $db;
+    $attended = get_attended($collegeID);
+    $attended = $attended + 1;
+    $query = "UPDATE univirsites SET attended = '$attended' WHERE id = '$collegeID'";
+    $db->exec($query);
+}
+
 ?>
