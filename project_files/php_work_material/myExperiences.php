@@ -94,16 +94,17 @@ include("header.php");
                 font-size: 16px;
             }
             .dropdown2{
-                width: 320px;
+                width: 200px;
                 margin-right:4px;
             }
-            #titlediv {
-	            margin-left: 56px;
-	            width: 320px;
+            #titlediv input {
+	            margin-left: 58px;
+	            width: 316px;
                 font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
                 font-size: 16px;
-                line-height:100px;
+
             }
+
         </style>
 	</head>
 	<body>
@@ -142,7 +143,7 @@ include("header.php");
 
                 <label>Type</label>
 
-                <select class="dropdown2" name="type">
+                <select class="dropdown2" name="type" style="width:320px">
                     <?php for($i = 0; $i < count($type); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
 
@@ -156,7 +157,7 @@ include("header.php");
                 <br/>
                 <label style="margin-right: 5px;">Title</label>
 
-                <select class="dropdown2" id = "titleselect" name="title">
+                <select class="dropdown2" id = "titleselect" name="title" style="width:320px">
                     <?php for($i = 0; $i < count($titles); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
 
