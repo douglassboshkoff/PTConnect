@@ -97,6 +97,11 @@ include("header.php");
                 width: 320px;
                 margin-right:4px;
             }
+            #titlediv {
+	            margin-left: 30px;
+	            width: 320px;
+	            height: 30px;
+            }
         </style>
 	</head>
 	<body>
