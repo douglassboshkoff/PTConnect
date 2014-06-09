@@ -29,7 +29,9 @@ else if($action === 'edit')
 else if($action === 'populate_edit')
 {
     $id = $_POST['id'];
-    $sp_college = get_specific_college($id);
+    $sp_college = get_specific_college($id)->fetch();
+    $sp_major;
+    $sp_minor;
     $colleges = get_colleges();
 }
 else if($action === 'add')
@@ -128,7 +130,7 @@ else if($action === 'delete')
 				<select class="dropdown2" id = "major2">
                     <?php for($i = 0; $i < count($majors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
-                            <option <?php if($sp_experience['type'] === $majors[$i] ) { ?> selected <?php } ?>><?php echo $majors[$i] ?></option>
+                            <option <?php if($sp_college['type'] === $majors[$i] ) { ?> selected <?php } ?>><?php echo $majors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $majors[$i] ?> <?php } ?></option>
                     <?php } ?>
                     <option>none</option>
@@ -142,7 +144,7 @@ else if($action === 'delete')
 				<select class="dropdown2" id = "minor1">
                     <?php for($i = 0; $i < count($minors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
-                            <option <?php if($sp_experience['type'] === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
+                            <option <?php if($sp_college['type'] === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $minors[$i] ?> <?php } ?></option>
                     <?php } ?>
                     <option value = "1" class = ".textexp"> Other </option>
@@ -153,7 +155,7 @@ else if($action === 'delete')
 				<select class="dropdown2" id = "minor2">
                     <?php for($i = 0; $i < count($minors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
-                            <option <?php if($sp_experience['type'] === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
+                            <option <?php if($sp_college['type'] === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $minors[$i] ?> <?php } ?></option>
                     <?php } ?>
                     <option value = "1" class = ".textexp"> Other </option>
