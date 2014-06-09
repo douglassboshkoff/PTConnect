@@ -44,7 +44,8 @@ if(isset($_GET['next'])){
 }
 $comment_arr = get_questions($collegeID, $pageNum);
 if(isset($_GET['userID'])){
-$user_comment = get_question($_GET['userID'], $collegeID, $pageNum);
+    $userID = $_GET['userID'];
+    $user_comment = get_question($_GET['userID'], $collegeID, $pageNum);
 }
 /**
  * Created by JetBrains PhpStorm.
@@ -84,6 +85,7 @@ $user_comment = get_question($_GET['userID'], $collegeID, $pageNum);
             <img src="profile.png"/><p><?php echo $user_comment; ?></p>
             <?php } ?>
             <?php foreach($comment_arr as $comment){ ?>
+            <?php if($comment['accounts_id'] != $userID){?>
             <img src="profile.png"/><p><?php echo $comment['response']; ?></p>
             <?php } ?>
         </div>
