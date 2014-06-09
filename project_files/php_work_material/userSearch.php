@@ -51,6 +51,7 @@ else{
     $titleIn = "";
 }
 
+$newArr = accounts_filter("", "", "");
 
 $class_array = "";
 $name_array = "";

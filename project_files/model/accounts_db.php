@@ -103,7 +103,7 @@ function get_college_by_user($id) {
     return $result;
 }
 
-function accounts_filter($university, $location, $major) {
+function accounts_filter($university, $location, $major, $type, $title) {
     //Initial Database Fetch
     global $db;
     $query = "SELECT * FROM accounts LEFT JOIN questions ON accounts.id = questions.accounts_id LEFT JOIN concentration ON accounts.id = concentration.accounts_id";
@@ -124,6 +124,14 @@ function accounts_filter($university, $location, $major) {
 
     if($major != "") {
         $paramBuilder .= "AND WHERE name = '$major'";
+    }
+
+    if($type != ""){
+
+    }
+
+    if($title != ""){
+
     }
 
     $result = $db->query($query.$paramBuilder);
