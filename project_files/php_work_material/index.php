@@ -21,7 +21,7 @@ if($action == 'login')
     $password = $_POST['password'];
     if(validate_password($email, $password) === true){
 
-        $_SESSION['id'] = get_id_by_email($email);
+        $_SESSION['id'] = get_id_by_email($email)['id'];
         include('main.php');
         exit();
     }
