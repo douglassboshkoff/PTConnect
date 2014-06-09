@@ -46,9 +46,7 @@ $comment_arr = get_questions($collegeID, $pageNum);
 if(isset($_GET['userID'])){
     $userID = $_GET['userID'];
     $user_comment = get_question($_GET['userID'], $collegeID, $pageNum);
-    echo "UserComment: " . $user_comment;
 }
-echo "UserComment2: " . get_question(1, 1, 1);
 /**
  * Created by JetBrains PhpStorm.
  * User: Danny
@@ -84,7 +82,7 @@ echo "UserComment2: " . get_question(1, 1, 1);
                 </a>
             <h1> <?php echo $arr[$pageNum]['question']; ?></h1>
             <?php if(isset($user_comment)){ ?>
-            <img src="profile.png"/><p><?php echo $user_comment . "1st"; ?></p>
+            <img src="profile.png"/><p style= "background-color: lightgrey;"><?php echo $user_comment; ?></p>
             <?php } ?>
 
             <?php foreach($comment_arr as $comment){ ?>
