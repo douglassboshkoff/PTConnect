@@ -2,7 +2,6 @@
 
 include "../model/university_db.php";
 include "../model/database.php";
-include "header.php";
 
 //test array
 $arr = array("goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
@@ -39,6 +38,11 @@ $type_array = array("Private", "Public");
 //
 $secondary_info_array = "";
 $secondary_name_array = "";
+
+if(isset($_SESSION['id']))
+{
+    include('header.php');
+}
 ?>
 <!DOCTYPE html>
 <html>

@@ -23,6 +23,7 @@ if($action == 'login')
 
         $_SESSION['id'] = get_id_by_email($email);
         include('main.php');
+        exit();
     }
     else {
         $error=true;

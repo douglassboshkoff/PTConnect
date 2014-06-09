@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 
-<?php
-if(isset($_SESSION['id']))
-{
-include('header.php');
-}
-?>
 
 <html>
 	<head>
@@ -31,12 +25,6 @@ include('header.php');
 		</div>
 		</div>
 	</body>
-    <?php
-    if(isset($_SESSION['id']))
-    {
-        include('footer.php');
-    }
-    ?>
 </html>
 
 
