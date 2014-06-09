@@ -35,6 +35,14 @@ function get_all_titles() {
 
 }
 
+function get_titles_by_type($type) {
+    global $db;
+    $query = "SELECT title FROM experiences where type = '$type'";
+    $result = $db->query($query);
+    return $result->fetchAll(PDO::FETCH_COLUMN,0);
+
+}
+
 function danny_get_all_titles(){
     global $db;
     $query = "SELECT title FROM experiences";

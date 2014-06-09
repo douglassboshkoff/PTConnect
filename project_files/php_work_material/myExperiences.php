@@ -98,9 +98,11 @@ include("header.php");
                 margin-right:4px;
             }
             #titlediv {
-	            margin-left: 30px;
+	            margin-left: 56px;
 	            width: 320px;
-	            height: 30px;
+                font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
+                font-size: 16px;
+                line-height:100px;
             }
         </style>
 	</head>
