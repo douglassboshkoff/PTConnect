@@ -85,8 +85,9 @@ if(isset($_GET['userID'])){
             <img src="profile.png"/><p><?php echo $user_comment; ?></p>
             <?php } ?>
             <?php foreach($comment_arr as $comment){ ?>
-            <?php if($comment['accounts_id'] != $userID){?>
+            <?php if($comment['accounts_id'] != isset($userID) ){?>
             <img src="profile.png"/><p><?php echo $comment['response']; ?></p>
+                <?php } ?>
             <?php } ?>
         </div>
     </div>
