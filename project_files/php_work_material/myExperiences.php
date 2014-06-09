@@ -37,7 +37,7 @@ else
 
 if($action==='display')
 {
-    $experiences = get_experiences(1);
+    $experiences = get_experiences($_SESSION['id']);
 }
 else if($action === 'edit')
 {
