@@ -52,7 +52,9 @@ else if($action == 'register')
 }
 else if($action == 'continue_as_guest')
 {
+    unset($_SESSION['id']);
     include('main.php');
+
 }
 else if($action=='alumni_filter')
 {
