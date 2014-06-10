@@ -8,6 +8,8 @@ session_start();
 $majors = get_majors();
 $minors = get_minors();
 
+$colleges = get_college_from_email(get_email_by_id($_SESSION['id']));
+
 if(isset($_POST['action']))
 {
     $action = $_POST['action'];
@@ -19,12 +21,18 @@ else
 
 
 
+    $sp_minor1 = "none";
+    $sp_minor2 = "none";
+    $sp_major2 = "none";
+
+
 if($action==='display')
 {
-        $colleges = get_colleges();
+        $colleges = get_college_info($_SESSION['id']);
 }
 else if($action === 'edit')
 {
+
 }
 else if($action === 'populate_edit')
 {
@@ -32,11 +40,6 @@ else if($action === 'populate_edit')
     $sp_college = get_specific_college($id)->fetch();
     $sp_major =  get_sp_major($id, $_SESSION['id']);
     $sp_minor = get_sp_minor($id, $_SESSION['id']);
-    foreach($sp_major as $sp)
-    {
-        echo $sp." ";
-    }
-    echo count($sp_major);
     if(count($sp_major) == 2)
     {
         $sp_major1 = $sp_major[0];
@@ -54,10 +57,6 @@ else if($action === 'populate_edit')
     }
     else if(count($sp_minor) == 1){
         $sp_minor1 = $sp_minor[0];
-        $sp_major2 = "none";
-    }else {
-        $sp_minor1 = "none";
-        $sp_major2 = "none";
     }
     $colleges = get_colleges();
 }
@@ -180,6 +179,7 @@ include "header.php";
                             <option <?php if($sp_minor1 == $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $minors[$i] ?> <?php } ?></option>
                     <?php } ?>
+                    <option <?php if($sp_minor1 === "none") { ?>  selected <?php } ?>>none</option> ?>
                     <option value = "1" class = ".textexp"> Other </option>
                 </select>
 
@@ -191,7 +191,7 @@ include "header.php";
                             <option <?php if($sp_minor2 === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $minors[$i] ?> <?php } ?></option>
                     <?php } ?>
-
+                    <option <?php if($sp_minor2 === "none") { ?>  selected <?php } ?>>none</option> ?>
                     <option value = "1" class = ".textexp"> Other </option>
                 </select>
                 <div id = "minordiv2">  <input type="text" id="minorothertextbox2" />  </div>
@@ -199,13 +199,20 @@ include "header.php";
 
 
                 <h2>Question 1 Text</h2>
-				<textarea class="questions" rows="4"></textarea>
+				<textarea class="questions" rows="4" name="question1"></textarea>
 				<h2>Question 2 Text</h2>
-				<textarea class="questions" rows="4"></textarea>
+				<textarea class="questions" rows="4" name="question2"></textarea>
 				<h2>Question 3 Text</h2>
-				<textarea class="questions" rows="4"></textarea>
+				<textarea class="questions" rows="4" name="question3"></textarea>
+                <input type="hidden" name="action" value="<?php
+                if($action === 'display')
+                {
+                    echo 'add';
+                }
+                else{
+                    echo 'edit';
+                } ?>
 				<input type="submit" id="addButton" value="submit">
-                <input type="hidden" name="page" value="college"/>
 			</form>
 		</div>
 		</div>

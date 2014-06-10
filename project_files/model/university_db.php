@@ -37,6 +37,12 @@ function get_college($userID) {
     $college = $db->query($query);
     return $college;
 }
+function get_college_info($userID) {
+    global $db;
+    $query = "SELECT * FROM universities WHERE accounts_id = '$userID'";
+    $college = $db->query($query);
+    return $college;
+}
 
 function get_specific_college($collegeid) {
     global $db;

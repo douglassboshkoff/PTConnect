@@ -175,3 +175,11 @@ function get_id_by_email($email)
     $result = $db->query($query);
     return $result->fetch();
 }
+
+function get_email_by_id($id)
+{
+    global $db;
+    $query = "SELECT email FROM accounts WHERE id = '$id'";
+    $result = $db->query($query)->fetch()[0];
+    return $result;
+}
