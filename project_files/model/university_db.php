@@ -53,12 +53,12 @@ function get_college_name($collegeID){
 }
 
 function get_colleges() {
-        global $db;
-        $query = "SELECT *
+    global $db;
+    $query = "SELECT *
         FROM universities
         ORDER BY name";
-        $request = $db->query($query);
-        return $request;
+    $request = $db->query($query);
+    return $request;
 }
 
 function get_college_locations(){
@@ -88,22 +88,22 @@ function get_graduated($collegeID) {
 
     $result = $query->fetchAll(PDO::FETCH_COLUMN, 0);
 
-    
+
     for($i = 0; $i < count($result); $i++) {
         if($result[$i] == 1) {
             $grad++;
         }
     }
-    
+
     return $grad;
 }
 
 function get_attended($collegeID) {
-     global $db;
+    global $db;
     $attend = 0;
     $query = $db->prepare("SELECT graduated FROM universities where id = '$collegeID'");
     $query->execute();
-    
+
     $result = $query->fetchAll(PDO::FETCH_COLUMN, 0);
 
     for($i = 0; $i < count($result); $i++) {
@@ -111,7 +111,7 @@ function get_attended($collegeID) {
             $attend++;
         }
     }
-    
+
     return $attend;
 }
 
@@ -158,5 +158,39 @@ function get_college_from_email($email) {
 
 }
 
+function university_filter($name, $location, $type){
+    global $db;
+    $query = "SELECT * FROM universities";
+
+    //Refined Filtration
+    $paramBuilder = "";
+    if($name != "") {
+        $paramBuilder .= " WHERE name = '$name' ";
+    }
+
+    if($location != "") {
+        if($paramBuilder == ""){
+            $paramBuilder .= " WHERE location = '$location'";
+        }
+        else{
+            $paramBuilder .= " AND location = '$location'";
+        }
+    }
+
+    if($type != ""){
+        if($paramBuilder == ""){
+                $paramBuilder .= " WHERE `public/private` = '$type'";
+
+        }else{
+                $paramBuilder .= " AND `public/private` = '$type'";
+        }
+    }
+
+    echo $query.$paramBuilder;
+    $result = $db->query($query.$paramBuilder);
+    //$result = $result->fetchAll();
+
+    return $result;
+}
 
 ?>
