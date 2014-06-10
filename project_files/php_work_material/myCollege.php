@@ -9,6 +9,7 @@ $majors = get_majors();
 $minors = get_minors();
 
 $colleges = get_college_from_email(get_email_by_id($_SESSION['id']));
+echo $colleges[0];
 
 if(isset($_POST['action']))
 {
