@@ -164,7 +164,6 @@ function get_college_from_email($email) {
 
 }
 
-}
 
 function university_filter($name, $location, $type){
     global $db;
