@@ -221,12 +221,6 @@ include "header.php";
 		</div>
 		</div>
 
-	</body>
-<<<<<<< HEAD
-	<?php  include "footer.php" ?>
-</html>
-=======
-    <?php  include "footer.php" ?>
+	</body>	<?php  include "footer.php" ?>
 </html>
 
->>>>>>> FETCH_HEAD
