@@ -105,15 +105,15 @@ include "header.php";
 				<label>School</label>
 				<select class="dropdown2" id="college2">
                     <?php $colleges = get_colleges(); ?>
-                        <?php  foreach($colleges as $college) { ?>
+                        <?php  foreach($colleges as $college1) { ?>
 
                         <?php if($action==='populate_edit') { ?>
 
-                                <option <?php if($sp_college['name'] === $college['name'] ) { ?> selected <?php } ?>> <?php echo $college['name']; ?></option>
+                                <option <?php if($sp_college['name'] === $college1['name'] ) { ?> selected <?php } ?>> <?php echo $college1['name']; ?></option>
 
                             <?php }else { ?>
 
-                            <option><?php echo $college['name'] ?></option>
+                            <option><?php echo $college1['name'] ?></option>
                         <?php } ?>
                     <?php } ?>
 
@@ -185,4 +185,4 @@ include "header.php";
 	</body>
 </html>
 
-<?php // include "footer.php" ?>
+<?php  include "footer.php" ?>

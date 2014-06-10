@@ -11,8 +11,8 @@
             <li><span id="white">PT</span><span id="red">Connect</span></li>
             <form id="login" method="post" action="index.php">
                 <input type="hidden" name="action" value="login"/>
-                <input type="text" name="email" value="<?php if($error) echo "error"  ?>"  />
-                <input type="password" name="password"/>
+                <input type="text" name="email" value="<?php if($error) echo "error"  ?>"  placeholder="Email"/>
+                <input type="password" name="password" placeholder="Password"/>
                 <input id="loginButton" type="submit" value="Login"/>
             </form>
         </ul>
