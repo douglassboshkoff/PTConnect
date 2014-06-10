@@ -151,16 +151,19 @@ function get_college_from_email($email) {
 
     $query = "SELECT id FROM accounts WHERE email = '$email'";
     $result = $db->query($query);
-    $id = $result->fetch()[0];
+    $id = $result->fetch();
+    $names = array();
 
-    $query = "SELECT university_id FROM questions WHERE accounts_id = '$id'";
-    $result = $db->query($query);
-    $id = $result->fetch()[0];
+    while($id = mysql_fetch_assoc($id)) {
+        $query = "SELECT university_id FROM questions WHERE accounts_id = '$id'";
+        $result = $db->query($query);
+        $id = $result->fetch();
 
-    $query = "SELECT name FROM universities WHERE id = '$id'";
-    $result = $db->query($query);
-    $name = $result->fetch()[0];
-    return $name;
+        $query = "SELECT name FROM universities WHERE id = '$id'";
+        $result = $db->query($query);
+        $names[] = $result->fetch()[0];
+    }
+    return $names;
 
 }
 
@@ -185,10 +188,10 @@ function university_filter($name, $location, $type){
 
     if($type != ""){
         if($paramBuilder == ""){
-                $paramBuilder .= " WHERE `public/private` = '$type'";
+            $paramBuilder .= " WHERE `public/private` = '$type'";
 
         }else{
-                $paramBuilder .= " AND `public/private` = '$type'";
+            $paramBuilder .= " AND `public/private` = '$type'";
         }
     }
 
