@@ -129,12 +129,11 @@ body, html {
 	position: relative;
 	bottom: 0;
 	width: 100%;
-	margin-top: -70px; /* negative value of footer height */
-	height: 70px;
+	margin-top: -30px; /* negative value of footer height */
+	height: 31px;
 	padding: 0;
 	background: #000000;
 	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
-	box-shadow: 0px 5px 5px #888888;
 }
 #footer h1 {
 	font-size: 14px;
@@ -776,11 +775,18 @@ label {
 #mainform #fname {
 	width: 30%;
 	float: left;
+    margin-left: 10px;
 }
 #mainform #lname {
 	width: 30%;
 	float: left;
 	margin-left: 5%;
+}
+#mainform #email {
+    margin-left: 8px;
+}
+#mainform #password {
+    margin-left: 7px;
 }
 #mainform #email, #mainform #password, #mainform #gradyear {
 	width: 65.9%;
@@ -792,6 +798,7 @@ label {
 	margin-top: 10px;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 16px;
+    margin-left: 9px;
 }
 #mainform #gradyear {
 	font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;

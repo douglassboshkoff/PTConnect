@@ -151,19 +151,18 @@ function get_college_from_email($email) {
 
     $query = "SELECT id FROM accounts WHERE email = '$email'";
     $result = $db->query($query);
-    $names = array();
+    $id = $result->fetch()[0];
 
-    for($i = 0; $i < $result->num_rows; $i++) {
-        $id = $result->fetch();
-        $query = "SELECT university_id FROM questions WHERE accounts_id = '$id'";
-        $result = $db->query($query);
-        $id = $result->fetch();
+    $query = "SELECT university_id FROM questions WHERE accounts_id = '$id'";
+    $result = $db->query($query);
+    $id = $result->fetch()[0];
 
-        $query = "SELECT name FROM universities WHERE id = '$id'";
-        $result = $db->query($query);
-        $names[] = $result->fetch()[0];
-    }
-    return $names;
+    $query = "SELECT name FROM universities WHERE id = '$id'";
+    $result = $db->query($query);
+    $name = $result->fetch()[0];
+    return $name;
+
+}
 
 }
 

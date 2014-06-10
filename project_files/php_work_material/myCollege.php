@@ -29,7 +29,7 @@ else
 
 if($action==='display')
 {
-        $colleges = get_college_info($_SESSION['id']);
+        $colleges = get_colleges();
 }
 else if($action === 'edit')
 {
@@ -134,23 +134,20 @@ include "header.php";
 			<h1><?php if($action==='display') { echo "Add College";} else { echo "Edit College";} ?></h1>
 			<form method="post" action="myCollege.php">
 				<label>School</label>
+                <?php if($action === 'populate_edit') { ?>
+                    <input type="text" name="college" value="<?php echo  $sp_college['name']?>" readonly style="margin-left:7px; width: 230px; font-family: 'HelveticaNeue-Thin', 'Helvetica Neue Thin', 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; padding: 2px 0 2px 8px;"/>
+                <?php }else{ ?>
 				<select class="dropdown2" id="college2">
                     <?php $colleges = get_colleges(); ?>
                         <?php  foreach($colleges as $college1) { ?>
 
-                        <?php if($action==='populate_edit') { ?>
-
-                                <option <?php if($sp_college['name'] === $college1['name'] ) { ?> selected <?php } ?>> <?php echo $college1['name']; ?></option>
-
-                            <?php }else { ?>
-
                             <option><?php echo $college1['name'] ?></option>
-                        <?php } ?>
                     <?php } ?>
 
                     <option value = "1" class = ".textexp"> Other </option>
 
                 </select>
+                <?php } ?>
                 <div id = "hiddendiv">   <input type="text" class="othertextbox" />  </div>
                 <div id = "hiddendiv2">  <input type="text" class="othertextbox" />  </div>
                 <div id = "hiddendiv3">  <input type="text" class="othertextbox" />  </div>
