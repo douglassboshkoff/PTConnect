@@ -1,11 +1,9 @@
 <?php
 include "../model/database.php";
 include "../model/accounts_db.php";
-
+session_start();
 $userID = $_SESSION['id'];
-
-$account = get_user_by_id($userID);
-
+$account = get_user_by_id($userID)->fetch();
 ?>
 
 <!DOCTYPE html>
@@ -24,33 +22,22 @@ $account = get_user_by_id($userID);
                 <input id="lname" type="text" value="<?php echo $account['last_name']?>"/>
                 </br></br>
                 <label style="padding-right: 84px;">Email</label>
-                <input id="email" type="text" value="agottwald@parktudor.org"/>
+                <input id="email" type="text" value="<?php echo $account['email'] ?>"/>
                 </br></br>
                 <label style="padding-right: 45px;">Password</label>
-                <input id="password" type="password" value="ptconnect1"/>
+                <input id="password" type="password" value="<?php echo $account['password'] ?>"/>
                 </br></br>
                 <label>PT Grad Year</label>
                 <select id="gradyear">
-                    <option>PT Grad Year</option>
-                    <option>2017</option>
-                    <option>2016</option>
-                    <option>2015</option>
-                    <option>2014</option>
-                    <option>2013</option>
-                    <option>2012</option>
-                    <option>2011</option>
-                    <option>2010</option>
-                    <option>2010</option>
-                    <option>2010</option>
-                    <option>2009</option>
-                    <option>2008</option>
-                    <option>2007</option>
-                    <option>2006</option>
-                    <option>2005</option>
-                    <option>2004</option>
+                    <option><?php echo $account['pt_grad_year'] ?></option>
+                    <?php for($i = 2017; $i > 2000; $i--) : ?>
+                        <?php if($i != $account['pt_grad_year']) : ?>
+                            <option><?php echo $i ?></option>
+                        <?php endif ; ?>
+                    <?php endfor ; ?>
                 </select>
                 </br></br></br>
-                <label style="padding-right: 102px;">Bio</label><textarea id="bioEdit" rows="6"></textarea></br>
+                <label style="padding-right: 102px;">Bio</label><textarea id="bioEdit" rows="6"><?php echo $account['bio']?></textarea></br>
                 <input id="saveButton" type="submit" value="Save" /></br></br>
             </form>
         </div>
