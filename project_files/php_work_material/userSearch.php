@@ -1,10 +1,15 @@
 <?php
+session_start();
+if(isset($_SESSION['id']))
+{
+    $_SESSION['id'] = $_SESSION['id'];
+}
 include "../model/accounts_db.php";
 include "../model/university_db.php";
 include "../model/concentration_db.php";
 include "../model/experiences_db.php";
 include "../model/database.php";
-
+include "header.php";
 
 $arr = array("hello","world","how's","it","goin?", "ggg", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "geree", "aerffds", "wefds", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer", "dwwer");
 
@@ -56,7 +61,6 @@ $class_array = "";
 $name_array = "";
 ?>
 <html>
-<?php include "header.php"; ?>
 <head>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
@@ -180,5 +184,5 @@ $name_array = "";
 </div>
 </div>
 </body>
-</html>
 <?php include ("footer.php"); ?>
+</html>
