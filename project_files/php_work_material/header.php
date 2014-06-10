@@ -34,7 +34,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
     <ul>
         <?php if(isset($_SESSION['id'])) { ?>
-        <li class='active'><a href='main.php'><span>Home</span></a></li>
+        <li><a href='main.php'><span>Home</span></a></li>
         <li><a href='myCollege.php'><span>My College</span></a></li>
         <li><a href='myExperiences.php'><span>My Experiences</span></a></li>
         <li class='last'><a href='myProfile.php'><span>My Profile</span></a></li>
