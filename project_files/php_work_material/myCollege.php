@@ -97,7 +97,6 @@ include "header.php";
             }
             .othertextbox{
                 margin-left: 77px;
-                width: 235px;
             }
             </style>
 	</head>
