@@ -95,6 +95,9 @@ include "header.php";
                 font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, sans-serif;
                 font-size: 16px;
             }
+            .othertextbox{
+                margin-left: 77px;
+            }
             </style>
 	</head>
 	<body>
@@ -147,7 +150,10 @@ include "header.php";
                     <option value = "1" class = ".textexp"> Other </option>
 
                 </select>
-                <div id = "hiddendiv">  <input type="text" id="othertextbox" />  </div>
+                <div id = "hiddendiv">   <input type="text" class="othertextbox" />  </div>
+                <div id = "hiddendiv2">  <input type="text" class="othertextbox" />  </div>
+                <div id = "hiddendiv3">  <input type="text" class="othertextbox" />  </div>
+                <div id = "hiddendiv4">  <input type="text" class="othertextbox" />  </div>
 				<br>
 				<label style="margin-right: 2px;">Major 1</label>
 				<select class="dropdown2" id = "major1" style= "width:242px">

@@ -3,6 +3,9 @@ $(document).ready(function() {
         $(window).load(function()
         {
             $("#hiddendiv").hide();
+            $("#hiddendiv2").hide();
+            $("#hiddendiv3").hide();
+            $("#hiddendiv4").hide();
             $("#majordiv1").hide();
             $("#majordiv2").hide();
             $("#minordiv1").hide();
@@ -21,8 +24,50 @@ $(document).ready(function() {
             if(val == "1")
             {
                 $("#hiddendiv").show();
+                $("#hiddendiv2").show();
+                $("#hiddendiv3").show();
+                $("#hiddendiv4").show();
+
             }else{
                 $("#hiddendiv").hide();
+                $("#hiddendiv2").show();
+                $("#hiddendiv3").show();
+                $("#hiddendiv4").show();
+
+            }
+        });
+
+        $("#college2").change(function()
+        {
+            var val = $(this).val();
+
+            if(val == "1")
+            {
+                $("#hiddendiv2").show();
+            }else{
+                $("#hiddendiv2").hide();
+            }
+        });
+        $("#college2").change(function()
+        {
+            var val = $(this).val();
+
+            if(val == "1")
+            {
+                $("#hiddendiv3").show();
+            }else{
+                $("#hiddendiv3").hide();
+            }
+        });
+        $("#college2").change(function()
+        {
+            var val = $(this).val();
+
+            if(val == "1")
+            {
+                $("#hiddendiv4").show();
+            }else{
+                $("#hiddendiv4").hide();
             }
         });
 
