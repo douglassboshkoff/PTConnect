@@ -154,12 +154,12 @@ function get_college_from_email($email) {
     $id = $result->fetch();
     $names = array();
 
-    while($id = mysql_fetch_assoc($id)) {
-        $query = "SELECT university_id FROM questions WHERE accounts_id = '$id'";
+    while($idi = mysql_fetch_array($id)) {
+        $query = "SELECT university_id FROM questions WHERE accounts_id = '$idi'";
         $result = $db->query($query);
-        $id = $result->fetch();
+        $idi = $result->fetch();
 
-        $query = "SELECT name FROM universities WHERE id = '$id'";
+        $query = "SELECT name FROM universities WHERE id = '$idi'";
         $result = $db->query($query);
         $names[] = $result->fetch()[0];
     }
