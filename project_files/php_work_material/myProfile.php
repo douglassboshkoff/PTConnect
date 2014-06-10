@@ -1,4 +1,6 @@
 <?php
+$currentID = $_SESSION['id'];
+
 
 ?>
 
