@@ -203,11 +203,11 @@ include "header.php";
                 <div id = "minordiv1">  <input type="text" id="minorothertextbox" />  </div>
 
 
-                <h2>Question 1 Text</h2>
+                <h2>What made you choose this college?</h2>
 				<textarea class="questions" rows="4" name="question1"></textarea>
-				<h2>Question 2 Text</h2>
+				<h2>What is the single most unique attribute of this college?</h2>
 				<textarea class="questions" rows="4" name="question2"></textarea>
-				<h2>Question 3 Text</h2>
+				<h2>What will your degree from this college help you accomplish?</h2>
 				<textarea class="questions" rows="4" name="question3"></textarea>
                 <input type="hidden" name="action" value="<?php
                 if($action === 'display')
