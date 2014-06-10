@@ -51,6 +51,17 @@ $secondary_name_array = "";
 <head>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
+<style>
+    form input[type="submit"]{
+
+        background: none;
+        border: none;
+        color: black;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 16px;
+    }
+</style>
 <body>
 <div id="wrapper1">
     <div id='wrapper2'>
@@ -62,6 +73,7 @@ $secondary_name_array = "";
                     <?php if($nameIn != "") : ?>
                         <option value="<?php echo $nameIn?>"><?php echo $nameIn ?></option>
                     <?php endif ; ?>
+                    <option value="">(No Criteria)</option>
                     <?php foreach ($name_array as $name) : ?>
                         <?php if($name['name'] != $nameIn) : ?>
                             <option value="<?php echo $name['name'] ?>"><?php echo $name['name'] ?></option>
@@ -74,6 +86,7 @@ $secondary_name_array = "";
                     <?php if($locationIn != "") : ?>
                         <option value="<?php echo $locationIn?>"><?php echo $locationIn ?></option>
                     <?php endif ; ?>
+                    <option value="">(No Criteria)</option>
                     <?php foreach ($location_array as $location) : ?>
                         <?php if($location['location'] != $locationIn) : ?>
                             <option value="<?php echo $location['location'] ?>"><?php echo $location['location'] ?></option>
@@ -84,16 +97,16 @@ $secondary_name_array = "";
                 <label>Type</label></br>
                 <select name="type" id="dropdown">
                     <?php if($typeIn == "" || $typeIn == " ") : ?>
-                        <option value="">-blank-</option>
+                        <option value="">(No Criteria)</option>
                         <option value="0">Public</option>
                         <option value="1">Private</option>
                     <?php elseif($typeIn == "0") : ?>
                         <option value="0">Public</option>
-                        <option value="">-blank-</option>
+                        <option value="">(No Criteria)</option>
                         <option value="1">Private</option>
                     <?php elseif($typeIn == "1") : ?>
                         <option value="1">Private</option>
-                        <option value="">-blank-</option>
+                        <option value="">(No Criteria)</option>
                         <option value="0">Public</option>
                     <?php endif ; ?>
                     <!--
@@ -118,9 +131,9 @@ $secondary_name_array = "";
                     <a href="../html_originals/college.html"><img src="purdue.png"/></a>
                     <form action="college.php" method="post">
                         <input type="submit" value="<?php echo $value['name']?>">
-                        <input type="hidden" name="name" value="<?php echo $value['id']?>">
+                        <input type="hidden" name="university_id" value="<?php echo $value['id']?>">
                     </form>
-                    <h3>West Lafayette, IN</h3>
+                    <h3><?php echo $value['location']?></h3>
                 </div>
                 <!-- form stuff
                 <form action="College_Page.php" method="post">

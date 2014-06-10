@@ -87,6 +87,7 @@ $name_array = "";
             <?php if($yearIn != "") : ?>
                 <option value="<?php echo $yearIn?>"><?php echo $yearIn ?></option>
             <?php endif ; ?>
+            <option value="">(No Criteria)</option>
             <?php foreach ($grad_year_array as $year) : ?>
                 <?php if($year['pt_grad_year'] != $yearIn) : ?>
                     <option value="<?php echo $year['pt_grad_year'] ?>"><?php echo $year['pt_grad_year'] ?></option>
@@ -98,6 +99,7 @@ $name_array = "";
             <?php if($collegeIn != "") : ?>
                 <option value="<?php echo $collegeIn?>"><?php echo $collegeIn ?></option>
             <?php endif ; ?>
+            <option value="">(No Criteria)</option>
             <?php foreach ($college_array as $college) : ?>
                 <?php if($college['name'] != $collegeIn) : ?>
                     <option value="<?php echo $college['name'] ?>"><?php echo $college['name'] ?></option>
@@ -109,6 +111,7 @@ $name_array = "";
             <?php if($majorIn != "") : ?>
                 <option value="<?php echo $majorIn?>"><?php echo $majorIn ?></option>
             <?php endif ; ?>
+            <option value="">(No Criteria)</option>
             <?php foreach ($major_array as $major) : ?>
                 <?php if($major['name'] != $majorIn) : ?>
                     <option value="<?php echo $major['name'] ?>"><?php echo $major['name'] ?></option>
@@ -120,6 +123,7 @@ $name_array = "";
             <?php if($typeIn != "") : ?>
                 <option value="<?php echo $typeIn?>"><?php echo $typeIn ?></option>
             <?php endif ; ?>
+            <option value="">(No Criteria)</option>
             <?php foreach ($experience_type_array as $type) : ?>
                 <?php if($type['type'] != $typeIn) : ?>
                     <option value="<?php echo $type['type'] ?>"><?php echo $type['type'] ?></option>
@@ -131,6 +135,7 @@ $name_array = "";
             <?php if($titleIn != "") : ?>
                 <option value="<?php echo $titleIn?>"><?php echo $titleIn ?></option>
             <?php endif ; ?>
+            <option value="">(No Criteria)</option>
             <?php foreach ($experience_title_array as $title) : ?>
                 <?php if($title['title'] != $titleIn) : ?>
                     <option value="<?php echo $title['title'] ?>"><?php echo $title['title'] ?></option>

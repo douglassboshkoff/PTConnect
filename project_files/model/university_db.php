@@ -186,7 +186,7 @@ function university_filter($name, $location, $type){
         }
     }
 
-    echo $query.$paramBuilder;
+    //echo $query.$paramBuilder;
     $result = $db->query($query.$paramBuilder);
     //$result = $result->fetchAll();
 
