@@ -187,3 +187,14 @@ function get_email_by_id($id)
     $result = $db->query($query)->fetch()[0];
     return $result;
 }
+
+function update_user($id, $fname, $lname, $email, $password, $gradyear, $bio){
+    global $db;
+    $query = "UPDATE accounts
+    SET id = '$id', first_name = '$fname',
+    last_name = '$lname', email = '$email',
+    pt_grad_year = '$gradyear', bio = '$bio',
+    password = '$password'
+    WHERE id = '$id'";
+    $db->exec($query);
+}

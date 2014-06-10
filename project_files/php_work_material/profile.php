@@ -1,4 +1,7 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 include("../model/database.php");
 include("../model/university_db.php");
 include("../model/accounts_db.php");
