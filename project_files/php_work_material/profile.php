@@ -24,6 +24,7 @@ $arr_exp = get_experiences($userID)->fetchAll() ;
 ?>
 <!DOCTYPE html>
 <html>
+<?php include "header.php"?>
 <head>
     <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
     <script type="text/javascript" src="../js/jQuery.js"></script>
@@ -69,4 +70,5 @@ $arr_exp = get_experiences($userID)->fetchAll() ;
     </div>
 </div>
 </body>
+<?php include "footer.php" ?>
 </html>
