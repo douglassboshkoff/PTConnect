@@ -11,7 +11,6 @@ if (session_status() == PHP_SESSION_NONE) {
             display: block;
             float: left;
             font-size: 32px;
-
             text-decoration: none;
         }
     </style>

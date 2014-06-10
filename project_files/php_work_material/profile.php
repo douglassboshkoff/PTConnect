@@ -7,8 +7,8 @@ include("../model/experiences_db.php");
 $cur_pic = "../test_material/bullets_picture/Bullet_Arrow_R.png";
 //gets userID from alum filter
 $userID = 1;
-if (isset($_POST["name"])) {
-    $userID = $_POST["name"];
+if (isset($_POST['name'])) {
+    $userID = get_id_by_email($_POST['name'])['id'];
 }
 $g_colleges = get_college($userID);
 

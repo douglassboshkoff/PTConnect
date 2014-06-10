@@ -35,6 +35,7 @@ else{
     $typeIn = "";
 }
 
+$newArr = university_filter($nameIn, $locationIn, $typeIn);
 
 //filters
 $name_array = get_colleges();
@@ -50,40 +51,65 @@ $secondary_name_array = "";
 <head>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
+<style>
+    form input[type="submit"]{
+
+        background: none;
+        border: none;
+        color: black;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 16px;
+    }
+</style>
 <body>
 <div id="wrapper1">
     <div id='wrapper2'>
         <div id="filters">
             <h1>Filters</h1>
-            <label>Name</label></br>
-            <select name="name" id="dropdown">
-                <?php if($nameIn != "") : ?>
-                    <option value="<?php echo $nameIn?>"><?php echo $nameIn ?></option>
-                <?php endif ; ?>
-                <?php foreach ($name_array as $name) : ?>
-                    <?php if($name['name'] != $nameIn) : ?>
-                        <option value="<?php echo $name['name'] ?>"><?php echo $name['name'] ?></option>
+            <form action="collegeSearch.php" method="post">
+                <label>Name</label></br>
+                <select name="name" id="dropdown">
+                    <?php if($nameIn != "") : ?>
+                        <option value="<?php echo $nameIn?>"><?php echo $nameIn ?></option>
                     <?php endif ; ?>
-                <?php endforeach ; ?>
-            </select>
+                    <option value="">(No Criteria)</option>
+                    <?php foreach ($name_array as $name) : ?>
+                        <?php if($name['name'] != $nameIn) : ?>
+                            <option value="<?php echo $name['name'] ?>"><?php echo $name['name'] ?></option>
+                        <?php endif ; ?>
+                    <?php endforeach ; ?>
+                </select>
 
-            <label>Location</label></br>
-            <select name="name" id="dropdown">
-                <?php if($locationIn != "") : ?>
-                    <option value="<?php echo $locationIn?>"><?php echo $locationIn ?></option>
-                <?php endif ; ?>
-                <?php foreach ($location_array as $location) : ?>
-                    <?php if($location['location'] != $locationIn) : ?>
-                        <option value="<?php echo $location['location'] ?>"><?php echo $location['location'] ?></option>
+                <label>Location</label></br>
+                <select name="location" id="dropdown">
+                    <?php if($locationIn != "") : ?>
+                        <option value="<?php echo $locationIn?>"><?php echo $locationIn ?></option>
                     <?php endif ; ?>
-                <?php endforeach ; ?>
-            </select></br>
-            <!-- 0 is private, 1 is public  -->
-            <label>Type</label></br>
-            <select name="type" id="dropdown">
-                <option value="0">Private</option>
-                <option value="1">Public</option>
-                <!--
+                    <option value="">(No Criteria)</option>
+                    <?php foreach ($location_array as $location) : ?>
+                        <?php if($location['location'] != $locationIn) : ?>
+                            <option value="<?php echo $location['location'] ?>"><?php echo $location['location'] ?></option>
+                        <?php endif ; ?>
+                    <?php endforeach ; ?>
+                </select></br>
+                <!-- 0 is private, 1 is public  -->
+                <label>Type</label></br>
+                <select name="type" id="dropdown">
+                    <?php if($typeIn == "" || $typeIn == " ") : ?>
+                        <option value="">(No Criteria)</option>
+                        <option value="0">Public</option>
+                        <option value="1">Private</option>
+                    <?php elseif($typeIn == "0") : ?>
+                        <option value="0">Public</option>
+                        <option value="">(No Criteria)</option>
+                        <option value="1">Private</option>
+                    <?php elseif($typeIn == "1") : ?>
+                        <option value="1">Private</option>
+                        <option value="">(No Criteria)</option>
+                        <option value="0">Public</option>
+                    <?php endif ; ?>
+                    <!--
                 <?php if($typeIn != "") : ?>
                     <option value="<?php echo $typeIn?>"><?php echo $typeIn ?></option>
                 <?php endif ; ?>
@@ -93,18 +119,21 @@ $secondary_name_array = "";
                     <?php endif ; ?>
                 <?php endforeach ; ?>
                 -->
-            </select></br>
+                </select></br>
+
+                <input class="submit" type="submit" value="Search">
+            </form>
         </div>
 
         <div id="content">
-            <?php foreach($arr as $value) : ?>
+            <?php foreach($newArr as $value) : ?>
                 <div id="college">
                     <a href="../html_originals/college.html"><img src="purdue.png"/></a>
                     <form action="college.php" method="post">
-                        <input type="submit" value="<?php echo $value?>">
-                        <input type="hidden" name="name" value="<?php echo $value?>">
+                        <input type="submit" value="<?php echo $value['name']?>">
+                        <input type="hidden" name="university_id" value="<?php echo $value['id']?>">
                     </form>
-                    <h3>West Lafayette, IN</h3>
+                    <h3><?php echo $value['location']?></h3>
                 </div>
                 <!-- form stuff
                 <form action="College_Page.php" method="post">
@@ -126,16 +155,6 @@ $secondary_name_array = "";
                 </form>
                 -->
             <?php endforeach; ?>
-            <div id="college">
-                <a href="../html_originals/college.html"><img src="purdue.png"/></a>
-                <a href="../html_originals/college.html"><h2>Purdue University</h2></a>
-                <h3>West Lafayette, IN</h3>
-            </div>
-            <div id="college">
-                <a href="../html_originals/college.html"><img src="purdue.png"/></a>
-                <a href="../html_originals/college.html"><h2>Purdue University</h2></a>
-                <h3>West Lafayette, IN</h3>
-            </div>
         </div>
     </div>
 </div>
