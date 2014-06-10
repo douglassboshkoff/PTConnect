@@ -11,10 +11,10 @@
             <li><span id="white">PT</span><span id="red">Connect</span></li>
             <form id="login" method="post" action="index.php">
                 <input type="hidden" name="action" value="login"/>
-                <input type="text" name="email" value="<?php if($error) echo "error"  ?>"  placeholder="Email"/>
-                <input type="password" name="password" placeholder="Password"/>
+                <input type="text" name="email" value="<?php if($error) { echo "Invalid user";  } ?>" <?php if($error) { ?> style="color:red" <?php  } ?>    placeholder="Email" />
+                <input type="password" name="password" placeholder="Password" />
                 <input id="loginButton" type="submit" value="Login"/>
-            </form>
+            </form
         </ul>
     </div>
     <div id="guestSide">
