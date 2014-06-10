@@ -40,7 +40,7 @@ function get_college($userID) {
 
 function get_specific_college($collegeid) {
     global $db;
-    $query = "SELECT * FROM experiences WHERE id = '$collegeid'";
+    $query = "SELECT * FROM universities WHERE id = '$collegeid'";
     $result = $db->query($query);
     return $result;
 }

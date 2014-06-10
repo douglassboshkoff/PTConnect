@@ -4,7 +4,7 @@ include "../model/database.php";
 include "../model/accounts_db.php";
 include "../model/university_db.php";
 include "../model/concentration_db.php";
-
+session_start();
 $majors = get_majors();
 $minors = get_minors();
 
@@ -30,8 +30,27 @@ else if($action === 'populate_edit')
 {
     $id = $_POST['id'];
     $sp_college = get_specific_college($id)->fetch();
-    $sp_major =  get_sp;
-    $sp_minor;
+    $sp_major =  get_sp_major($id, $_SESSION['id']);
+    $sp_minor = get_sp_minor($id, $_SESSION['id']);
+    if(count($sp_major) == 2)
+    {
+        $sp_major1 = $sp_major[0];
+        $sp_major2 = $sp_major[1];
+    }
+    else {
+        $sp_major1 = $sp_major[0];
+        $sp_major2 = "none";
+    }
+
+    if(count($sp_minor) == 2)
+    {
+        $sp_minor1 = $sp_minor[0];
+        $sp_minor2 = $sp_minor[1];
+    }
+    else {
+        $sp_minor1 = $sp_minor[0];
+        $sp_major2 = "none";
+    }
     $colleges = get_colleges();
 }
 else if($action === 'add')
@@ -126,7 +145,7 @@ include "header.php";
 				<select class="dropdown2" id = "major1" style= "width:242px">
                     <?php for($i = 0; $i < count($majors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
-                            <option <?php if($sp_college['major'] === $majors[$i] ) { ?> selected <?php } ?>><?php echo $majors[$i] ?></option>
+                            <option <?php if($sp_major1 == $majors[$i] ) { ?> selected <?php } ?>><?php echo $majors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $majors[$i] ?> <?php } ?></option>
                     <?php } ?>
                     <option value = "1" class = ".textexp"> Other </option>
@@ -136,7 +155,7 @@ include "header.php";
 				<select class="dropdown2" id = "major2" style= "width:242px">
                     <?php for($i = 0; $i < count($majors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
-                            <option <?php if($sp_college['type'] === $majors[$i] ) { ?> selected <?php } ?>><?php echo $majors[$i] ?></option>
+                            <option <?php if($sp_major2 == $majors[$i] ) { ?> selected <?php } ?>><?php echo $majors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $majors[$i] ?> <?php } ?></option>
                     <?php } ?>
                     <option>none</option>
@@ -150,7 +169,7 @@ include "header.php";
 				<select class="dropdown2" id = "minor1" style= "width:242px">
                     <?php for($i = 0; $i < count($minors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
-                            <option <?php if($sp_college['type'] === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
+                            <option <?php if($sp_minor1 === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $minors[$i] ?> <?php } ?></option>
                     <?php } ?>
                     <option value = "1" class = ".textexp"> Other </option>
@@ -161,9 +180,10 @@ include "header.php";
 				<select class="dropdown2" id = "minor2" style= "width:242px">
                     <?php for($i = 0; $i < count($minors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
-                            <option <?php if($sp_college['type'] === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
+                            <option <?php if($sp_minor2 === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $minors[$i] ?> <?php } ?></option>
                     <?php } ?>
+
                     <option value = "1" class = ".textexp"> Other </option>
                 </select>
                 <div id = "minordiv2">  <input type="text" id="minorothertextbox2" />  </div>
