@@ -1,6 +1,10 @@
 <?php
-$currentID = $_SESSION['id'];
+include "../model/database.php";
+include "../model/accounts_db.php";
 
+$userID = $_SESSION['id'];
+
+$account = get_user_by_id($userID);
 
 ?>
 
@@ -16,8 +20,8 @@ $currentID = $_SESSION['id'];
         <div id="mainform">
             <form>
                 <label style="padding-right: 79px;">Name</label>
-                <input id="fname" type="text" value="<?php echo"/>
-                <input id="lname" type="text" value="Gottwald"/>
+                <input id="fname" type="text" value="<?php echo $account['first_name']?>"/>
+                <input id="lname" type="text" value="<?php echo $account['last_name']?>"/>
                 </br></br>
                 <label style="padding-right: 84px;">Email</label>
                 <input id="email" type="text" value="agottwald@parktudor.org"/>
