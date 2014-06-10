@@ -32,6 +32,11 @@ else if($action === 'populate_edit')
     $sp_college = get_specific_college($id)->fetch();
     $sp_major =  get_sp_major($id, $_SESSION['id']);
     $sp_minor = get_sp_minor($id, $_SESSION['id']);
+    foreach($sp_major as $sp)
+    {
+        echo $sp." ";
+    }
+    echo count($sp_major);
     if(count($sp_major) == 2)
     {
         $sp_major1 = $sp_major[0];
@@ -47,8 +52,11 @@ else if($action === 'populate_edit')
         $sp_minor1 = $sp_minor[0];
         $sp_minor2 = $sp_minor[1];
     }
-    else {
+    else if(count($sp_minor) == 1){
         $sp_minor1 = $sp_minor[0];
+        $sp_major2 = "none";
+    }else {
+        $sp_minor1 = "none";
         $sp_major2 = "none";
     }
     $colleges = get_colleges();
@@ -158,7 +166,7 @@ include "header.php";
                             <option <?php if($sp_major2 == $majors[$i] ) { ?> selected <?php } ?>><?php echo $majors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $majors[$i] ?> <?php } ?></option>
                     <?php } ?>
-                    <option>none</option>
+                    <option <?php if($sp_major2 === "none") { ?>  selected <?php } ?>>none</option> ?>
                     <option value = "1" class = ".textexp" style= "width:242px"> Other </option>
                 </select>
                 <div id = "majordiv1" >  <input type="text" id="majorothertextbox" />  </div>
@@ -169,7 +177,7 @@ include "header.php";
 				<select class="dropdown2" id = "minor1" style= "width:242px">
                     <?php for($i = 0; $i < count($minors); $i++) { ?>
                         <?php if($action === 'populate_edit') { ?>
-                            <option <?php if($sp_minor1 === $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
+                            <option <?php if($sp_minor1 == $minors[$i] ) { ?> selected <?php } ?>><?php echo $minors[$i] ?></option>
                         <?php }else { ?> <option><?php echo $minors[$i] ?> <?php } ?></option>
                     <?php } ?>
                     <option value = "1" class = ".textexp"> Other </option>
