@@ -72,6 +72,8 @@ $name_array = "";
     }
 </style>
 <body>
+<div id="wrapper1">
+    <div id='wrapper2'>
 <div id="filters">
     <h1>Filters</h1>
     <form action="userSearch.php" method="post">
@@ -174,6 +176,8 @@ $name_array = "";
                     </div>
                 </form> -->
     <?php endforeach; ?>
+</div>
+</div>
 </div>
 </body>
 <?php include ("footer.php"); ?>
