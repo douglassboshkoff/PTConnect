@@ -16,7 +16,7 @@ $currentID = $_SESSION['id'];
         <div id="mainform">
             <form>
                 <label style="padding-right: 79px;">Name</label>
-                <input id="fname" type="text" value="Alex"/>
+                <input id="fname" type="text" value="<?php echo"/>
                 <input id="lname" type="text" value="Gottwald"/>
                 </br></br>
                 <label style="padding-right: 84px;">Email</label>
