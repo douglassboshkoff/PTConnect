@@ -188,7 +188,7 @@ include("header.php");
 
                 <br/>
 
-                <h2>Describe your experience</h2>
+                <h2>Describe Your Experience</h2>
                 <textarea class="questions" rows="4" name="content" ><?php if($action==='populate_edit') { echo $sp_experience['content']; } ?></textarea>
                 <input type="hidden" name="action" value="<?php
                 if($action === 'display')

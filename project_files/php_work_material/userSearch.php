@@ -180,5 +180,5 @@ $name_array = "";
 </div>
 </div>
 </body>
-<?php include ("footer.php"); ?>
 </html>
+<?php include ("footer.php"); ?>
