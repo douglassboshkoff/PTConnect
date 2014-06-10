@@ -30,7 +30,7 @@ else if($action === 'populate_edit')
 {
     $id = $_POST['id'];
     $sp_college = get_specific_college($id)->fetch();
-    $sp_major;
+    $sp_major =  get_sp;
     $sp_minor;
     $colleges = get_colleges();
 }

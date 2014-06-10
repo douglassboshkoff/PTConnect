@@ -17,6 +17,14 @@ function get_majors() {
     return $result->fetchAll(PDO::FETCH_COLUMN,0);
 }
 
+function get_sp_major($university_id, $account_id)
+{
+    global $db;
+    $query = "SELECT * from concentration where major_minor=0 and universities_id = '$university_id' and  accounts_id = '$account_id'";
+    $result = $db->query($query)->fetchAll(PDO::FETCH_COLUMN,0);
+    return $result;
+}
+
 function danny_get_majors(){
     global $db;
     $query = 'SELECT DISTINCT name
