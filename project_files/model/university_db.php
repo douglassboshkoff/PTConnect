@@ -166,6 +166,10 @@ function get_college_from_email($email) {
 
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 function university_filter($name, $location, $type){
     global $db;
     $query = "SELECT * FROM universities";
