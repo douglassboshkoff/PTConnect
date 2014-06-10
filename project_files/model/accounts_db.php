@@ -106,19 +106,20 @@ function get_college_by_user($id) {
 function accounts_filter($university, $year, $major, $type, $title) {
     //Initial Database Fetch
     global $db;
-    $query = "SELECT distinct name, first_name, last_name, pt_grad_year, email, type, title FROM accounts
+    $query = "SELECT distinct first_name, last_name, pt_grad_year, email, type, title FROM accounts
     LEFT JOIN questions ON accounts.id = questions.accounts_id
     LEFT JOIN concentration ON accounts.id = concentration.accounts_id
     LEFT JOIN experiences on accounts.id = experiences.accounts_id";
 
     //Refined Filtration
     $paramBuilder = "";
+    $got = false;
     if($university != "") {
         $query = "SELECT distinct name, first_name, last_name, pt_grad_year, university_id, email, type, title FROM accounts
     LEFT JOIN questions ON accounts.id = questions.accounts_id
     LEFT JOIN concentration ON accounts.id = concentration.accounts_id
     LEFT JOIN experiences on accounts.id = experiences.accounts_id";
-
+        $got = true;
         $query2 = "SELECT id FROM universities WHERE name='$university'"; //UNIVERSITY NAME IN PARAM; NOT ID!
         $university_id = $db->query($query2);
         $university_id = $university_id->fetch();
@@ -136,6 +137,18 @@ function accounts_filter($university, $year, $major, $type, $title) {
     }
 
     if($major != "") {
+        if($got == true){
+            $query = "SELECT distinct name, first_name, last_name, pt_grad_year, university_id, email, type, title FROM accounts
+    LEFT JOIN questions ON accounts.id = questions.accounts_id
+    LEFT JOIN concentration ON accounts.id = concentration.accounts_id
+    LEFT JOIN experiences on accounts.id = experiences.accounts_id";
+        }
+        else{
+            $query = "SELECT distinct name, first_name, last_name, pt_grad_year, email, type, title FROM accounts
+    LEFT JOIN questions ON accounts.id = questions.accounts_id
+    LEFT JOIN concentration ON accounts.id = concentration.accounts_id
+    LEFT JOIN experiences on accounts.id = experiences.accounts_id";
+        }
         if($paramBuilder == ""){
             $paramBuilder .= " WHERE name = '$major'";
         }
@@ -145,6 +158,7 @@ function accounts_filter($university, $year, $major, $type, $title) {
     }
 
     if($type != ""){
+
         if($paramBuilder == ""){
             $paramBuilder .= " WHERE type = '$type'";
         }else{
@@ -153,6 +167,7 @@ function accounts_filter($university, $year, $major, $type, $title) {
     }
 
     if($title != ""){
+        
         if($paramBuilder == ""){
             $paramBuilder .= " WHERE title = '$title'";
         }else{

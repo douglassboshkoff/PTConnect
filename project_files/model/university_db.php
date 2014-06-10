@@ -18,13 +18,14 @@ function get_college_image($collegeID){
     $result = $db->query($query);
     return $result->fetch()['image_link'];
 }
+
 function get_students($collegeID) {
     global $db;
     $query = "SELECT accounts_id FROM questions WHERE university_id = '$collegeID'";
     $result = $db->query($query);
     return $result->fetchAll();
-
 }
+
 function remove_college($id) {
     global $db;
     $query = "DELETE FROM universities WHERE id = '$id'";
@@ -37,6 +38,7 @@ function get_college($userID) {
     $college = $db->query($query);
     return $college;
 }
+
 function get_college_info($userID) {
     global $db;
     $query = "SELECT * FROM universities WHERE accounts_id = '$userID'";
@@ -161,8 +163,6 @@ function get_college_from_email($email) {
     $result = $db->query($query);
     $name = $result->fetch()[0];
     return $name;
-
-}
 
 }
 
