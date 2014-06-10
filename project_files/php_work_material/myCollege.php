@@ -211,8 +211,11 @@ include "header.php";
                 }
                 else{
                     echo 'edit';
-                } ?>
+                } ?>"/>
 				<input type="submit" id="addButton" value="submit">
+                <?php if($action==='populate_edit') { ?>
+                    <input type="hidden" name="college_id" value="<?php echo $sp_college['id'] ?>"/>
+                <?php } ?>
 			</form>
 		</div>
 		</div>
